@@ -39,13 +39,13 @@ export default function Destinations() {
   return (
     <section className="space-y-8">
       <div className="space-y-4">
-        <span className="text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <span className="text-sm font-semibold uppercase tracking-wide text-slate-700">
           Travel & Play
         </span>
         <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
           Dinks Destinations: Pickleball Getaway Vacations
         </h1>
-        <p className="text-lg font-semibold text-brand-green">
+        <p className="text-lg font-semibold text-slate-700">
           What&apos;s better than pickleball? Pickleball Vacations at some of
           the most beautiful locations in the world!
         </p>
@@ -66,7 +66,7 @@ export default function Destinations() {
           <ul className="space-y-3 text-base leading-7">
             {benefits.map((benefit) => (
               <li key={benefit} className="flex items-start gap-3">
-                <span className="text-xl text-brand-green">✓</span>
+                <span className="text-xl text-slate-700">✓</span>
                 <span>{benefit}</span>
               </li>
             ))}
@@ -88,7 +88,7 @@ export default function Destinations() {
             <Card key={dest.location}>
               <CardHeader>
                 <CardTitle>{dest.location}</CardTitle>
-                <CardDescription className="font-semibold text-brand-green">
+                <CardDescription className="font-semibold text-slate-700">
                   {dest.description}
                 </CardDescription>
               </CardHeader>
@@ -142,7 +142,7 @@ export default function Destinations() {
         <Card>
           <CardHeader>
             <CardTitle>Your Trip Organizers</CardTitle>
-            <CardDescription className="text-lg font-semibold text-brand-green">
+            <CardDescription className="text-lg font-semibold text-slate-700">
               David &amp; Bailey Lanning
             </CardDescription>
           </CardHeader>

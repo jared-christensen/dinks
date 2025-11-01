@@ -49,7 +49,7 @@ export default function Instruction() {
   return (
     <section className="space-y-8">
       <div className="space-y-4">
-        <span className="text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <span className="text-sm font-semibold uppercase tracking-wide text-slate-600">
           Learn & Improve
         </span>
         <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -67,27 +67,29 @@ export default function Instruction() {
         <Card>
           <CardHeader>
             <CardTitle>Meet Your Instructors</CardTitle>
-            <CardDescription className="text-lg font-semibold text-brand-green">
+            <CardDescription className="text-lg font-semibold text-slate-700">
               David &amp; Bailey Lanning
             </CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2 text-sm leading-6">
               <li className="flex items-start gap-2">
-                <span className="text-brand-green">•</span>
+                <span className="text-slate-600">•</span>
                 <span>Co-Owners of Dinks Pickleball</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-brand-green">•</span>
+                <span className="text-slate-600">•</span>
                 <span>PPR Professional Instructors</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-brand-green">•</span>
+                <span className="text-slate-600">•</span>
                 <span>Certified pickleball instructors</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-brand-green">•</span>
-                <span>Experience with all skill levels from beginners to advanced</span>
+                <span className="text-slate-600">•</span>
+                <span>
+                  Experience with all skill levels from beginners to advanced
+                </span>
               </li>
             </ul>
           </CardContent>
@@ -108,7 +110,7 @@ export default function Instruction() {
           <Card key={service.title}>
             <CardHeader>
               <CardTitle>{service.title}</CardTitle>
-              <CardDescription className="font-semibold text-brand-green">
+              <CardDescription className="font-semibold text-slate-700">
                 {service.description}
               </CardDescription>
             </CardHeader>
@@ -128,7 +130,7 @@ export default function Instruction() {
           <ul className="space-y-2 text-sm leading-6">
             {clinicLevels.map((level) => (
               <li key={level} className="flex items-start gap-2">
-                <span className="text-brand-green">•</span>
+                <span className="text-slate-600">•</span>
                 <span>{level}</span>
               </li>
             ))}
@@ -159,7 +161,7 @@ export default function Instruction() {
       </div>
 
       {/* Dinks Destinations callout */}
-      <Card className="border-2 border-brand-green bg-slate-50">
+      <Card className="border-2 border-slate-300 bg-slate-50">
         <CardHeader>
           <CardTitle className="text-2xl">Love to Travel?</CardTitle>
         </CardHeader>

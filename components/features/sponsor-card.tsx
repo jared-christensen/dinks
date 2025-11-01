@@ -25,7 +25,7 @@ export function SponsorCard({
           href={url}
           target="_blank"
           rel="noreferrer"
-          className="text-brand-primary underline"
+          className="text-slate-700 underline"
         >
           Visit
         </a>

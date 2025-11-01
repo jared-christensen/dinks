@@ -216,7 +216,7 @@ export default function Sponsors() {
             <div className="pt-4">
               <Link
                 href="mailto:info@dinkspickleballdsm.com"
-                className="inline-flex items-center justify-center rounded-full bg-brand-green px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-green/90"
+                className="inline-flex items-center justify-center rounded-full bg-slate-700 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-700/90"
               >
                 Inquire about gold
               </Link>

@@ -21,7 +21,7 @@ export function MembershipCard({ tier }: { tier: MembershipTier }) {
     <Card className="flex flex-col transition hover:shadow-md">
       <CardHeader>
         <CardTitle>{tier.name}</CardTitle>
-        <CardDescription className="text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <CardDescription className="text-sm font-semibold uppercase tracking-wide text-slate-600">
           {tier.price}
         </CardDescription>
       </CardHeader>
@@ -34,7 +34,7 @@ export function MembershipCard({ tier }: { tier: MembershipTier }) {
               <li key={item} className="flex items-start gap-2">
                 <span
                   aria-hidden
-                  className="mt-1 h-1.5 w-1.5 rounded-full bg-brand-green"
+                  className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-600"
                 />
                 <span>{item}</span>
               </li>

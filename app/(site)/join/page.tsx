@@ -49,7 +49,7 @@ export default function Join() {
   return (
     <section className="space-y-14">
       <div className="space-y-6 text-center md:text-left">
-        <span className="text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <span className="text-sm font-semibold uppercase tracking-wide text-slate-600">
           Memberships
         </span>
         <div className="space-y-4">
@@ -66,15 +66,15 @@ export default function Join() {
         </div>
       </div>
 
-      <Card className="bg-brand-green/5 border-brand-green/20">
+      <Card className="bg-slate-100 border-slate-300">
         <CardContent className="pt-6">
           <h2 className="mb-6 text-center text-xl font-semibold text-slate-900">
             All memberships include:
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
             <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-green/10">
-                <KeyRound className="h-6 w-6 text-brand-green" />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-slate-200">
+                <KeyRound className="h-6 w-6 text-slate-700" />
               </div>
               <p className="font-semibold text-slate-900">
                 Personalized door code access
@@ -82,8 +82,8 @@ export default function Join() {
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-green/10">
-                <CalendarCheck className="h-6 w-6 text-brand-green" />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-slate-200">
+                <CalendarCheck className="h-6 w-6 text-slate-700" />
               </div>
               <p className="font-semibold text-slate-900">
                 Court booking access
@@ -91,8 +91,8 @@ export default function Join() {
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-green/10">
-                <DollarSign className="h-6 w-6 text-brand-green" />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-slate-200">
+                <DollarSign className="h-6 w-6 text-slate-700" />
               </div>
               <p className="font-semibold text-slate-900">
                 $10 ball machine rental
@@ -107,7 +107,7 @@ export default function Join() {
         ))}
       </div>
 
-      <div className="rounded-3xl border-2 border-brand-green bg-slate-50 p-8 shadow-sm">
+      <div className="rounded-3xl border-2 border-slate-300 bg-slate-50 p-8 shadow-sm">
         <h2 className="text-2xl font-semibold text-slate-900">
           Business or Organization?
         </h2>
@@ -134,7 +134,7 @@ export default function Join() {
           Still deciding?{" "}
           <Link
             href="/contact"
-            className="font-semibold text-brand-green underline-offset-4 hover:underline"
+            className="font-semibold text-slate-700 underline-offset-4 hover:underline"
           >
             Contact us
           </Link>{" "}

@@ -73,7 +73,7 @@ export default function Contact() {
   return (
     <section className="space-y-8">
       <div className="space-y-4">
-        <span className="text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <span className="text-sm font-semibold uppercase tracking-wide text-slate-700">
           Get in Touch
         </span>
         <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -208,25 +208,25 @@ export default function Contact() {
               <div className="space-y-2 text-sm">
                 <Link
                   href="/join"
-                  className="block text-brand-green hover:underline"
+                  className="block text-slate-700 hover:underline"
                 >
                   → Membership Options
                 </Link>
                 <Link
                   href="/faq"
-                  className="block text-brand-green hover:underline"
+                  className="block text-slate-700 hover:underline"
                 >
                   → Frequently Asked Questions
                 </Link>
                 <Link
                   href="/sponsors"
-                  className="block text-brand-green hover:underline"
+                  className="block text-slate-700 hover:underline"
                 >
                   → Sponsorship Opportunities
                 </Link>
                 <Link
                   href="/instruction"
-                  className="block text-brand-green hover:underline"
+                  className="block text-slate-700 hover:underline"
                 >
                   → Instruction & Clinics
                 </Link>

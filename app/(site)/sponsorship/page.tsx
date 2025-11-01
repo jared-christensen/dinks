@@ -53,7 +53,7 @@ export default function Sponsorship() {
   return (
     <section className="space-y-8">
       <div className="space-y-4">
-        <span className="text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <span className="text-sm font-semibold uppercase tracking-wide text-slate-600">
           Business Partnerships
         </span>
         <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -61,42 +61,42 @@ export default function Sponsorship() {
         </h1>
         <p className="max-w-2xl text-base leading-7 text-slate-600">
           Partner with Dinks to connect your business with the Des Moines
-          pickleball community. Our sponsorship packages offer visibility,
-          brand exposure, and membership benefits while supporting the growth of
+          pickleball community. Our sponsorship packages offer visibility, brand
+          exposure, and membership benefits while supporting the growth of
           pickleball in Iowa.
         </p>
       </div>
 
       {/* Why sponsor */}
-      <Card className="border-2 border-brand-green">
+      <Card className="border-2 border-slate-300">
         <CardHeader>
           <CardTitle className="text-2xl">Why Sponsor Dinks?</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-3 text-base leading-7">
             <li className="flex items-start gap-3">
-              <span className="text-xl text-brand-green">✓</span>
+              <span className="text-xl text-slate-700">✓</span>
               <span>
                 <strong>Growing Community:</strong> Connect with an active,
                 engaged pickleball community in Des Moines
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-xl text-brand-green">✓</span>
+              <span className="text-xl text-slate-700">✓</span>
               <span>
                 <strong>Brand Visibility:</strong> Your business prominently
                 displayed to members and visitors daily
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-xl text-brand-green">✓</span>
+              <span className="text-xl text-slate-700">✓</span>
               <span>
                 <strong>Support Local Sports:</strong> Help grow the
                 fastest-growing sport in America right here in Iowa
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-xl text-brand-green">✓</span>
+              <span className="text-xl text-slate-700">✓</span>
               <span>
                 <strong>Membership Benefits:</strong> All packages include VIP
                 memberships for your team
@@ -116,7 +116,7 @@ export default function Sponsorship() {
             <Card key={tier.name} className="flex flex-col">
               <CardHeader>
                 <CardTitle className="text-lg">{tier.name}</CardTitle>
-                <CardDescription className="text-2xl font-bold text-brand-green">
+                <CardDescription className="text-2xl font-bold text-slate-700">
                   {tier.price}
                 </CardDescription>
               </CardHeader>
@@ -132,7 +132,7 @@ export default function Sponsorship() {
                           key={diff}
                           className="flex items-start gap-2 text-sm leading-6"
                         >
-                          <span className="text-brand-green">●</span>
+                          <span className="text-slate-700">●</span>
                           <span>{diff}</span>
                         </li>
                       ))}

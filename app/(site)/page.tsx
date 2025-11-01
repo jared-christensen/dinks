@@ -50,7 +50,7 @@ export default function Home() {
     <>
       <HomeHero />
       <section className="space-y-16">
-        <Card className="relative border-brand-green/20 bg-brand-green/5">
+        <Card className="relative border-slate-300 bg-slate-50">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 -z-10 opacity-5 [background-image:url('/dinks-logo-circle.webp')] [background-position:center] [background-repeat:no-repeat] [background-size:460px]"
@@ -63,7 +63,7 @@ export default function Home() {
               <Card>
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-2">
-                    <KeyRound className="h-5 w-5 text-brand-green" />
+                    <KeyRound className="h-5 w-5 text-slate-700" />
                     <h3 className="text-lg font-semibold text-slate-900">
                       Access anytime
                     </h3>
@@ -76,7 +76,7 @@ export default function Home() {
               <Card>
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-2">
-                    <CalendarDays className="h-5 w-5 text-brand-green" />
+                    <CalendarDays className="h-5 w-5 text-slate-700" />
                     <h3 className="text-lg font-semibold text-slate-900">
                       Book ahead
                     </h3>
@@ -89,7 +89,7 @@ export default function Home() {
               <Card>
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-2">
-                    <Users2 className="h-5 w-5 text-brand-green" />
+                    <Users2 className="h-5 w-5 text-slate-700" />
                     <h3 className="text-lg font-semibold text-slate-900">
                       Member programming
                     </h3>
@@ -118,19 +118,17 @@ export default function Home() {
             {membershipPreview.map((tier) => (
               <Card
                 key={tier.name}
-                className={`transition hover:border-brand-green hover:shadow-md ${
-                  tier.name === "Gold Membership"
-                    ? "bg-slate-50"
-                    : ""
+                className={`transition hover:border-slate-400 hover:shadow-md ${
+                  tier.name === "Gold Membership" ? "bg-slate-50" : ""
                 }`}
               >
                 <CardContent className="pt-6">
                   {tier.name === "Gold Membership" ? (
-                    <span className="inline-block rounded-full bg-brand-green/10 px-3 py-1 text-xs font-semibold text-brand-green">
+                    <span className="inline-block rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-700">
                       Most popular
                     </span>
                   ) : null}
-                  <p className="text-sm font-semibold uppercase tracking-wide text-brand-green">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-slate-600">
                     {tier.price}
                   </p>
                   <h3 className="mt-2 text-xl font-semibold text-slate-900">
@@ -141,7 +139,7 @@ export default function Home() {
                   </p>
                   <Link
                     href="/join"
-                    className="mt-4 inline-flex items-center text-sm font-semibold text-brand-green transition hover:text-brand-green/80"
+                    className="mt-4 inline-flex items-center text-sm font-semibold text-slate-700 transition hover:text-slate-900"
                   >
                     Compare memberships →
                   </Link>
@@ -208,7 +206,7 @@ export default function Home() {
             </p>
             <Link
               href="/sponsors"
-              className="mt-4 inline-flex items-center text-sm font-semibold text-brand-green transition hover:text-brand-green/80"
+              className="mt-4 inline-flex items-center text-sm font-semibold text-slate-300 transition hover:text-slate-100"
             >
               View sponsors →
             </Link>
@@ -217,9 +215,7 @@ export default function Home() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-slate-900">
-              Visit us
-            </h2>
+            <h2 className="text-2xl font-semibold text-slate-900">Visit us</h2>
             <p className="text-sm leading-6 text-slate-600">
               Find us on the north end of Merle Hay Mall, next to the food court
               and Kids Empire.
@@ -230,7 +226,7 @@ export default function Home() {
               <li>
                 <Link
                   href="/contact"
-                  className="font-semibold text-brand-green underline-offset-4 hover:underline"
+                  className="font-semibold text-slate-700 underline-offset-4 hover:underline"
                 >
                   info@dinkspickleballdsm.com
                 </Link>
@@ -258,7 +254,7 @@ export default function Home() {
                 href="https://maps.google.com/?q=Dinks+Pickleball+Des+Moines"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-brand-green underline-offset-4 hover:underline"
+                className="font-semibold text-slate-700 underline-offset-4 hover:underline"
               >
                 Open in Google Maps
               </Link>

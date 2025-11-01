@@ -77,62 +77,61 @@ export function TrainingContactForm() {
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="training-name">Name *</Label>
+              <Input
+                id="training-name"
+                name="name"
+                type="text"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your name"
+              />
+            </div>
 
-      <div className="space-y-4">
-        <div className="space-y-2">
-          <Label htmlFor="training-name">Name *</Label>
-          <Input
-            id="training-name"
-            name="name"
-            type="text"
-            required
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Your name"
-          />
-        </div>
+            <div className="space-y-2">
+              <Label htmlFor="training-email">Email *</Label>
+              <Input
+                id="training-email"
+                name="email"
+                type="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="your.email@example.com"
+              />
+            </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="training-email">Email *</Label>
-          <Input
-            id="training-email"
-            name="email"
-            type="email"
-            required
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="your.email@example.com"
-          />
-        </div>
+            <div className="space-y-2">
+              <Label htmlFor="training-phone">Phone (optional)</Label>
+              <Input
+                id="training-phone"
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="(555) 123-4567"
+              />
+            </div>
+          </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="training-phone">Phone (optional)</Label>
-          <Input
-            id="training-phone"
-            name="phone"
-            type="tel"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="(555) 123-4567"
-          />
-        </div>
-      </div>
+          {submitStatus.type && (
+            <div
+              className={`rounded-lg p-4 text-sm ${
+                submitStatus.type === "success"
+                  ? "bg-slate-100 text-slate-800"
+                  : "bg-slate-200 text-slate-900"
+              }`}
+            >
+              {submitStatus.message}
+            </div>
+          )}
 
-      {submitStatus.type && (
-        <div
-          className={`rounded-lg p-4 text-sm ${
-            submitStatus.type === "success"
-              ? "bg-green-50 text-green-800"
-              : "bg-red-50 text-red-800"
-          }`}
-        >
-          {submitStatus.message}
-        </div>
-      )}
-
-      <Button type="submit" disabled={isSubmitting} className="w-full">
-        {isSubmitting ? "Sending..." : "Request Information"}
-      </Button>
+          <Button type="submit" disabled={isSubmitting} className="w-full">
+            {isSubmitting ? "Sending..." : "Request Information"}
+          </Button>
         </form>
       </CardContent>
     </Card>

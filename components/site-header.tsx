@@ -56,7 +56,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-semibold uppercase tracking-wide text-slate-600 transition hover:text-brand-green"
+              className="text-sm font-semibold uppercase tracking-wide text-slate-600 transition hover:text-slate-900"
             >
               {link.label}
             </Link>
@@ -91,7 +91,7 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-semibold uppercase tracking-wide text-slate-700 transition hover:text-brand-green"
+                className="text-sm font-semibold uppercase tracking-wide text-slate-700 transition hover:text-slate-900"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}

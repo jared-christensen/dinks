@@ -3,7 +3,7 @@ import { NewsletterSignup } from "@/components/newsletter-signup";
 
 export function NewsletterCard() {
   return (
-    <Card className="bg-brand-blue">
+    <Card className="bg-slate-800">
       <CardContent className="pt-6 text-sm leading-6 text-white">
         <h2 className="text-2xl font-semibold">Stay in the loop</h2>
         <p className="mt-2">

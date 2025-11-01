@@ -1,10 +1,5 @@
 import Image from "next/image";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function About() {
   return (
@@ -12,7 +7,7 @@ export default function About() {
       {/* About Dinks - The Facility */}
       <div className="space-y-8">
         <div className="space-y-4">
-          <span className="text-sm font-semibold uppercase tracking-wide text-brand-green">
+          <span className="text-sm font-semibold uppercase tracking-wide text-slate-600">
             About Dinks
           </span>
           <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -57,18 +52,18 @@ export default function About() {
             </CardHeader>
             <CardContent className="text-base leading-7">
               Professional instruction, competitive leagues and tournaments,
-              clinics for all skill levels, open play sessions, and a
-              welcoming community space for players to connect.
+              clinics for all skill levels, open play sessions, and a welcoming
+              community space for players to connect.
             </CardContent>
           </Card>
         </div>
 
         <Card className="border-0 bg-slate-50">
           <CardContent className="text-base leading-7">
-            Everything about the club—from daily programming to special events—is
-            shaped by the people who show up and make the courts feel like home.
-            We opened Dinks so players would always have a place to rally with
-            friends, meet new partners, and keep learning.
+            Everything about the club—from daily programming to special
+            events—is shaped by the people who show up and make the courts feel
+            like home. We opened Dinks so players would always have a place to
+            rally with friends, meet new partners, and keep learning.
           </CardContent>
         </Card>
       </div>
@@ -79,7 +74,7 @@ export default function About() {
       {/* Meet the Owners */}
       <div className="space-y-8">
         <div className="space-y-4">
-          <span className="text-sm font-semibold uppercase tracking-wide text-brand-green">
+          <span className="text-sm font-semibold uppercase tracking-wide text-slate-600">
             Meet the Owners
           </span>
           <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">

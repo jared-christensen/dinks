@@ -39,7 +39,7 @@ export default function Faq() {
   return (
     <section className="space-y-8">
       <div className="space-y-4">
-        <span className="text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <span className="text-sm font-semibold uppercase tracking-wide text-slate-700">
           Help & Support
         </span>
         <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -49,7 +49,7 @@ export default function Faq() {
           Please{" "}
           <Link
             href="/contact"
-            className="font-semibold text-brand-green underline-offset-4 hover:underline"
+            className="font-semibold text-slate-700 underline-offset-4 hover:underline"
           >
             contact us
           </Link>{" "}

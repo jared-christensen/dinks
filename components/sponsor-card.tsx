@@ -55,7 +55,7 @@ export function SponsorCard({
       )}
 
       <div className="space-y-2">
-        <p className="text-xs font-semibold uppercase tracking-wide text-brand-green">
+        <p className="text-xs font-semibold uppercase tracking-wide text-slate-600">
           {sponsor.tier}
         </p>
         <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-50">

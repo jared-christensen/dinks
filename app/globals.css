@@ -4,11 +4,11 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --brand-yellow: rgb(237, 205, 61);
   --brand-green: #2f5435;
-  --brand-green-light: #3b7a4a;
   --brand-red: #b4342c;
   --brand-blue: rgb(20, 46, 82);
-  --brand-primary: rgb(237, 205, 61);
+  --brand-primary: #737373;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

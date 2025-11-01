@@ -5,7 +5,7 @@ export default function JoinHowTo() {
   return (
     <section className="space-y-8">
       <div className="space-y-4">
-        <span className="text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <span className="text-sm font-semibold uppercase tracking-wide text-slate-700">
           Join Dinks
         </span>
         <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -71,7 +71,7 @@ export default function JoinHowTo() {
             >
               <span
                 aria-hidden="true"
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-green text-base text-white"
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-700 text-base text-white"
               >
                 ▶
               </span>
@@ -86,7 +86,7 @@ export default function JoinHowTo() {
         <p className="mt-2">
           <Link
             href="/contact"
-            className="font-semibold text-brand-green underline-offset-4 hover:underline"
+            className="font-semibold text-slate-700 underline-offset-4 hover:underline"
           >
             Contact us
           </Link>{" "}

@@ -10,7 +10,7 @@ export default function Sponsorship() {
     <section className="space-y-8">
       <div className="space-y-4">
         <span className="text-sm font-semibold uppercase tracking-wide text-slate-600">
-          Business Partnerships
+          Sponsorship
         </span>
         <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
           Sponsorship Opportunities

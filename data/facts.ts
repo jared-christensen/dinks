@@ -12,7 +12,6 @@ export const FACILITY = {
   },
   amenities: [
     "Warm-up/practice areas",
-    "Lounge/social space",
     "Bags/cornhole",
     "Ping pong",
     "Yard games",

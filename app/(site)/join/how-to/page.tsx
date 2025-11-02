@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { NeedHelpCard } from "@/components/need-help-card";
 
 export default function JoinHowTo() {
   return (
@@ -81,19 +82,7 @@ export default function JoinHowTo() {
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 text-sm leading-6 text-slate-600 shadow-sm">
-        <h2 className="text-lg font-semibold text-slate-900">Need help?</h2>
-        <p className="mt-2">
-          <Link
-            href="/contact"
-            className="font-semibold text-slate-700 underline-offset-4 hover:underline"
-          >
-            Contact us
-          </Link>{" "}
-          or talk with the front desk during staffed hours and we&apos;ll walk
-          you through the process.
-        </p>
-      </div>
+      <NeedHelpCard variant="compact" />
     </section>
   );
 }

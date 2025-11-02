@@ -1,76 +1,8 @@
 import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function About() {
   return (
     <section className="space-y-16">
-      {/* About Dinks - The Facility */}
-      <div className="space-y-8">
-        <div className="space-y-4">
-          <span className="text-sm font-semibold uppercase tracking-wide text-slate-600">
-            About Dinks
-          </span>
-          <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
-            Des Moines&apos; Premier Indoor Pickleball Facility
-          </h1>
-          <p className="text-base leading-7 text-slate-600">
-            Dinks Pickleball is Des Moines&apos; largest dedicated pickleball
-            facility with 13 professional indoor courts. We&apos;re a
-            family-owned, community-driven club that exists to give players a
-            reliable indoor home for year-round play, instruction, leagues,
-            tournaments, and connection.
-          </p>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-3">
-          <Card>
-            <CardHeader>
-              <CardTitle>Our Mission</CardTitle>
-            </CardHeader>
-            <CardContent className="text-base leading-7">
-              Create a welcoming, competitive, and inclusive pickleball
-              experience. Whether you are brand new to the sport or chasing the
-              next tournament, we provide instruction, community, and space to
-              play together.
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>The Facility</CardTitle>
-            </CardHeader>
-            <CardContent className="text-base leading-7">
-              13 professional courts with outdoor court surface and permanent
-              nets, warm-up area, entertainment & lounge area. Open 6am to
-              midnight, 7 days a week at Merle Hay Mall.
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>What We Offer</CardTitle>
-            </CardHeader>
-            <CardContent className="text-base leading-7">
-              Professional instruction, competitive leagues and tournaments,
-              clinics for all skill levels, open play sessions, and a welcoming
-              community space for players to connect.
-            </CardContent>
-          </Card>
-        </div>
-
-        <Card>
-          <CardContent className="text-base leading-7">
-            Everything about the club—from daily programming to special
-            events—is shaped by the people who show up and make the courts feel
-            like home. We opened Dinks so players would always have a place to
-            rally with friends, meet new partners, and keep learning.
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Divider */}
-      <div className="border-t border-slate-200"></div>
-
       {/* Meet the Owners */}
       <div className="space-y-8">
         <div className="space-y-4">

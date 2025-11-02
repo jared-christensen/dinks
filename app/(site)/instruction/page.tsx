@@ -53,7 +53,7 @@ export default function Instruction() {
           Learn & Improve
         </span>
         <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
-          Instruction &amp; Clinics
+          Lessons &amp; Clinics
         </h1>
         <p className="max-w-2xl text-base leading-7 text-slate-600">
           Whether you&apos;re picking up a paddle for the first time or looking

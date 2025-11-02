@@ -17,7 +17,8 @@ export const membershipsData: MembershipsData = {
   allIncluded: [
     "Personalized door code access",
     "Court booking access",
-    "$10 ball machine rental",
+    "Ball machine rental ($10 per session)",
+    "Guest access (each guest $10 per visit)",
   ],
   tiers: [
     {

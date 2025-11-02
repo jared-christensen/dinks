@@ -58,9 +58,15 @@ export default function Join() {
                 <DollarSign className="h-6 w-6 text-slate-700" />
               </div>
               <p className="font-semibold text-slate-900">
-                $10 ball machine rental
+                Rentable ball machine access
               </p>
             </div>
+          </div>
+          <div className="mt-6 border-t border-slate-200 pt-6 text-center text-sm text-slate-600">
+            <p>
+              <strong>Guest Policy:</strong> Members may bring guests to their
+              reservation. Guest fee is $10 per person.
+            </p>
           </div>
         </CardContent>
       </Card>
@@ -81,7 +87,10 @@ export default function Join() {
         ))}
       </div>
 
-      <div className="rounded-3xl border-2 border-slate-300 bg-slate-50 p-8 shadow-sm">
+      <div
+        id="business-sponsorships"
+        className="rounded-3xl border-2 border-slate-300 bg-slate-50 p-8 shadow-sm"
+      >
         <h2 className="text-2xl font-semibold text-slate-900">
           Business or Organization?
         </h2>
@@ -90,30 +99,26 @@ export default function Join() {
           with the Des Moines pickleball community. Packages include branding,
           VIP memberships, and more.
         </p>
+        <ul className="mt-4 space-y-1 text-sm font-medium text-slate-700">
+          <li>
+            <span className="inline-block w-36">Gold:</span> $1,000/yr –
+            includes 1 VIP membership
+          </li>
+          <li>
+            <span className="inline-block w-36">Premier:</span> $2,500/yr –
+            includes 1 VIP membership
+          </li>
+          <li>
+            <span className="inline-block w-36">Platinum:</span> $5,000/yr –
+            includes 2 VIP memberships
+          </li>
+          <li className="text-xs font-normal text-slate-500">
+            Custom multi-year partnerships available.
+          </li>
+        </ul>
         <Button asChild className="mt-6">
           <Link href="/sponsorship">View Sponsorship Packages</Link>
         </Button>
-      </div>
-
-      <div className="rounded-3xl bg-slate-50 p-8 text-base leading-7 text-slate-700 shadow-sm">
-        <h2 className="text-xl font-semibold text-slate-900">Need help?</h2>
-        <p className="mt-2">
-          Follow our step-by-step guide to complete your membership in
-          CourtReserve.
-        </p>
-        <Button asChild className="mt-4">
-          <Link href="/join/how-to">View how-to guide</Link>
-        </Button>
-        <p className="mt-4 text-sm text-slate-500">
-          Still deciding?{" "}
-          <Link
-            href="/contact"
-            className="font-semibold text-slate-700 underline-offset-4 hover:underline"
-          >
-            Contact us
-          </Link>{" "}
-          and we&apos;ll walk you through it.
-        </p>
       </div>
     </section>
   );

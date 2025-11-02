@@ -212,22 +212,16 @@ export default function Contact() {
                   → Membership Packages
                 </Link>
                 <Link
-                  href="/faq"
-                  className="block text-slate-700 hover:underline"
-                >
-                  → Frequently Asked Questions
-                </Link>
-                <Link
                   href="/sponsorship"
                   className="block text-slate-700 hover:underline"
                 >
-                  → Sponsorship Opportunities
+                  → Sponsorship Packages
                 </Link>
                 <Link
                   href="/instruction"
                   className="block text-slate-700 hover:underline"
                 >
-                  → Instruction & Clinics
+                  → Lessons & Clinics
                 </Link>
               </div>
             </CardContent>

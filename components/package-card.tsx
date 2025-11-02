@@ -47,10 +47,10 @@ export function PackageCard({
   return (
     <Card className="h-full">
       <CardHeader>
-        <CardTitle className="text-lg font-semibold text-slate-900">
+        <CardTitle className="text-xl font-bold text-slate-900">
           {tier.name}
         </CardTitle>
-        <CardDescription className="text-sm font-semibold uppercase tracking-wide text-slate-600">
+        <CardDescription className="text-base font-semibold text-slate-600">
           {tier.price}
         </CardDescription>
       </CardHeader>
@@ -60,14 +60,14 @@ export function PackageCard({
         )}
 
         {differences && differences.length > 0 && (
-          <div className="space-y-2 text-xs leading-relaxed text-slate-600">
-            <p className="font-semibold text-slate-900">{differencesLabel}</p>
-            <ul className="space-y-1">
+          <div className="space-y-2 text-sm leading-relaxed text-slate-700">
+            <p className="font-bold text-slate-900">{differencesLabel}</p>
+            <ul className="space-y-1.5">
               {differences.map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <span
                     aria-hidden
-                    className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-600"
+                    className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-700"
                   />
                   <span>{item}</span>
                 </li>

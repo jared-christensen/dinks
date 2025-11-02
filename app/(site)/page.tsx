@@ -89,8 +89,14 @@ export default function Home() {
             <span>All memberships include:</span>
             {membershipsData.allIncluded.map((item, index) => {
               const simplified = item
-                .replace(/Ball machine rental \(\$10 per session\)/i, "Ball machine access")
-                .replace(/Guest access \(each guest \$10 per visit\)/i, "Guest access");
+                .replace(
+                  /Ball machine rental \(\$10 per session\)/i,
+                  "Ball machine access"
+                )
+                .replace(
+                  /Guest access \(each guest \$10 per visit\)/i,
+                  "Guest access"
+                );
               return <span key={index}>{simplified}</span>;
             })}
           </div>

@@ -10,7 +10,7 @@ export default function SiteLayout({
     <div className="flex min-h-screen flex-col bg-white">
       <SiteHeader />
       <main className="flex-1">
-        <div className="mx-auto w-full max-w-5xl p-4 sm:p-6">{children}</div>
+        <div className="mx-auto w-full max-w-5xl px-6 py-8">{children}</div>
       </main>
       <SiteFooter />
     </div>

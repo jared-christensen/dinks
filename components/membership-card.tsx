@@ -18,7 +18,7 @@ type MembershipTier = {
 
 export function MembershipCard({ tier }: { tier: MembershipTier }) {
   return (
-    <Card className="flex flex-col transition hover:shadow-md">
+    <Card>
       <CardHeader>
         <CardTitle>{tier.name}</CardTitle>
         <CardDescription className="text-sm font-semibold uppercase tracking-wide text-slate-600">

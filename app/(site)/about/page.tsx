@@ -58,7 +58,7 @@ export default function About() {
           </Card>
         </div>
 
-        <Card className="border-0 bg-slate-50">
+        <Card>
           <CardContent className="text-base leading-7">
             Everything about the club—from daily programming to special
             events—is shaped by the people who show up and make the courts feel

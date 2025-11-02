@@ -1,5 +1,8 @@
-```markdown
 # Current Sponsors - Source of Truth
+
+Thank-you to our Court Sponsors - your commitment to Dinks and growing pickleball in central Iowa is amazing. Please take time to visit our Platinum Sponsor's businesses and show them support!
+
+Become a Sponsor!
 
 ## Platinum Court Sponsors
 
@@ -45,47 +48,20 @@
 
 ## Gold Sponsors
 
-### Image360
-
-- **Website:** https://www.image360.com/desmoines
-
-### RoofSmart
-
-- **Website:** https://roofsmart.com
-
-### Happy Roof
-
-- **Website:** https://happyroof.com
-
-### Sherwood Forest
-
-- **Website:** https://sherwoodforestdsm.com
-
-### Ridgemont
-
-- **Website:** https://ridgemontdsm.com
-
-### Elevate
-
-- **Website:** https://elevatedsm.com
-
-### Clarity Cleaning
-
-- **Website:** https://claritycleaningdsm.com
-
-### Potthoff Foods
-
-- **Website:** https://potthofffoods.com
-
-### Grounds
-
-- **Website:** https://groundsdsm.com
-
-### Cindy's Boutique
-
-- **Website:** https://cindysboutique.com
-
-### Skateland
-
-- **Website:** https://skatelanddsm.com
-```
+https://groundsforcelebration.com/ Grounds For Celebration
+https://www.roofsmartiowa.com/ RoofSmart
+https://www.facebook.com/theridgemont/ The Ridgemont
+https://www.sherwoodforesteventcenter.com/ Sherwood Forest Event Center
+https://skatelanddm.com/ Skateland
+https://www.facebook.com/p/Amy-Boom-Real-Estate-100089396266403/ Amy Boom Real Estate
+https://image360.com/urbandale-ia Image360 Urbandale
+https://potthofffoods.com/ Potthoff Foods
+https://communitygreetings.com/ Community Greetings
+https://cindysboutiquevalleyjunction.com/ Cindy's Boutique in Valley Junction
+https://www.arisagency.com/ Craig Montgomery - Licensed Insurance Consultant
+https://www.happyroof.biz/ Happy Roof
+https://elevateptiowa.com/ Elevate Physical Therapy & Sports Medicine
+https://29thstateapparel.com/ 29th State Apparel
+https://www.claritychirotrt.com/ Clarity Chiropractic
+https://myiowarealtor.com/ Tony Muse - Realtor
+http://www.cassmuse.com/ Cass Muse - Loan Officer

@@ -1,11 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const faqs = [
   {
@@ -76,14 +71,14 @@ export default function Faq() {
         ))}
       </div>
 
-      <Card className="border-0 bg-slate-50">
+      <Card>
         <CardHeader>
           <CardTitle className="text-xl">Still have questions?</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-base leading-7">
-            We&apos;re here to help! Contact us and we&apos;ll get back to you as
-            soon as possible.
+            We&apos;re here to help! Contact us and we&apos;ll get back to you
+            as soon as possible.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Button asChild>

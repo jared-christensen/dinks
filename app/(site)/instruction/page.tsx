@@ -144,7 +144,7 @@ export default function Instruction() {
           <TrainingContactForm />
         </div>
         <div>
-          <Card className="bg-slate-50">
+          <Card>
             <CardHeader>
               <CardTitle>General Questions?</CardTitle>
             </CardHeader>
@@ -161,7 +161,7 @@ export default function Instruction() {
       </div>
 
       {/* Dinks Destinations callout */}
-      <Card className="border-2 border-slate-300 bg-slate-50">
+      <Card>
         <CardHeader>
           <CardTitle className="text-2xl">Love to Travel?</CardTitle>
         </CardHeader>

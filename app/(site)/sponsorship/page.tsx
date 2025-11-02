@@ -68,7 +68,7 @@ export default function Sponsorship() {
       </div>
 
       {/* Why sponsor */}
-      <Card className="border-2 border-slate-300">
+      <Card>
         <CardHeader>
           <CardTitle className="text-2xl">Why Sponsor Dinks?</CardTitle>
         </CardHeader>
@@ -113,7 +113,7 @@ export default function Sponsorship() {
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {sponsorTiers.map((tier) => (
-            <Card key={tier.name} className="flex flex-col">
+            <Card key={tier.name}>
               <CardHeader>
                 <CardTitle className="text-lg">{tier.name}</CardTitle>
                 <CardDescription className="text-2xl font-bold text-slate-700">
@@ -167,7 +167,7 @@ export default function Sponsorship() {
       </div>
 
       {/* Multi-year note */}
-      <Card className="border-0 bg-slate-50">
+      <Card>
         <CardHeader>
           <CardTitle>Multi-Year Sponsorships Available</CardTitle>
         </CardHeader>
@@ -182,7 +182,7 @@ export default function Sponsorship() {
               <Link href="/contact">Discuss Sponsorship</Link>
             </Button>
             <Button asChild variant="outline">
-              <Link href="/sponsors">View Current Sponsors</Link>
+              <Link href="/">View Current Sponsors</Link>
             </Button>
           </div>
         </CardContent>

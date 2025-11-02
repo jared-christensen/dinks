@@ -12,16 +12,16 @@ export default function JoinHowTo() {
           How to join Dinks
         </h1>
         <p className="max-w-2xl text-base leading-7 text-slate-600">
-          Dinks memberships are managed through CourtReserve, a platform that handles our court
-          bookings, member accounts, and payments. You&apos;ll create a CourtReserve account and join
-          Dinks Pickleball from there.
+          Dinks memberships are managed through CourtReserve, a platform that
+          handles our court bookings, member accounts, and payments. You&apos;ll
+          create a CourtReserve account and join Dinks Pickleball from there.
         </p>
       </div>
 
       <div className="space-y-6 rounded-3xl bg-slate-50 p-8 text-base leading-7 text-slate-700 shadow-sm">
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-slate-900">
-            Join through the website (recommended)
+            Join through the CourtReserve website
           </h2>
           <ol className="space-y-3 list-decimal pl-5">
             <li>Create your CourtReserve account</li>
@@ -42,11 +42,11 @@ export default function JoinHowTo() {
 
         <div className="space-y-4 border-t border-slate-200 pt-6">
           <h2 className="text-xl font-semibold text-slate-900">
-            Or join through the mobile app
+            Or join through the CourtReserve mobile app
           </h2>
           <p className="text-sm">
-            If you prefer to join from your phone, download the CourtReserve app and follow the same
-            steps above.
+            If you prefer to join from your phone, download the CourtReserve app
+            and follow the same steps above.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -90,7 +90,8 @@ export default function JoinHowTo() {
           >
             Contact us
           </Link>{" "}
-          or talk with the front desk during staffed hours and we&apos;ll walk you through the process.
+          or talk with the front desk during staffed hours and we&apos;ll walk
+          you through the process.
         </p>
       </div>
     </section>

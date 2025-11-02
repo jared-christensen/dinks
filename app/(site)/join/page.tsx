@@ -66,7 +66,7 @@ export default function Join() {
         </div>
       </div>
 
-      <Card className="bg-slate-100 border-slate-300">
+      <Card>
         <CardContent className="pt-6">
           <h2 className="mb-6 text-center text-xl font-semibold text-slate-900">
             All memberships include:

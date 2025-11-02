@@ -6,12 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -50,7 +45,7 @@ export default function Contact() {
       } else {
         throw new Error("Failed to send message");
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: "error",
         message:
@@ -91,76 +86,80 @@ export default function Contact() {
           <Card>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-4">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Name *</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your name"
-                  />
+                <div className="space-y-4">
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Name *</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email *</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="your.email@example.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">Subject *</Label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      type="text"
+                      required
+                      value={formData.subject}
+                      onChange={handleChange}
+                      placeholder="What is this regarding?"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message *</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      required
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Tell us more about your question or inquiry..."
+                      rows={6}
+                    />
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email *</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-              </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="subject">Subject *</Label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  required
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="What is this regarding?"
-                />
-              </div>
+                {submitStatus.type && (
+                  <div
+                    className={`rounded-lg p-4 ${
+                      submitStatus.type === "success"
+                        ? "bg-green-50 text-green-800"
+                        : "bg-red-50 text-red-800"
+                    }`}
+                  >
+                    <p className="text-sm">{submitStatus.message}</p>
+                  </div>
+                )}
 
-              <div className="space-y-2">
-                <Label htmlFor="message">Message *</Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell us more about your question or inquiry..."
-                  rows={6}
-                />
-              </div>
-            </div>
-
-            {submitStatus.type && (
-              <div
-                className={`rounded-lg p-4 ${
-                  submitStatus.type === "success"
-                    ? "bg-green-50 text-green-800"
-                    : "bg-red-50 text-red-800"
-                }`}
-              >
-                <p className="text-sm">{submitStatus.message}</p>
-              </div>
-            )}
-
-            <Button type="submit" disabled={isSubmitting} className="w-full">
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </Button>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full"
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
               </form>
             </CardContent>
           </Card>
@@ -200,7 +199,7 @@ export default function Contact() {
             </CardContent>
           </Card>
 
-          <Card className="border-0 bg-slate-50">
+          <Card>
             <CardHeader>
               <CardTitle>Quick Links</CardTitle>
             </CardHeader>
@@ -219,7 +218,7 @@ export default function Contact() {
                   → Frequently Asked Questions
                 </Link>
                 <Link
-                  href="/sponsors"
+                  href="/sponsorship"
                   className="block text-slate-700 hover:underline"
                 >
                   → Sponsorship Opportunities

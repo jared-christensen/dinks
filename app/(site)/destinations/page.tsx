@@ -60,7 +60,9 @@ export default function Destinations() {
       {/* Why join */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Why Join a Dinks Destination Trip?</CardTitle>
+          <CardTitle className="text-2xl">
+            Why Join a Dinks Destination Trip?
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-3 text-base leading-7">
@@ -101,9 +103,11 @@ export default function Destinations() {
       </div>
 
       {/* Stay updated CTA */}
-      <Card className="border-0 bg-slate-50">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Stay Updated on Future Trips</CardTitle>
+          <CardTitle className="text-2xl">
+            Stay Updated on Future Trips
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-base leading-7">
@@ -149,10 +153,10 @@ export default function Destinations() {
           <CardContent>
             <p className="text-base leading-7">
               Co-Owners of Dinks Pickleball and PPR Professional Instructors.
-              They bring their passion for pickleball and love of travel together
-              to create unforgettable experiences. You&apos;ll get professional
-              instruction, organized play, and the chance to explore amazing
-              destinations with fellow pickleball enthusiasts.
+              They bring their passion for pickleball and love of travel
+              together to create unforgettable experiences. You&apos;ll get
+              professional instruction, organized play, and the chance to
+              explore amazing destinations with fellow pickleball enthusiasts.
             </p>
             <Button asChild variant="outline" className="mt-4">
               <Link href="/instruction">Learn more about instruction</Link>

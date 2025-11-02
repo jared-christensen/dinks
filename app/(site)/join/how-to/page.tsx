@@ -26,7 +26,7 @@ export default function JoinHowTo() {
           <ol className="space-y-3 list-decimal pl-5">
             <li>Create your CourtReserve account</li>
             <li>Search for &quot;Dinks Pickleball&quot; and select the club</li>
-            <li>Choose your membership tier</li>
+            <li>Choose your membership package</li>
             <li>Complete payment to activate your membership</li>
           </ol>
           <Button asChild>

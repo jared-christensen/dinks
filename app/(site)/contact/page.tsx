@@ -209,7 +209,7 @@ export default function Contact() {
                   href="/join"
                   className="block text-slate-700 hover:underline"
                 >
-                  → Membership Options
+                  → Membership Packages
                 </Link>
                 <Link
                   href="/faq"

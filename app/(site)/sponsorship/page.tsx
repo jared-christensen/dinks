@@ -1,53 +1,9 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import Link from "next/link"; // still used inside PackageCard via CTA
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { sponsorshipsData } from "@/data/sponsorships";
+import { PackageCard } from "@/components/package-card";
 
-const sponsorTiers = [
-  {
-    name: "Dinks Gold Sponsor",
-    price: "$1,000/yr",
-    keyDifferences: [
-      "Banner hung for 1 year",
-      "Logo on Dinks website for 1 year",
-    ],
-    included: ["Includes 1 VIP annual membership"],
-  },
-  {
-    name: "Premier Entry Sponsor",
-    price: "$2,500/yr",
-    keyDifferences: [
-      "Premier 4'x30' advertisement space near entrance and courts",
-      "Logo on Dinks website for 1 year",
-      "Mesh windscreen printing is sponsor responsibility",
-    ],
-    included: ["Includes 1 VIP annual membership"],
-  },
-  {
-    name: '"The Big Dill" Court Sponsor (Platinum)',
-    price: "$5,000/yr",
-    keyDifferences: [
-      "Court naming rights (shown during reservations)",
-      "On-court branding opportunities",
-      "Banner hung for 1 year",
-      "Logo on Dinks website for 1 year",
-    ],
-    included: ["Includes 2 VIP annual memberships"],
-  },
-  {
-    name: '"The Bob Barker" — Let\'s Make a Dill',
-    price: "Custom",
-    keyDifferences: [
-      "Open partnership ideas (title tournament sponsor, bags/boards sponsor, gear sponsor, etc.)",
-    ],
-    included: ["Work with us to design a custom package"],
-  },
-];
+const sponsorTiers = sponsorshipsData.tiers;
 
 export default function Sponsorship() {
   return (
@@ -111,82 +67,46 @@ export default function Sponsorship() {
         <h2 className="text-2xl font-semibold text-slate-900">
           Sponsorship Packages
         </h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {sponsorTiers.map((tier) => (
-            <Card key={tier.name}>
-              <CardHeader>
-                <CardTitle className="text-lg">{tier.name}</CardTitle>
-                <CardDescription className="text-2xl font-bold text-slate-700">
-                  {tier.price}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-1 flex-col">
-                <div className="space-y-4">
-                  <div>
-                    <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
-                      What&apos;s Different
-                    </p>
-                    <ul className="space-y-2">
-                      {tier.keyDifferences.map((diff) => (
-                        <li
-                          key={diff}
-                          className="flex items-start gap-2 text-sm leading-6"
-                        >
-                          <span className="text-slate-700">●</span>
-                          <span>{diff}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
-                      Included
-                    </p>
-                    <ul className="space-y-2">
-                      {tier.included.map((item) => (
-                        <li
-                          key={item}
-                          className="flex items-start gap-2 text-sm leading-6 text-slate-600"
-                        >
-                          <span className="text-slate-400">●</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="mt-auto pt-6">
-                  <Button asChild className="w-full">
-                    <Link href="/contact">Contact Us About Sponsorship</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+            <PackageCard
+              key={tier.name}
+              tier={{
+                name: tier.name,
+                price: tier.price,
+                whatsDifferent: tier.whatsDifferent,
+                included: tier.included,
+                ctaHref: "/join/how-to",
+                ctaLabel: "Start in CourtReserve",
+              }}
+              variant="sponsorship"
+            />
           ))}
         </div>
-      </div>
 
-      {/* Multi-year note */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Multi-Year Sponsorships Available</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-base leading-7">
-            Interested in a longer-term partnership? Ask about our multi-year
-            sponsorship discounts and benefits. We&apos;re also open to creating
-            custom packages that fit your business goals.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button asChild>
-              <Link href="/contact">Discuss Sponsorship</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/">View Current Sponsors</Link>
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+        <Card className="border-dashed">
+          <CardHeader>
+            <CardTitle>Have a different idea?</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-sm leading-6 text-slate-600">
+            <p>
+              We can build a custom partnership: multi-year packages, title
+              tournament sponsor, youth program supporter, gear partner, event
+              activations—bring us your concept.
+            </p>
+            <p className="text-xs font-semibold text-slate-500">
+              Custom packages can blend on-site branding, VIP memberships,
+              pricing lock-ins, and exclusive experiences.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-md border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+            >
+              Start a conversation →
+            </Link>
+          </CardContent>
+        </Card>
+      </div>
     </section>
   );
 }

@@ -2,48 +2,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { KeyRound, CalendarCheck, DollarSign } from "lucide-react";
-import { MembershipCard } from "@/components/membership-card";
+import { PackageCard } from "@/components/package-card";
+import { membershipsData } from "@/data/memberships";
 
-const membershipTiers = [
-  {
-    name: "Basic",
-    price: "$60/yr + $25 activation",
-    description:
-      "For players who want flexible access to courts and intro programming.",
-    keyDifferences: [
-      "Book 5 days in advance",
-      "Up to 4 courts per day",
-      "48-hour cancellation policy",
-    ],
-    included: ["Personalized door code access", "$10 ball machine rental"],
-  },
-  {
-    name: "Gold",
-    price: "$125/yr + $25 activation",
-    description:
-      "Adds a longer booking window and early access to tournaments & special events.",
-    keyDifferences: [
-      "Book 14 days in advance",
-      "Up to 8 courts per day",
-      "24-hour cancellation policy",
-      "Early access to tournaments & events",
-    ],
-    included: ["Personalized door code access", "$10 ball machine rental"],
-  },
-  {
-    name: "VIP",
-    price: "$195/yr + $10 activation",
-    description:
-      "For frequent players who want the longest booking window and priority access.",
-    keyDifferences: [
-      "Book 6 months in advance",
-      "Up to 8 courts per day",
-      "8-hour cancellation policy",
-      "Early access to tournaments & events",
-    ],
-    included: ["Personalized door code access", "$10 ball machine rental"],
-  },
-];
+const membershipTiers = membershipsData.tiers;
 
 export default function Join() {
   return (
@@ -59,9 +21,10 @@ export default function Join() {
           <p className="mx-auto max-w-2xl text-base leading-7 text-slate-600 md:mx-0">
             Memberships unlock personal door codes, extended booking windows,
             and early access to leagues, tournaments, and special events. Choose
-            the tier that fits how often you play, then complete your enrollment
-            through CourtReserve. Businesses can support the club through
-            sponsorships that include VIP memberships and on-site visibility.
+            the package that fits how often you play, then complete your
+            enrollment through CourtReserve. Businesses can support the club
+            through sponsorships that include VIP memberships and on-site
+            visibility.
           </p>
         </div>
       </div>
@@ -103,7 +66,18 @@ export default function Join() {
       </Card>
       <div className="grid gap-8 md:grid-cols-3">
         {membershipTiers.map((tier) => (
-          <MembershipCard key={tier.name} tier={tier} />
+          <PackageCard
+            key={tier.name}
+            tier={{
+              name: tier.name,
+              price: tier.price,
+              description: tier.description,
+              keyDifferences: tier.keyDifferences,
+              ctaHref: "/join/how-to",
+              ctaLabel: "Select this membership",
+            }}
+            variant="membership"
+          />
         ))}
       </div>
 
@@ -117,7 +91,7 @@ export default function Join() {
           VIP memberships, and more.
         </p>
         <Button asChild className="mt-6">
-          <Link href="/sponsorship">View Sponsorship Options</Link>
+          <Link href="/sponsorship">View Sponsorship Packages</Link>
         </Button>
       </div>
 

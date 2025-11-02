@@ -4,25 +4,11 @@ import { NewsletterCard } from "@/components/newsletter-card";
 import { HomeHero } from "@/components/home-hero";
 import { FeaturedSponsors } from "@/components/featured-sponsors";
 import { Button } from "@/components/ui/button";
+import { FACILITY, INSTRUCTION, DESTINATIONS } from "@/data/facts";
+import { membershipsData } from "@/data/memberships";
+import { PackageCard } from "@/components/package-card";
 
-const membershipPreview = [
-  {
-    name: "Basic Membership",
-    price: "$60/year",
-    description: "Personal door code. Play casually and meet local players.",
-  },
-  {
-    name: "Gold Membership",
-    price: "$125/year",
-    description:
-      "More advance time & priority access. Grow with the community.",
-  },
-  {
-    name: "VIP Membership",
-    price: "$195/year",
-    description: "Maximum flexibility & first access to everything at Dinks.",
-  },
-];
+const membershipDisplayTiers = membershipsData.tiers;
 
 // Facility highlights removed as part of simplifying homepage
 
@@ -31,7 +17,53 @@ export default function Home() {
     <>
       <HomeHero />
       <section className="space-y-16">
-        {/* Removed 'Why join' teaser cards to streamline page focus */}
+        {/* Why Dinks section */}
+        <div className="space-y-6">
+          <h2 className="text-center text-2xl font-semibold text-slate-900 sm:text-3xl">
+            Why Dinks?
+          </h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-lg font-semibold text-slate-900">
+                  Iowa&apos;s Largest Indoor Facility
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  {FACILITY.courts} professional courts across{" "}
+                  {FACILITY.sqFtApprox.toLocaleString()} sq ft with outdoor
+                  surface, permanent nets, and warm-up area. Open 6am–midnight
+                  daily.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-lg font-semibold text-slate-900">
+                  Serious Competition & Community
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Competitive leagues and tournaments, clinics for all skill
+                  levels—where Des Moines&apos; strongest players train
+                  year-round.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-lg font-semibold text-slate-900">
+                  Instruction & Inclusive Play
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Professional coaches, beginner clinics to advanced training,
+                  open play sessions—whether you&apos;re brand new or chasing
+                  nationals, you have a home here.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
 
         <div className="relative space-y-6">
           <div
@@ -39,46 +71,28 @@ export default function Home() {
             className="pointer-events-none absolute inset-0 -z-10 opacity-5 bg-[url('/dinks-logo-circle.webp')] bg-center bg-no-repeat bg-size-[460px]"
           />
           <h2 className="text-2xl font-semibold text-slate-900">
-            Membership tiers
-            <span className="ml-2 align-middle text-xs font-semibold tracking-wide text-slate-500">
-              Join through CourtReserve
-            </span>
+            Membership packages
           </h2>
-          <p className="text-sm leading-6 text-slate-600">
-            Choose what fits. Upgrade anytime. Signup happens inside
-            CourtReserve.
-          </p>
+          <div className="flex flex-wrap items-center gap-4 rounded-lg border bg-white/60 p-4 text-xs font-semibold text-slate-700 shadow-sm backdrop-blur">
+            <span>All memberships include:</span>
+            {membershipsData.allIncluded.map((item, index) => (
+              <span key={index}>{item}</span>
+            ))}
+          </div>
           <div className="grid gap-4 md:grid-cols-3">
-            {membershipPreview.map((tier) => (
-              <Card
+            {membershipDisplayTiers.map((tier) => (
+              <PackageCard
                 key={tier.name}
-                className={`transition hover:border-slate-400 hover:shadow-md ${
-                  tier.name === "Gold Membership" ? "bg-slate-50" : ""
-                }`}
-              >
-                <CardContent className="pt-6">
-                  {tier.name === "Gold Membership" ? (
-                    <span className="inline-block rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-700">
-                      Most popular
-                    </span>
-                  ) : null}
-                  <p className="text-sm font-semibold uppercase tracking-wide text-slate-600">
-                    {tier.price}
-                  </p>
-                  <h3 className="mt-2 text-xl font-semibold text-slate-900">
-                    {tier.name}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
-                    {tier.description}
-                  </p>
-                  <Link
-                    href="/join"
-                    className="mt-4 inline-flex items-center text-sm font-semibold text-slate-700 transition hover:text-slate-900"
-                  >
-                    Join on CourtReserve →
-                  </Link>
-                </CardContent>
-              </Card>
+                tier={{
+                  name: tier.name,
+                  price: tier.price,
+                  description: tier.description,
+                  keyDifferences: tier.keyDifferences,
+                  ctaHref: "/join/how-to",
+                  ctaLabel: "Select this membership",
+                }}
+                variant="membership"
+              />
             ))}
           </div>
         </div>
@@ -96,6 +110,9 @@ export default function Home() {
               sponsorships, we build packages that keep you in front of
               thousands of players every month.
             </p>
+            <p className="mt-2 text-xs font-semibold text-slate-500">
+              Sponsorship packages include VIP memberships and on-site branding.
+            </p>
             <Link
               href="/sponsorship"
               className="mt-4 inline-flex items-center text-sm font-semibold text-slate-700 transition hover:text-slate-900"
@@ -107,21 +124,41 @@ export default function Home() {
 
         {/* Visit section removed: address now provided in global footer */}
 
-        <Card>
-          <CardContent className="flex flex-col items-center gap-4 py-12 text-center md:flex-row md:justify-between md:text-left">
-            <div>
-              <h2 className="text-2xl font-semibold">Ready to join?</h2>
-              <p className="mt-1 text-sm text-slate-600">
-                Pick a tier and start playing today.
+        {/* Instruction teaser */}
+        <div className="grid gap-6 md:grid-cols-2">
+          <Card>
+            <CardContent className="pt-6">
+              <h2 className="text-2xl font-semibold">Lessons & Clinics</h2>
+              <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">
+                Private and group instruction plus youth training with PPR
+                professionals David & Bailey.
               </p>
-            </div>
-            <div className="flex gap-3">
-              <Button asChild>
-                <Link href="/join">View memberships</Link>
+              <p className="mt-2 text-xs font-semibold text-slate-500">
+                Email {INSTRUCTION.contactEmail} for scheduling.
+              </p>
+              <Button asChild className="mt-4" variant="outline">
+                <Link href="/instruction">View instruction details</Link>
               </Button>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="pt-6">
+              <h2 className="text-2xl font-semibold">Pickleball Getaways</h2>
+              <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">
+                Join fellow Dinks players on destination trips—past trips
+                include Riviera Maya. Follow our Facebook group for upcoming
+                adventures.
+              </p>
+              <p className="mt-2 text-xs font-semibold text-slate-500">
+                Group: {DESTINATIONS.facebookGroup}
+              </p>
+              <Button asChild className="mt-4" variant="outline">
+                <Link href="/destinations">Learn more</Link>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
 
         <NewsletterCard />
       </section>

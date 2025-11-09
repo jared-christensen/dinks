@@ -35,11 +35,11 @@ export function SiteFooter() {
             More
           </p>
           <div className="flex flex-col gap-2 text-white/90">
-            <Link href="/sponsorship" className="transition hover:text-white">
-              Sponsorship Packages
+            <Link href="/about" className="transition hover:text-white">
+              About
             </Link>
-            <Link href="/destinations" className="transition hover:text-white">
-              Destinations
+            <Link href="/membership#business-sponsorships" className="transition hover:text-white">
+              Become a Sponsor
             </Link>
           </div>
         </div>

@@ -51,7 +51,7 @@ export default function Sponsors() {
           </p>
           <div className="flex flex-wrap gap-3 pt-1">
             <Button asChild>
-              <Link href="/join#business-sponsorships">
+              <Link href="/membership#business-sponsorships">
                 View sponsorship tiers
               </Link>
             </Button>
@@ -130,7 +130,7 @@ export default function Sponsors() {
           </div>
           <div className="flex gap-3">
             <Button asChild variant="outline">
-              <Link href="/join#business-sponsorships">View tiers</Link>
+              <Link href="/membership#business-sponsorships">View tiers</Link>
             </Button>
             <Button asChild>
               <Link href="/contact">Contact us</Link>

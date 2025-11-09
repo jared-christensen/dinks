@@ -68,10 +68,7 @@ export default function Contact() {
   return (
     <section className="space-y-8">
       <div className="space-y-4">
-        <span className="text-sm font-semibold uppercase tracking-wide text-slate-700">
-          Get in Touch
-        </span>
-        <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+        <h1 className="text-4xl font-bold text-slate-900">
           Contact Us
         </h1>
         <p className="max-w-2xl text-base leading-7 text-slate-600">
@@ -206,19 +203,19 @@ export default function Contact() {
             <CardContent>
               <div className="space-y-2 text-sm">
                 <Link
-                  href="/join"
+                  href="/membership"
                   className="block text-slate-700 hover:underline"
                 >
                   → Membership Packages
                 </Link>
                 <Link
-                  href="/sponsorship"
+                  href="/membership#business-sponsorships"
                   className="block text-slate-700 hover:underline"
                 >
                   → Sponsorship Packages
                 </Link>
                 <Link
-                  href="/instruction"
+                  href="/lessons"
                   className="block text-slate-700 hover:underline"
                 >
                   → Lessons & Clinics

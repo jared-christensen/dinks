@@ -1,7 +1,13 @@
 import { courtRatesData } from "@/data/court-rates";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export function CourtRates() {
-
   return (
     <section className="space-y-6">
       <div className="space-y-4">
@@ -10,18 +16,19 @@ export function CourtRates() {
 
       <div className="grid gap-6 md:grid-cols-3">
         {courtRatesData.rates.map((rate) => (
-          <div
-            key={rate.name}
-            className="flex flex-col space-y-3 rounded-lg border border-slate-200 bg-white p-6 text-center"
-          >
-            <h3 className="text-xl font-semibold text-slate-900">
-              {rate.name}
-            </h3>
-            <p className="text-2xl font-bold text-slate-900">
-              ${rate.ratePerHour}/Hour
-            </p>
-            <p className="text-sm text-slate-600">{rate.timeRange}</p>
-          </div>
+          <Card key={rate.name} className="flex h-full flex-col">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-slate-900">
+                {rate.name}
+              </CardTitle>
+              <CardDescription className="text-base font-semibold text-slate-600">
+                ${rate.ratePerHour}/Hour
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-slate-600">{rate.timeRange}</p>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </section>

@@ -11,7 +11,7 @@ export default function SiteLayout({
     <div className="flex min-h-screen flex-col bg-white">
       <SiteHeader />
       <main className="flex-1">
-        <Container className="py-8">{children}</Container>
+        <Container className="py-24">{children}</Container>
       </main>
       <SiteFooter />
     </div>

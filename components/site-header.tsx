@@ -8,10 +8,9 @@ import { Container } from "@/components/container";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/instruction", label: "Lessons" },
+  { href: "/lessons", label: "Lessons" },
   { href: "/destinations", label: "Destinations" },
   { href: "/book", label: "Book a Court" },
-  { href: "/about", label: "About" },
 ];
 
 export function SiteHeader() {
@@ -65,7 +64,7 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 md:flex">
           <Button asChild>
-            <Link href="/join">Join Dinks</Link>
+            <Link href="/membership">Join Dinks</Link>
           </Button>
         </div>
 
@@ -100,7 +99,7 @@ export function SiteHeader() {
           </div>
           <div className="flex flex-col gap-2 pt-2">
             <Button asChild className="w-full">
-              <Link href="/join" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/membership" onClick={() => setIsMenuOpen(false)}>
                 Join Dinks
               </Link>
             </Button>

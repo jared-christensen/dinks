@@ -3,6 +3,8 @@ import { NewsletterCard } from "@/components/newsletter-card";
 import { HomeHero } from "@/components/home-hero";
 import { FeaturedSponsors } from "@/components/featured-sponsors";
 import { MembershipSection } from "@/components/membership-section";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { CourtRates } from "@/components/court-rates";
 
 export default function Home() {
@@ -14,42 +16,42 @@ export default function Home() {
 
         <CourtRates />
 
-        {/* Instruction teaser */}
-        <div className="grid gap-8 md:grid-cols-2 lg:gap-16">
-          <div className="space-y-5">
-            <h2 className="text-3xl font-bold text-slate-900">
-              Lessons & Clinics
-            </h2>
-            <p className="text-base leading-relaxed text-slate-600">
-              Private and group instruction plus youth training with PPR
-              professionals David & Bailey.
-            </p>
-            <Link
-              href="/instruction"
-              className="inline-flex items-center text-base font-semibold text-slate-900 hover:text-slate-700 transition"
-            >
-              View details
-            </Link>
-          </div>
+        {/* Instruction & Destinations */}
+        <div className="grid gap-6 md:grid-cols-2">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-slate-900">
+                Lessons & Clinics
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-sm leading-relaxed text-slate-600">
+                Private and group instruction plus youth training with PPR
+                professionals David & Bailey.
+              </p>
+              <Button asChild variant="outline" className="w-full">
+                <Link href="/lessons">View details</Link>
+              </Button>
+            </CardContent>
+          </Card>
 
-          <div className="space-y-5">
-            <h2 className="text-3xl font-bold text-slate-900">
-              Pickleball Destinations
-            </h2>
-            <p className="text-base leading-relaxed text-slate-600">
-              Travel to incredible destinations like Sonoma, Budapest, and
-              Riviera Maya with fellow pickleball enthusiasts.
-            </p>
-            <Link
-              href="/destinations"
-              className="inline-flex items-center text-base font-semibold text-slate-900 hover:text-slate-700 transition"
-            >
-              View details
-            </Link>
-          </div>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-slate-900">
+                Pickleball Destinations
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-sm leading-relaxed text-slate-600">
+                Travel to incredible destinations like Sonoma, Budapest, and
+                Riviera Maya with fellow pickleball enthusiasts.
+              </p>
+              <Button asChild variant="outline" className="w-full">
+                <Link href="/destinations">View details</Link>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
-
-        <NewsletterCard />
 
         <FeaturedSponsors />
       </section>

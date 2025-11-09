@@ -1,0 +1,55 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { PackageCard } from "@/components/package-card";
+import { sponsorshipsData } from "@/data/sponsorships";
+
+export function SponsorshipSection() {
+  return (
+    <section id="business-sponsorships" className="space-y-6">
+      <div className="space-y-4">
+        <h2 className="text-3xl font-bold text-slate-900">
+          Sponsorship Packages
+        </h2>
+        <p className="max-w-2xl text-base text-slate-600">
+          Partner with Dinks to connect your business with the Des Moines
+          pickleball community. Our sponsorship packages offer visibility, brand
+          exposure, and membership benefits while supporting the growth of
+          pickleball in Iowa.
+        </p>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-3">
+        {sponsorshipsData.tiers.map((tier) => (
+          <PackageCard
+            key={tier.name}
+            tier={{
+              name: tier.name,
+              price: tier.price,
+              description: tier.description,
+              whatsDifferent: tier.whatsDifferent,
+              included: tier.included,
+              ctaHref: "/join",
+              ctaLabel: "Get Started",
+            }}
+            variant="sponsorship"
+          />
+        ))}
+      </div>
+
+      <div className="space-y-3">
+        <h3 className="text-xl font-semibold text-slate-900">
+          Need a custom partnership?
+        </h3>
+        <p className="text-sm leading-6 text-slate-600">
+          We can build custom packages with multi-year commitments, tournament
+          sponsorships, youth programs, gear partnerships, or event activations.
+        </p>
+        <div className="pt-1">
+          <Button asChild variant="outline">
+            <Link href="/contact">Contact us to discuss options</Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}

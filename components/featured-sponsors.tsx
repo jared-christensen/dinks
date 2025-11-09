@@ -2,10 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { getFeaturedSponsors, getSponsorsByTier } from "@/data/sponsors";
 
-export function FeaturedSponsors({ limit = 6 }: { limit?: number }) {
+export function FeaturedSponsors({
+  limit = 6,
+  showGold = true,
+  goldLimit,
+}: {
+  limit?: number;
+  showGold?: boolean;
+  goldLimit?: number;
+}) {
   const featured = getFeaturedSponsors(limit);
   const premier = getSponsorsByTier("premier");
-  const gold = getSponsorsByTier("gold");
+  const allGold = getSponsorsByTier("gold");
+  const gold = goldLimit ? allGold.slice(0, goldLimit) : allGold;
 
   if (!featured.length && !premier.length && !gold.length) return null;
 
@@ -16,7 +25,7 @@ export function FeaturedSponsors({ limit = 6 }: { limit?: number }) {
         <p className="text-base text-slate-600">
           These sponsors keep the courts open and our players thriving.{" "}
           <a
-            href="/sponsorship"
+            href="/membership#business-sponsorships"
             className="text-slate-800 underline hover:text-slate-900"
           >
             Want to join them?
@@ -70,7 +79,7 @@ export function FeaturedSponsors({ limit = 6 }: { limit?: number }) {
       )}
 
       {/* Gold Sponsors */}
-      {gold.length > 0 && (
+      {showGold && gold.length > 0 && (
         <div className="flex flex-wrap gap-4">
           {gold.map((s) => (
             <Link

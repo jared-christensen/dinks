@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PackageCard } from "@/components/package-card";
 import { membershipsData } from "@/data/memberships";
+import { Info } from "lucide-react";
 
 export function MembershipSection() {
   const benefitsWithoutGuest = membershipsData.allIncluded.filter(
@@ -28,14 +29,17 @@ export function MembershipSection() {
               description: tier.description,
               keyDifferences: tier.keyDifferences,
               ctaHref: "/join",
-              ctaLabel: "Learn more",
+              ctaLabel: "Join Now",
             }}
             variant="membership"
           />
         ))}
       </div>
 
-      <p className="text-sm text-slate-600">{membershipsData.guestPolicy}</p>
+      <div className="flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
+        <Info className="h-5 w-5 flex-shrink-0 text-slate-600" />
+        <p className="text-sm text-slate-600">{membershipsData.guestPolicy}</p>
+      </div>
     </section>
   );
 }

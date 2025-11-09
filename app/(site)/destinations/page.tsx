@@ -123,7 +123,7 @@ export default function Destinations() {
               {destinationsData.instructorsDescription}
             </p>
             <Button asChild variant="outline" className="mt-4">
-              <Link href="/instruction">Learn more about instruction</Link>
+              <Link href="/lessons">Learn more about lessons</Link>
             </Button>
           </CardContent>
         </Card>

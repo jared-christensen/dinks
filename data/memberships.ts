@@ -10,6 +10,7 @@ export interface MembershipTier {
 
 export interface MembershipsData {
   allIncluded: string[]; // Universal benefits across all tiers
+  guestPolicy: string; // Guest policy information
   tiers: MembershipTier[];
 }
 
@@ -20,10 +21,12 @@ export const membershipsData: MembershipsData = {
     "Ball machine rental ($10 per session)",
     "Guest access (each guest $10 per visit)",
   ],
+  guestPolicy:
+    "Members may bring guests to their reservation. Guest fee is $10 per person.",
   tiers: [
     {
       name: "Basic",
-      price: "$60/yr + $25 activation",
+      price: "$60/Year + $25 activation",
       description:
         "For players who want flexible access to courts and intro programming.",
       keyDifferences: [
@@ -34,7 +37,7 @@ export const membershipsData: MembershipsData = {
     },
     {
       name: "Gold",
-      price: "$125/yr + $25 activation",
+      price: "$125/Year + $25 activation",
       description:
         "Adds a longer booking window and early access to tournaments & special events.",
       keyDifferences: [
@@ -46,7 +49,7 @@ export const membershipsData: MembershipsData = {
     },
     {
       name: "VIP",
-      price: "$195/yr + $10 activation",
+      price: "$195/Year + $10 activation",
       description:
         "For frequent players who want the longest booking window and priority access.",
       keyDifferences: [

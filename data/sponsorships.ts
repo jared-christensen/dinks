@@ -15,7 +15,7 @@ export const sponsorshipsData: SponsorshipsData = {
   tiers: [
     {
       name: "Gold Sponsorship",
-      price: "$1,000/yr",
+      price: "$1,000/Year",
       whatsDifferent: [
         "Banner hung for 1 year",
         "Logo on Dinks website for 1 year",
@@ -24,7 +24,7 @@ export const sponsorshipsData: SponsorshipsData = {
     },
     {
       name: "Premier Sponsorship",
-      price: "$2,500/yr",
+      price: "$2,500/Year",
       whatsDifferent: [
         "Premier 4'x30' advertisement space near entrance and courts",
         "Logo on Dinks website for 1 year",
@@ -34,7 +34,7 @@ export const sponsorshipsData: SponsorshipsData = {
     },
     {
       name: "Platinum Sponsorship",
-      price: "$5,000/yr",
+      price: "$5,000/Year",
       whatsDifferent: [
         "Court naming rights (shown during reservations)",
         "On-court branding opportunities",

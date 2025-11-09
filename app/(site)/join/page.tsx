@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { KeyRound, CalendarCheck, DollarSign } from "lucide-react";
-import { PackageCard } from "@/components/package-card";
+import { MembershipSection } from "@/components/membership-section";
+import { CourtRates } from "@/components/court-rates";
 import { membershipsData } from "@/data/memberships";
-
-const membershipTiers = membershipsData.tiers;
 
 export default function Join() {
   return (
@@ -29,63 +27,9 @@ export default function Join() {
         </div>
       </div>
 
-      <Card>
-        <CardContent className="pt-6">
-          <h2 className="mb-6 text-center text-xl font-semibold text-slate-900">
-            All memberships include:
-          </h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-slate-200">
-                <KeyRound className="h-6 w-6 text-slate-700" />
-              </div>
-              <p className="font-semibold text-slate-900">
-                Personalized door code access
-              </p>
-            </div>
+      <MembershipSection />
 
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-slate-200">
-                <CalendarCheck className="h-6 w-6 text-slate-700" />
-              </div>
-              <p className="font-semibold text-slate-900">
-                Court booking access
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-slate-200">
-                <DollarSign className="h-6 w-6 text-slate-700" />
-              </div>
-              <p className="font-semibold text-slate-900">
-                Rentable ball machine access
-              </p>
-            </div>
-          </div>
-          <div className="mt-6 border-t border-slate-200 pt-6 text-center text-sm text-slate-600">
-            <p>
-              <strong>Guest Policy:</strong> Members may bring guests to their
-              reservation. Guest fee is $10 per person.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
-      <div className="grid gap-8 md:grid-cols-3">
-        {membershipTiers.map((tier) => (
-          <PackageCard
-            key={tier.name}
-            tier={{
-              name: tier.name,
-              price: tier.price,
-              description: tier.description,
-              keyDifferences: tier.keyDifferences,
-              ctaHref: "/join/how-to",
-              ctaLabel: "Select this membership",
-            }}
-            variant="membership"
-          />
-        ))}
-      </div>
+      <CourtRates />
 
       <div
         id="business-sponsorships"

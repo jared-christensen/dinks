@@ -1,5 +1,6 @@
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { Container } from "@/components/container";
 
 export default function SiteLayout({
   children,
@@ -10,7 +11,7 @@ export default function SiteLayout({
     <div className="flex min-h-screen flex-col bg-white">
       <SiteHeader />
       <main className="flex-1">
-        <div className="mx-auto w-full max-w-5xl px-6 py-8">{children}</div>
+        <Container className="py-8">{children}</Container>
       </main>
       <SiteFooter />
     </div>

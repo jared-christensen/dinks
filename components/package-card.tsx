@@ -45,7 +45,7 @@ export function PackageCard({
   const differencesLabel = "Differences";
 
   return (
-    <Card className="h-full">
+    <Card className="flex h-full flex-col">
       <CardHeader>
         <CardTitle className="text-xl font-bold text-slate-900">
           {tier.name}
@@ -56,7 +56,7 @@ export function PackageCard({
       </CardHeader>
       <CardContent className="flex flex-1 flex-col space-y-4">
         {!compact && tier.description && (
-          <p className="text-sm leading-6 text-slate-600">{tier.description}</p>
+          <p className="h-[4.5rem] text-sm leading-6 text-slate-600">{tier.description}</p>
         )}
 
         {differences && differences.length > 0 && (

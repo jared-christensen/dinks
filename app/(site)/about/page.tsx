@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { aboutData } from "@/data/about";
 
 export default function About() {
   return (
@@ -6,155 +7,60 @@ export default function About() {
       {/* Meet the Owners */}
       <div className="space-y-8">
         <div className="space-y-4">
-          <span className="text-sm font-semibold uppercase tracking-wide text-slate-600">
-            Meet the Owners
-          </span>
-          <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
-            The Families Behind Dinks
-          </h2>
+          <h1 className="text-4xl font-bold text-slate-900">
+            {aboutData.pageTitle}
+          </h1>
           <p className="text-base leading-7 text-slate-600">
-            Dinks was founded by two local families with a shared passion for
-            pickleball and a vision to create Des Moines&apos; premier indoor
-            pickleball destination. Meet the Lannings and the Douglasses.
+            {aboutData.pageIntro}
           </p>
         </div>
       </div>
 
       <div className="space-y-12">
-        <article className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,3fr)] md:items-start">
-          <div className="overflow-hidden rounded-3xl bg-slate-100">
-            <Image
-              src="/Lannings.webp"
-              alt="The Lanning family"
-              width={960}
-              height={720}
-              className="h-full w-full object-cover"
-              priority
-            />
-          </div>
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-slate-900">
-              The Lanning Family
-            </h2>
-            <div className="space-y-4 text-base leading-7 text-slate-600">
-              <p>
-                David and Bailey started playing pickleball about 5 years ago
-                after Bailey’s parents, Kirk and Beth Meints introduced them to
-                the sport. Like most, once we started playing we quickly became
-                addicted. We even took a family cruise with Engage Pickleball
-                for a week of pickleball training which introduced us to the
-                founders of Engage. David continues to play for Team Engage as a
-                sponsored player. Pickleball has had a huge, positive impact on
-                our lives making so many life long friends, allowing us to
-                travel many states for tournaments and provides an outlet for
-                our competitiveness! Our whole family family will be heading to
-                Texas in November to support Bailey who will be playing 5.0
-                Women’s doubles at Nationals.
-              </p>
-              <p>
-                Dinks represents both a passion for pickleball while at the same
-                time an opportunity to respond to the overwhelming need for
-                proper indoor facilities for the growing pickleball demographic
-                in the greater Des Moines area.
-              </p>
-              <p>
-                Outside of Dinks, David works full time as a Regional Sales
-                Manager for a Cyber Security Start Up covering Enterprise
-                Accounts across 16 states and enjoys coaching both his girls
-                Soccer team.
-              </p>
-              <p>
-                Bailey is a licensed Mental Health Therapist and owns her own
-                private practice. She is very involved in our kids activities,
-                sits on boards, PTO and coaches the girls Volleyball team.
-              </p>
-              <p>
-                Campbell &amp; Lolo are Dinks VPs of Youth Experience. While
-                they are up and coming pickleball stars - they also focus their
-                time on soccer, volleyball, tumbling, track &amp; field, tennis,
-                and basketball!
-              </p>
-              <p>
-                We could not be more excited to open Dinks and in addition to 13
-                dedicated courts - provide training, tournaments, leagues,
-                events and most of all a central hub for the Des Moines
-                Pickleball community!!
-              </p>
-              <p>
-                We sincerely appreciate your support!
-                <br />
-                David Lanning Bailey Saal-Lanning
-              </p>
+        {aboutData.families.map((family, index) => (
+          <article
+            key={family.familyName}
+            className={`grid gap-8 md:items-start ${
+              index % 2 === 0
+                ? "md:grid-cols-[minmax(0,1fr)_minmax(0,3fr)]"
+                : "md:grid-cols-[minmax(0,3fr)_minmax(0,1fr)]"
+            }`}
+          >
+            {index % 2 === 0 && (
+              <div className="overflow-hidden rounded-3xl bg-slate-100">
+                <Image
+                  src={family.imageSrc}
+                  alt={family.imageAlt}
+                  width={960}
+                  height={720}
+                  className="h-full w-full object-cover"
+                  priority={index === 0}
+                />
+              </div>
+            )}
+            <div className="space-y-4">
+              <h2 className="text-2xl font-semibold text-slate-900">
+                {family.familyName}
+              </h2>
+              <div className="space-y-4 text-base leading-7 text-slate-600">
+                {family.paragraphs.map((paragraph, pIndex) => (
+                  <p key={pIndex}>{paragraph}</p>
+                ))}
+              </div>
             </div>
-          </div>
-        </article>
-
-        <article className="grid gap-8 md:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] md:items-start">
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-slate-900">
-              The Douglass Family
-            </h2>
-            <div className="space-y-4 text-base leading-7 text-slate-600">
-              <p>
-                Bill and Deb grew up in Mt Vernon but have lived at Lake
-                Panorama for the past 23yrs.
-              </p>
-              <p>
-                By day, Bill is a pilot for FedEx. Often times he is based out
-                of Indianapolis and where his work merged with pickleball. While
-                traveling and on call, Bill quickly got hooked on pickleball
-                about 5 yrs ago and made many friends in the pickleball
-                community both in Indiana and Iowa. 2 years ago this led to
-                founding and operating an indoor pickleball court, “The Hideout”
-                in Indianapolis. When Bill’s not flying or playing pickleball,
-                he stays busy playing golf, hunting, snowmobiling, playing bags
-                and even mentored a local Eagle Scout who built 2 pickleball
-                courts for his final project!
-              </p>
-              <p>
-                Deb has worked part time as a College Business Instructor and
-                currently manages food/beverage at The Turn Shack at Lake
-                Panorama National Golf Course. She stays very busy sitting on
-                numerous boards and volunteering in her community. While she is
-                still new to pickleball and it hasn’t completely taken all of
-                her free time yet, she keeps busy golfing, reading,
-                scrapbooking, gardening and hiking.
-              </p>
-              <p>
-                Dylan recently graduated from the University of Iowa w/ an
-                Entrepreneurial Management Degree and will begin Flight School
-                in AZ this fall.
-              </p>
-              <p>
-                Payton is a Senior at Cornell College majoring in Biochemistry,
-                Molecular Biology &amp; Religion. Her future plans include Med
-                School or becoming a Physician Assistant or Nurse Practitioner
-              </p>
-              <p>
-                Jordan is currently working and living in Ames. She teaches and
-                is a choreographer for a local dance studio and plans to own her
-                own studio in the future!
-              </p>
-              <p>
-                We are excited to bring Dinks to life and appreciate the
-                incredible support we have received so far.
-              </p>
-              <p>
-                Thank-You and see you on the courts soon!
-                <br />- The Douglass Family
-              </p>
-            </div>
-          </div>
-          <div className="overflow-hidden rounded-3xl bg-slate-100">
-            <Image
-              src="/Douglass family.webp"
-              alt="The Douglass family"
-              width={960}
-              height={720}
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </article>
+            {index % 2 === 1 && (
+              <div className="overflow-hidden rounded-3xl bg-slate-100">
+                <Image
+                  src={family.imageSrc}
+                  alt={family.imageAlt}
+                  width={960}
+                  height={720}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            )}
+          </article>
+        ))}
       </div>
     </section>
   );

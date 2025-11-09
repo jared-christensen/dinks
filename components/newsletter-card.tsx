@@ -1,17 +1,18 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 
 export function NewsletterCard() {
   return (
-    <Card>
-      <CardContent className="pt-6 text-sm leading-6 text-white">
-        <h2 className="text-2xl font-semibold">Stay in the loop</h2>
-        <p className="mt-2">
-          Get league openings, tournament announcements, and facility updates in
+    <div className="space-y-8">
+      <div className="space-y-4">
+        <h2 className="text-3xl font-bold text-slate-900">
+          Stay in the Loop
+        </h2>
+        <p className="max-w-2xl text-lg text-slate-600">
+          Get league openings, tournament announcements, and facility updates delivered to
           your inbox.
         </p>
-        <NewsletterSignup />
-      </CardContent>
-    </Card>
+      </div>
+      <NewsletterSignup />
+    </div>
   );
 }

@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { Container } from "@/components/container";
 
 export function SiteFooter() {
   return (
     <footer className="bg-slate-800 text-white border-t-[15px] border-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-12 text-sm sm:px-6 md:flex-row md:items-start md:justify-between">
+      <Container className="flex flex-col gap-8 px-4 py-12 text-sm sm:px-6 md:flex-row md:items-start md:justify-between">
         <div className="max-w-md space-y-3">
           <p className="text-lg font-semibold text-white">Dinks Pickleball</p>
           <p className="leading-relaxed text-white/90">
@@ -60,13 +61,13 @@ export function SiteFooter() {
             </Link>
           </div>
         </div>
-      </div>
+      </Container>
       <div className=" py-4 text-sm text-white/70">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 px-4 text-center sm:flex-row sm:justify-between sm:px-6">
+        <Container className="flex flex-col items-center gap-2 px-4 text-center sm:flex-row sm:justify-between sm:px-6">
           <p>
             © {new Date().getFullYear()} Dinks Pickleball. All rights reserved.
           </p>
-        </div>
+        </Container>
       </div>
     </footer>
   );

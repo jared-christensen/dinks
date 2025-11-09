@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Container } from "@/components/container";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -32,7 +33,7 @@ export function SiteHeader() {
         isScrolled ? "shadow-sm" : ""
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <Container className="flex h-16 items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-3">
           <Link
             href="/"
@@ -78,7 +79,7 @@ export function SiteHeader() {
         >
           Menu
         </button>
-      </div>
+      </Container>
 
       {isMenuOpen ? (
         <div

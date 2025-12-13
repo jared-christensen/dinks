@@ -46,10 +46,56 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-brand-green: var(--brand-green);
-  --color-brand-green-light: var(--brand-green-light);
-  --color-brand-red: var(--brand-red);
-  --color-brand-blue: var(--brand-blue);
+
+  /* Brand color scales */
+  --color-brand-green-50: oklch(from var(--brand-green) calc(l + 0.4) c h);
+  --color-brand-green-100: oklch(from var(--brand-green) calc(l + 0.35) c h);
+  --color-brand-green-200: oklch(from var(--brand-green) calc(l + 0.3) c h);
+  --color-brand-green-300: oklch(from var(--brand-green) calc(l + 0.25) c h);
+  --color-brand-green-400: oklch(from var(--brand-green) calc(l + 0.15) c h);
+  --color-brand-green-500: var(--brand-green);
+  --color-brand-green-600: oklch(from var(--brand-green) calc(l - 0.05) c h);
+  --color-brand-green-700: oklch(from var(--brand-green) calc(l - 0.1) c h);
+  --color-brand-green-800: oklch(from var(--brand-green) calc(l - 0.15) c h);
+  --color-brand-green-900: oklch(from var(--brand-green) calc(l - 0.2) c h);
+  --color-brand-green-950: oklch(from var(--brand-green) calc(l - 0.25) c h);
+
+  --color-brand-red-50: oklch(from var(--brand-red) calc(l + 0.4) c h);
+  --color-brand-red-100: oklch(from var(--brand-red) calc(l + 0.35) c h);
+  --color-brand-red-200: oklch(from var(--brand-red) calc(l + 0.3) c h);
+  --color-brand-red-300: oklch(from var(--brand-red) calc(l + 0.25) c h);
+  --color-brand-red-400: oklch(from var(--brand-red) calc(l + 0.15) c h);
+  --color-brand-red-500: var(--brand-red);
+  --color-brand-red-600: oklch(from var(--brand-red) calc(l - 0.05) c h);
+  --color-brand-red-700: oklch(from var(--brand-red) calc(l - 0.1) c h);
+  --color-brand-red-800: oklch(from var(--brand-red) calc(l - 0.15) c h);
+  --color-brand-red-900: oklch(from var(--brand-red) calc(l - 0.2) c h);
+  --color-brand-red-950: oklch(from var(--brand-red) calc(l - 0.25) c h);
+
+  --color-brand-blue-50: oklch(from var(--brand-blue) calc(l + 0.4) c h);
+  --color-brand-blue-100: oklch(from var(--brand-blue) calc(l + 0.35) c h);
+  --color-brand-blue-200: oklch(from var(--brand-blue) calc(l + 0.3) c h);
+  --color-brand-blue-300: oklch(from var(--brand-blue) calc(l + 0.25) c h);
+  --color-brand-blue-400: oklch(from var(--brand-blue) calc(l + 0.15) c h);
+  --color-brand-blue-500: var(--brand-blue);
+  --color-brand-blue-600: oklch(from var(--brand-blue) calc(l - 0.05) c h);
+  --color-brand-blue-700: oklch(from var(--brand-blue) calc(l - 0.1) c h);
+  --color-brand-blue-800: oklch(from var(--brand-blue) calc(l - 0.15) c h);
+  --color-brand-blue-900: oklch(from var(--brand-blue) calc(l - 0.2) c h);
+  --color-brand-blue-950: oklch(from var(--brand-blue) calc(l - 0.25) c h);
+
+  --color-brand-yellow-50: oklch(from var(--brand-yellow) calc(l + 0.15) c h);
+  --color-brand-yellow-100: oklch(from var(--brand-yellow) calc(l + 0.12) c h);
+  --color-brand-yellow-200: oklch(from var(--brand-yellow) calc(l + 0.09) c h);
+  --color-brand-yellow-300: oklch(from var(--brand-yellow) calc(l + 0.05) c h);
+  --color-brand-yellow-400: oklch(from var(--brand-yellow) calc(l + 0.02) c h);
+  --color-brand-yellow-500: var(--brand-yellow);
+  --color-brand-yellow-600: oklch(from var(--brand-yellow) calc(l - 0.05) c h);
+  --color-brand-yellow-700: oklch(from var(--brand-yellow) calc(l - 0.1) c h);
+  --color-brand-yellow-800: oklch(from var(--brand-yellow) calc(l - 0.15) c h);
+  --color-brand-yellow-900: oklch(from var(--brand-yellow) calc(l - 0.2) c h);
+  --color-brand-yellow-950: oklch(from var(--brand-yellow) calc(l - 0.25) c h);
+
   --color-brand-primary: var(--brand-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

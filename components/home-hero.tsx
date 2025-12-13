@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export function HomeHero() {
   return (
-    <div className="relative left-1/2 right-1/2 -mt-24 w-screen min-h-svh -translate-x-1/2 overflow-hidden bg-[url('/home-page-hero.jpg')] bg-cover bg-center bg-no-repeat">
+    <div className="relative left-1/2 right-1/2 -mt-24 w-screen -translate-x-1/2 overflow-hidden bg-[url('/home-page-hero.jpg')] bg-cover bg-center bg-no-repeat">
       <div
         aria-hidden
         className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"
       />
-      <div className="relative z-10 mx-auto flex min-h-svh items-center justify-center px-6">
+      <div className="relative z-10 mx-auto flex items-center justify-center px-6 pt-40 pb-24">
         <div className="max-w-5xl text-center">
           <div className="mx-auto mb-8 flex justify-center">
             <Image

@@ -5,9 +5,18 @@
       "Bash(npx shadcn@latest add:*)",
       "Bash(git checkout:*)",
       "Bash(ls:*)",
-      "Bash(identify -verbose public/dinks-logo-circle.png)"
+      "Bash(identify -verbose public/dinks-logo-circle.png)",
+      "Bash(npm install:*)",
+      "Bash(npm run ncu:*)",
+      "WebSearch",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot"
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "playwright"
+  ]
 }

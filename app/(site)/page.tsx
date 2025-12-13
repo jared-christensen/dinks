@@ -1,20 +1,39 @@
 import Link from "next/link";
-import { NewsletterCard } from "@/components/newsletter-card";
-import { HomeHero } from "@/components/home-hero";
 import { FeaturedSponsors } from "@/components/featured-sponsors";
 import { MembershipSection } from "@/components/membership-section";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CourtRates } from "@/components/court-rates";
+import { courtRatesData } from "@/data/court-rates";
+import { HomeHero } from "@/components/home-hero";
 
 export default function Home() {
   return (
     <>
-      {/* <HomeHero /> */}
-      <section className="space-y-24">
+      <HomeHero />
+      <section className="mt-16 space-y-24">
         <MembershipSection />
 
-        <CourtRates />
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold text-slate-900">Court Rates</h2>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {courtRatesData.rates.map((rate) => (
+              <div
+                key={rate.name}
+                className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-center"
+              >
+                <div className="text-sm font-semibold text-slate-900">
+                  {rate.name}
+                </div>
+                <div className="mt-1 text-lg font-bold text-slate-900">
+                  ${rate.ratePerHour}/hour
+                </div>
+                <div className="mt-2 text-xs text-slate-600">
+                  {rate.timeRange}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Instruction & Destinations */}
         <div className="grid gap-6 md:grid-cols-2">

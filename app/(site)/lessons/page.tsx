@@ -53,61 +53,8 @@ export default function Instruction() {
         </div>
       </div>
 
-      {/* Services grid */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {instructionData.services.map((service) => (
-          <Card key={service.title}>
-            <CardHeader>
-              <CardTitle>{service.title}</CardTitle>
-              <CardDescription className="font-semibold text-slate-700">
-                {service.description}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="text-sm leading-6">
-              {service.details}
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      {/* Clinic levels */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Available Clinic Types</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2 text-sm leading-6">
-            {instructionData.clinicLevels.map((level) => (
-              <li key={level} className="flex items-start gap-2">
-                <span className="text-slate-600">•</span>
-                <span>{level}</span>
-              </li>
-            ))}
-          </ul>
-        </CardContent>
-      </Card>
-
       {/* Contact form */}
-      <div className="grid gap-6 lg:grid-cols-3">
-        <div className="lg:col-span-2">
-          <TrainingContactForm />
-        </div>
-        <div>
-          <Card>
-            <CardHeader>
-              <CardTitle>General Questions?</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <p className="text-sm leading-6 text-slate-600">
-                For facility or membership questions, contact the Dinks team.
-              </p>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/contact">General Inquiries</Link>
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
+      <TrainingContactForm />
 
       {/* Dinks Destinations callout */}
       <Card>

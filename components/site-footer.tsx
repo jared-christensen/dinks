@@ -1,74 +1,69 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/container";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-slate-800 text-white border-t-[15px] border-white">
-      <Container className="flex flex-col gap-8 px-4 py-12 text-sm sm:px-6 md:flex-row md:items-start md:justify-between">
-        <div className="max-w-md space-y-3">
-          <p className="text-lg font-semibold text-white">Dinks Pickleball</p>
-          <p className="leading-relaxed text-white/90">
-            Des Moines&apos; home for indoor pickleball with 13
-            climate-controlled courts, daily play, and member-focused
-            programming.
-          </p>
-        </div>
-        <div className="space-y-2">
-          <p className="text-sm font-semibold uppercase tracking-wide text-white/70">
-            Visit
-          </p>
-          <p className="text-white/90">
-            3800 Merle Hay Rd Suite 1000, Des Moines, IA 50310
-          </p>
-          <p className="text-white/90">Open daily 6 am – midnight</p>
-          <Link
-            href="https://maps.google.com/?q=Dinks+Pickleball+Des+Moines"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-sm font-semibold text-white transition hover:text-white/80"
-          >
-            Get directions
-          </Link>
-        </div>
-        <div className="space-y-2">
-          <p className="text-sm font-semibold uppercase tracking-wide text-white/70">
-            More
-          </p>
-          <div className="flex flex-col gap-2 text-white/90">
-            <Link href="/about" className="transition hover:text-white">
+    <footer className="border-t border-slate-200 bg-slate-50">
+      <Container className="px-4 py-8 sm:px-6">
+        {/* Links + Copyright row */}
+        <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
+          <div className="flex items-center gap-6">
+            <Image
+              src="/dinks-logo-circle.png"
+              alt="Dinks Pickleball"
+              width={32}
+              height={32}
+            />
+            <nav className="flex flex-wrap justify-center gap-6 text-sm">
+            <Link
+              href="/about"
+              className="text-slate-600 transition hover:text-slate-900"
+            >
               About
             </Link>
-            <Link href="/membership#business-sponsorships" className="transition hover:text-white">
-              Become a Sponsor
+            <Link
+              href="/contact"
+              className="text-slate-600 transition hover:text-slate-900"
+            >
+              Contact
             </Link>
-          </div>
-        </div>
-        <div className="space-y-2">
-          <p className="text-sm font-semibold uppercase tracking-wide text-white/70">
-            Connect
-          </p>
-          <div className="flex flex-col gap-2 text-white/90">
+            <Link
+              href="/membership#business-sponsorships"
+              className="text-slate-600 transition hover:text-slate-900"
+            >
+              Sponsors
+            </Link>
             <Link
               href="https://www.facebook.com/dinkspickleball"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition hover:text-white"
+              className="text-slate-600 transition hover:text-slate-900"
             >
               Facebook
             </Link>
-            <Link href="/contact" className="transition hover:text-white">
-              Contact
-            </Link>
+            </nav>
           </div>
+
+          <p className="text-sm text-slate-500">
+            © {new Date().getFullYear()} Dinks Pickleball
+          </p>
+        </div>
+
+        {/* Address row */}
+        <div className="mt-6 flex flex-col gap-1 border-t border-slate-200 pt-6 text-sm text-slate-500">
+          <span>3800 Merle Hay Rd Suite 1000, Des Moines, IA</span>
+          <span>Open daily 6am–midnight</span>
+          <Link
+            href="https://maps.google.com/?q=Dinks+Pickleball+Des+Moines"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-600 transition hover:text-slate-900"
+          >
+            Directions
+          </Link>
         </div>
       </Container>
-      <div className=" py-4 text-sm text-white/70">
-        <Container className="flex flex-col items-center gap-2 px-4 text-center sm:flex-row sm:justify-between sm:px-6">
-          <p>
-            © {new Date().getFullYear()} Dinks Pickleball. All rights reserved.
-          </p>
-        </Container>
-      </div>
     </footer>
   );
 }

@@ -57,5 +57,5 @@ export const destinationsData: DestinationsData = {
   ],
   instructorsDescription:
     "Co-Owners of Dinks Pickleball and PPR Professional Instructors. They bring their passion for pickleball and love of travel together to create unforgettable experiences. You'll get professional instruction, organized play, and the chance to explore amazing destinations with fellow pickleball enthusiasts.",
-  instructorsImageSrc: "/people.webp",
+  instructorsImageSrc: "/david-bailey.webp",
 };

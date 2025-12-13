@@ -8,6 +8,7 @@ import { Container } from "@/components/container";
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/events", label: "Events" },
   { href: "/lessons", label: "Lessons" },
   { href: "/destinations", label: "Destinations" },
   { href: "/book", label: "Book a Court" },
@@ -28,7 +29,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full  bg-white/90 backdrop-blur transition-shadow  ${
+      className={`sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur transition-shadow ${
         isScrolled ? "shadow-sm" : ""
       }`}
     >

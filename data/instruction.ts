@@ -27,7 +27,7 @@ export const instructionData: InstructionData = {
     "Certified pickleball instructors",
     "Experience with all skill levels from beginners to advanced",
   ],
-  instructorsImageSrc: "/people.webp",
+  instructorsImageSrc: "/david-bailey.webp",
   services: [
     {
       title: "Private Instruction",

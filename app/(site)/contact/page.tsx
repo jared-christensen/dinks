@@ -81,7 +81,7 @@ export default function Contact() {
       <div className="grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <Card>
-            <CardContent>
+            <CardContent className="pt-6">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-4">
                   <div className="grid gap-4 sm:grid-cols-2">
@@ -193,34 +193,6 @@ export default function Contact() {
                   Get Directions
                 </Link>
               </Button>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Quick Links</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2 text-sm">
-                <Link
-                  href="/membership"
-                  className="block text-slate-700 hover:underline"
-                >
-                  → Membership Packages
-                </Link>
-                <Link
-                  href="/membership#business-sponsorships"
-                  className="block text-slate-700 hover:underline"
-                >
-                  → Sponsorship Packages
-                </Link>
-                <Link
-                  href="/lessons"
-                  className="block text-slate-700 hover:underline"
-                >
-                  → Lessons & Clinics
-                </Link>
-              </div>
             </CardContent>
           </Card>
         </div>

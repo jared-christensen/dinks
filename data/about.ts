@@ -20,7 +20,7 @@ export const aboutData: AboutData = {
   families: [
     {
       familyName: "The Lanning Family",
-      imageSrc: "/Lannings.webp",
+      imageSrc: "/lannings-family.webp",
       imageAlt: "The Lanning family",
       paragraphs: [
         "David and Bailey started playing pickleball about 5 years ago after Bailey's parents, Kirk and Beth Meints introduced them to the sport. Like most, once we started playing we quickly became addicted. We even took a family cruise with Engage Pickleball for a week of pickleball training which introduced us to the founders of Engage. David continues to play for Team Engage as a sponsored player. Pickleball has had a huge, positive impact on our lives making so many life long friends, allowing us to travel many states for tournaments and provides an outlet for our competitiveness! Our whole family family will be heading to Texas in November to support Bailey who will be playing 5.0 Women's doubles at Nationals.",
@@ -34,7 +34,7 @@ export const aboutData: AboutData = {
     },
     {
       familyName: "The Douglass Family",
-      imageSrc: "/Douglass family.webp",
+      imageSrc: "/douglass-family.webp",
       imageAlt: "The Douglass family",
       paragraphs: [
         "Bill and Deb grew up in Mt Vernon but have lived at Lake Panorama for the past 23yrs.",

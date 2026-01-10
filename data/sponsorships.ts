@@ -5,7 +5,6 @@ export interface SponsorshipTier {
   price: string; // Display-formatted price or 'Custom'
   description?: string; // Optional description
   whatsDifferent: string[]; // Distinguishing elements of this tier
-  included: string[]; // Benefits included at this tier
 }
 
 export interface SponsorshipsData {
@@ -18,11 +17,7 @@ export const sponsorshipsData: SponsorshipsData = {
       name: "Gold",
       price: "$1,000/Year",
       description: "Includes 1 VIP membership plus banner and website branding.",
-      whatsDifferent: [
-        "Banner at facility",
-        "Logo on Dinks website",
-      ],
-      included: [],
+      whatsDifferent: ["Banner at facility", "Logo on Dinks website"],
     },
     {
       name: "Premier",
@@ -33,7 +28,6 @@ export const sponsorshipsData: SponsorshipsData = {
         "Logo on Dinks website",
         "Mesh windscreen printing is sponsor responsibility",
       ],
-      included: [],
     },
     {
       name: "Platinum",
@@ -45,9 +39,7 @@ export const sponsorshipsData: SponsorshipsData = {
         "Banner at facility",
         "Logo on Dinks website",
       ],
-      included: [],
     },
   ],
 };
 
-export type { SponsorshipTier as Tier };

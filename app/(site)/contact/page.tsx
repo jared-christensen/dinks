@@ -68,10 +68,10 @@ export default function Contact() {
   return (
     <section className="space-y-8">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold text-slate-900">
+        <h1 className="text-4xl font-bold text-white">
           Contact Us
         </h1>
-        <p className="max-w-2xl text-base leading-7 text-slate-600">
+        <p className="max-w-2xl text-base leading-7 text-white/80">
           Have a question about memberships, sponsorships, or facility details?
           We&apos;d love to hear from you. Fill out the form below and
           we&apos;ll get back to you as soon as possible.

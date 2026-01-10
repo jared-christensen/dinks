@@ -1,5 +1,11 @@
 export type SponsorTierKey = "platinum" | "premier" | "gold";
 
+export const tierLabels: Record<SponsorTierKey, string> = {
+  platinum: "Platinum Court Sponsor",
+  premier: "Premier Sponsor",
+  gold: "Gold Sponsor",
+};
+
 export interface SponsorRecord {
   name: string;
   tier: SponsorTierKey;

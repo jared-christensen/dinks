@@ -121,8 +121,8 @@ export function TrainingContactForm() {
             <div
               className={`rounded-lg p-4 text-sm ${
                 submitStatus.type === "success"
-                  ? "bg-slate-100 text-slate-800"
-                  : "bg-slate-200 text-slate-900"
+                  ? "bg-brand-green-500/20 text-white"
+                  : "bg-brand-red-500/20 text-white"
               }`}
             >
               {submitStatus.message}

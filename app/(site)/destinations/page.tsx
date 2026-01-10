@@ -14,13 +14,13 @@ export default function Destinations() {
   return (
     <section className="space-y-8">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold text-slate-900">
+        <h1 className="text-4xl font-bold text-white">
           {destinationsData.pageTitle}
         </h1>
-        <p className="text-lg font-semibold text-slate-700">
+        <p className="text-lg font-semibold text-white/90">
           {destinationsData.tagline}
         </p>
-        <p className="max-w-2xl text-base leading-7 text-slate-600">
+        <p className="max-w-2xl text-base leading-7 text-white/80">
           {destinationsData.intro}
         </p>
       </div>
@@ -36,7 +36,7 @@ export default function Destinations() {
           <ul className="space-y-3 text-base leading-7">
             {destinationsData.benefits.map((benefit) => (
               <li key={benefit} className="flex items-start gap-3">
-                <span className="text-xl text-slate-700">✓</span>
+                <span className="text-xl text-brand-yellow-500">✓</span>
                 <span>{benefit}</span>
               </li>
             ))}
@@ -46,10 +46,10 @@ export default function Destinations() {
 
       {/* Past destinations */}
       <div className="space-y-6">
-        <h2 className="text-2xl font-semibold text-slate-900">
+        <h2 className="text-2xl font-semibold text-white">
           Past Destination Examples
         </h2>
-        <p className="text-base leading-7 text-slate-600">
+        <p className="text-base leading-7 text-white/80">
           Dinks Destinations has organized trips to incredible locations around
           the world:
         </p>
@@ -58,7 +58,7 @@ export default function Destinations() {
             <Card key={dest.location}>
               <CardHeader>
                 <CardTitle>{dest.location}</CardTitle>
-                <CardDescription className="font-semibold text-slate-700">
+                <CardDescription className="font-semibold text-white/90">
                   {dest.description}
                 </CardDescription>
               </CardHeader>
@@ -114,7 +114,7 @@ export default function Destinations() {
         <Card>
           <CardHeader>
             <CardTitle>Your Trip Organizers</CardTitle>
-            <CardDescription className="text-lg font-semibold text-slate-700">
+            <CardDescription className="text-lg font-semibold text-white/90">
               {destinationsData.instructorsName}
             </CardDescription>
           </CardHeader>

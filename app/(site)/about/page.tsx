@@ -7,10 +7,10 @@ export default function About() {
       {/* Meet the Owners */}
       <div className="space-y-8">
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold text-slate-900">
+          <h1 className="text-4xl font-bold text-white">
             {aboutData.pageTitle}
           </h1>
-          <p className="text-base leading-7 text-slate-600">
+          <p className="text-base leading-7 text-white/80">
             {aboutData.pageIntro}
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function About() {
             }`}
           >
             {index % 2 === 0 && (
-              <div className="overflow-hidden rounded-3xl bg-slate-100">
+              <div className="overflow-hidden rounded-3xl bg-white/10">
                 <Image
                   src={family.imageSrc}
                   alt={family.imageAlt}
@@ -39,17 +39,17 @@ export default function About() {
               </div>
             )}
             <div className="space-y-4">
-              <h2 className="text-2xl font-semibold text-slate-900">
+              <h2 className="text-2xl font-semibold text-white">
                 {family.familyName}
               </h2>
-              <div className="space-y-4 text-base leading-7 text-slate-600">
+              <div className="space-y-4 text-base leading-7 text-white/80">
                 {family.paragraphs.map((paragraph, pIndex) => (
                   <p key={pIndex}>{paragraph}</p>
                 ))}
               </div>
             </div>
             {index % 2 === 1 && (
-              <div className="overflow-hidden rounded-3xl bg-slate-100">
+              <div className="overflow-hidden rounded-3xl bg-white/10">
                 <Image
                   src={family.imageSrc}
                   alt={family.imageAlt}

@@ -7,10 +7,10 @@ export function SponsorshipSection() {
   return (
     <section id="business-sponsorships" className="space-y-6">
       <div className="space-y-4">
-        <h2 className="text-3xl font-bold text-slate-900">
+        <h2 className="text-3xl font-bold text-white">
           Sponsorship Packages
         </h2>
-        <p className="max-w-2xl text-base text-slate-600">
+        <p className="max-w-2xl text-base text-white/80">
           Partner with Dinks to connect your business with the Des Moines
           pickleball community. Our sponsorship packages offer visibility, brand
           exposure, and membership benefits while supporting the growth of
@@ -27,20 +27,18 @@ export function SponsorshipSection() {
               price: tier.price,
               description: tier.description,
               whatsDifferent: tier.whatsDifferent,
-              included: tier.included,
               ctaHref: "/join",
               ctaLabel: "Get Started",
             }}
-            variant="sponsorship"
           />
         ))}
       </div>
 
       <div className="space-y-3">
-        <h3 className="text-xl font-semibold text-slate-900">
+        <h3 className="text-xl font-semibold text-white">
           Need a custom partnership?
         </h3>
-        <p className="text-sm leading-6 text-slate-600">
+        <p className="text-sm leading-6 text-white/80">
           We can build custom packages with multi-year commitments, tournament
           sponsorships, youth programs, gear partnerships, or event activations.
         </p>

@@ -21,7 +21,6 @@ export function CourtReserveEmbed({
       src={src}
       loading="lazy"
       allowFullScreen
-      scrolling="no"
       className={className}
       style={{
         border: "none",

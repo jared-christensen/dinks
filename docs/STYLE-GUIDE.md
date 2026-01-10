@@ -80,33 +80,109 @@ Tiny: text-xs (12px)
 
 ---
 
-## Color Palette
+## Theme: Dark Mode
 
-**Status**: Brand colors defined. Implementation pending after typography is finalized.
+This is a **dark theme** site using brand green as the primary background color.
+
+---
+
+## Color Palette
 
 ### Brand Colors
 
-```
-Green:  #2F5435
-Red:    #B4342C
-Blue:   #0F223D
-Yellow: #EBCE3D
-White:  #FFFFFF
+| Color | Hex | Tailwind | Primary Use |
+|-------|-----|----------|-------------|
+| Green | #2F5435 | `brand-green-*` | **Base background color** |
+| Yellow | #EBCD3D | `brand-yellow-*` | **Primary action buttons & CTAs** |
+| Blue | #0F223D | `brand-blue-*` | Secondary accents, links |
+| Red | #B4342C | `brand-red-*` | Alerts, badges, price callouts |
+| White | #FFFFFF | `white` | Text on dark backgrounds |
+
+---
+
+## Background Colors
+
+| Element | Color | Example |
+|---------|-------|---------|
+| Page background | `brand-green-900` | Dark forest green |
+| Card / Surface | `brand-green-800` or `white/5` | Slightly elevated |
+| Elevated surface | `brand-green-700` or `white/10` | Modals, dropdowns |
+| Header | `brand-green-900/90 backdrop-blur` | Sticky nav |
+
+---
+
+## Text Colors (on dark backgrounds)
+
+| Element | Color | Notes |
+|---------|-------|-------|
+| Headings | `white` | All h1, h2, h3 |
+| Body text | `white/70` | Primary readable text |
+| Secondary text | `white/50` | Descriptions, supporting info |
+| Muted text | `white/40` | Labels, captions, metadata |
+| Disabled text | `white/30` | Inactive states |
+
+**Rule**: Never use brand colors for body text on dark backgrounds. Use white at varying opacities.
+
+---
+
+## Buttons & Interactive Elements
+
+| Type | Style |
+|------|-------|
+| **Primary CTA** | `bg-brand-yellow-500 text-black` → `hover:bg-brand-yellow-400` |
+| **Secondary** | `bg-white/10 text-white` → `hover:bg-white/20` |
+| **Ghost/Outline** | `border border-white/30 text-white` → `hover:bg-white/10` |
+| **Destructive** | `bg-brand-red-500 text-white` |
+
+---
+
+## Accent Color Usage
+
+| Color | When to use |
+|-------|-------------|
+| **Yellow** | Primary CTAs, important highlights, "Join Now" buttons |
+| **Red** | "Popular" badges, alerts, price callouts |
+| **Blue** | Links, secondary interactive elements |
+| **Green** | Already the background - use lighter shades for subtle accents |
+
+---
+
+## Borders & Dividers
+
+| Element | Color |
+|---------|-------|
+| Subtle divider | `white/10` |
+| Visible border | `white/20` |
+| Card border | `white/10` or `brand-green-700` |
+| Input border | `white/20` → `white/40` on focus |
+
+---
+
+## Cards on Dark Background
+
+```tsx
+// Standard card
+<div className="rounded-2xl bg-white/5 p-6 border border-white/10">
+  <h3 className="text-xl font-semibold text-white">Card Title</h3>
+  <p className="text-white/70">Card description text</p>
+</div>
+
+// Highlighted card
+<div className="rounded-2xl bg-white/10 p-6 ring-2 ring-brand-yellow-500">
+  ...
+</div>
 ```
 
-### Neutral Scale
+---
 
-```
-Black/Grays: Using Tailwind slate scale
-  - text-slate-900 (darkest)
-  - text-slate-600 (medium)
-  - text-slate-500 (light)
-  - text-slate-300 (lighter)
-```
+## Special Sections
 
-**Current State**: Using slate scale for text hierarchy.
-
-**Note**: Per Refactoring UI guidelines, we're working in grayscale first to ensure hierarchy works before adding brand colors.
+| Section | Background |
+|---------|------------|
+| Hero | `brand-green-900` with image overlay |
+| Main content | `brand-green-900` |
+| Alternate sections | `brand-green-800` or `black` for contrast |
+| Footer | `black` or `brand-green-950` |
 
 ---
 

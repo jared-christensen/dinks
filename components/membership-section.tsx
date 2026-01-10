@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { PackageCard } from "@/components/package-card";
 import { membershipsData } from "@/data/memberships";
 import { Info } from "lucide-react";
@@ -9,13 +8,16 @@ export function MembershipSection() {
   );
 
   return (
-    <section className="space-y-6">
-      <div className="space-y-4">
-        <h2 className="text-3xl font-bold text-slate-900">
-          Membership Packages
+    <section className="space-y-8">
+      <div className="space-y-3">
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-yellow-500">
+          Become a Member
+        </p>
+        <h2 className="text-3xl font-bold text-white md:text-4xl">
+          Choose Your Game
         </h2>
-        <p className="max-w-2xl text-base text-slate-600">
-          All memberships include {benefitsWithoutGuest.join(", ").toLowerCase()}.
+        <p className="max-w-2xl text-base text-white/80">
+          All members get {benefitsWithoutGuest.join(", ").toLowerCase()}.
         </p>
       </div>
 
@@ -31,14 +33,14 @@ export function MembershipSection() {
               ctaHref: "/join",
               ctaLabel: "Join Now",
             }}
-            variant="membership"
+            highlighted={tier.popular}
           />
         ))}
       </div>
 
-      <div className="flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
-        <Info className="h-5 w-5 flex-shrink-0 text-slate-600" />
-        <p className="text-sm text-slate-600">{membershipsData.guestPolicy}</p>
+      <div className="flex items-start gap-3 rounded-lg border border-white/10 bg-white/5 p-4">
+        <Info className="h-5 w-5 flex-shrink-0 text-white/50" />
+        <p className="text-sm text-white/80">{membershipsData.guestPolicy}</p>
       </div>
     </section>
   );

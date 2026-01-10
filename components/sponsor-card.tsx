@@ -30,7 +30,7 @@ export function SponsorCard({
 }: SponsorCardProps) {
   return (
     <article
-      className={`flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-slate-800 dark:bg-slate-900 ${className}`}
+      className={`flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 shadow-sm transition hover:bg-white/10 ${className}`}
     >
       {sponsor.imageSrc ? (
         <div className="mb-4 flex items-center justify-start">
@@ -55,14 +55,14 @@ export function SponsorCard({
       )}
 
       <div className="space-y-2">
-        <p className="text-xs font-semibold uppercase tracking-wide text-slate-600">
+        <p className="text-xs font-semibold uppercase tracking-wide text-white/60">
           {sponsor.tier}
         </p>
-        <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-50">
+        <h3 className="text-xl font-semibold text-white">
           {sponsor.name}
         </h3>
         {showBlurb && sponsor.blurb ? (
-          <p className="text-sm leading-6 text-slate-600 dark:text-slate-300 whitespace-pre-line">
+          <p className="text-sm leading-6 text-white/80 whitespace-pre-line">
             {sponsor.blurb}
           </p>
         ) : null}
@@ -72,7 +72,7 @@ export function SponsorCard({
         <div className="mt-4">
           <Link
             href={sponsor.href}
-            className="text-sm font-semibold text-slate-700 underline underline-offset-4 hover:text-slate-900 dark:text-slate-200"
+            className="text-sm font-semibold text-white underline underline-offset-4 hover:text-brand-yellow-500"
           >
             Visit website
           </Link>

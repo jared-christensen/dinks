@@ -29,8 +29,8 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur transition-shadow ${
-        isScrolled ? "shadow-sm" : ""
+      className={`sticky top-0 z-50 w-full border-b border-black/10 bg-white backdrop-blur transition-shadow ${
+        isScrolled ? "shadow-lg shadow-black/10" : ""
       }`}
     >
       <Container className="flex h-16 items-center justify-between px-4 sm:px-6">
@@ -46,7 +46,7 @@ export function SiteHeader() {
               width={180}
               height={40}
               priority
-              className="h-8 w-auto "
+              className="h-8 w-auto"
             />
           </Link>
         </div>
@@ -56,7 +56,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-semibold uppercase tracking-wide text-slate-600 transition hover:text-slate-900"
+              className="text-sm font-semibold uppercase tracking-wide text-brand-blue-900/70 transition hover:text-brand-blue-900"
             >
               {link.label}
             </Link>
@@ -64,14 +64,14 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button asChild>
+          <Button asChild variant="primary">
             <Link href="/membership">Join Dinks</Link>
           </Button>
         </div>
 
         <button
           type="button"
-          className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-3 py-1 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 md:hidden"
+          className="inline-flex items-center gap-2 rounded-full border border-brand-blue-900/30 px-3 py-1 text-sm font-semibold text-brand-blue-900 transition hover:bg-brand-blue-900/10 md:hidden"
           onClick={() => setIsMenuOpen((prev) => !prev)}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
@@ -84,14 +84,14 @@ export function SiteHeader() {
       {isMenuOpen ? (
         <div
           id="mobile-menu"
-          className="space-y-4 border-t border-slate-200 bg-white px-4 py-4 md:hidden"
+          className="space-y-4 border-t border-black/10 bg-white px-4 py-4 md:hidden"
         >
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-semibold uppercase tracking-wide text-slate-700 transition hover:text-slate-900"
+                className="text-sm font-semibold uppercase tracking-wide text-brand-blue-900/70 transition hover:text-brand-blue-900"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
@@ -99,7 +99,7 @@ export function SiteHeader() {
             ))}
           </div>
           <div className="flex flex-col gap-2 pt-2">
-            <Button asChild className="w-full">
+            <Button asChild variant="primary" className="w-full">
               <Link href="/membership" onClick={() => setIsMenuOpen(false)}>
                 Join Dinks
               </Link>

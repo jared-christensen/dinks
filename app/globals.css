@@ -4,11 +4,26 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --brand-yellow: rgb(237, 205, 61);
-  --brand-green: #2f5435;
-  --brand-red: #b4342c;
-  --brand-blue: rgb(20, 46, 82);
-  --brand-primary: #737373;
+  /*
+   * ===========================================
+   * DINKS PICKLEBALL DESIGN SYSTEM
+   * ===========================================
+   *
+   * Brand Colors (from logo):
+   * - Blue:   #0F223D - Primary, headers, dark sections
+   * - Green:  #2F5435 - "Dinks" in logo, accents, success
+   * - Red:    #B4342C - Accents, alerts, energy
+   * - Yellow: #EBCD3D - CTAs, highlights, "Pickleball" accent
+   *
+   * Usage in Tailwind:
+   * - bg-brand-blue-500, text-brand-green-500, etc.
+   * - Full scale available: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950
+   */
+
+  --brand-blue: #0F223D;
+  --brand-green: #2F5435;
+  --brand-red: #B4342C;
+  --brand-yellow: #EBCD3D;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -97,7 +112,7 @@
   --color-brand-yellow-950: oklch(from var(--brand-yellow) calc(l - 0.25) c h);
 
   --color-brand-primary: var(--brand-primary);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -135,8 +150,8 @@
 }
 
 body {
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .dark {

@@ -6,6 +6,7 @@ export interface MembershipTier {
   price: string; // Display-formatted price including activation
   description: string;
   keyDifferences: string[]; // Bulleted differentiators between tiers
+  popular?: boolean; // Highlights this tier as the recommended option
 }
 
 export interface MembershipsData {
@@ -16,10 +17,9 @@ export interface MembershipsData {
 
 export const membershipsData: MembershipsData = {
   allIncluded: [
-    "Personalized door code access",
-    "Court booking access",
-    "Ball machine rental ($10 per session)",
-    "Guest access (each guest $10 per visit)",
+    "Personal door code",
+    "Court booking",
+    "Ball machine rental",
   ],
   guestPolicy:
     "Members may bring guests to their reservation. Guest fee is $10 per person.",
@@ -61,5 +61,3 @@ export const membershipsData: MembershipsData = {
     },
   ],
 };
-
-export type { MembershipTier as Tier };

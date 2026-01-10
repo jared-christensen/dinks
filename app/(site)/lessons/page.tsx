@@ -15,10 +15,10 @@ export default function Instruction() {
   return (
     <section className="space-y-8">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold text-slate-900">
+        <h1 className="text-4xl font-bold text-white">
           {instructionData.pageTitle}
         </h1>
-        <p className="max-w-2xl text-base leading-7 text-slate-600">
+        <p className="max-w-2xl text-base leading-7 text-white/80">
           {instructionData.intro}
         </p>
       </div>
@@ -28,7 +28,7 @@ export default function Instruction() {
         <Card>
           <CardHeader>
             <CardTitle>Meet Your Instructors</CardTitle>
-            <CardDescription className="text-lg font-semibold text-slate-700">
+            <CardDescription className="text-lg font-semibold text-white/90">
               {instructionData.instructorsName}
             </CardDescription>
           </CardHeader>
@@ -36,7 +36,7 @@ export default function Instruction() {
             <ul className="space-y-2 text-sm leading-6">
               {instructionData.instructorsCredentials.map((credential) => (
                 <li key={credential} className="flex items-start gap-2">
-                  <span className="text-slate-600">•</span>
+                  <span className="text-white/70">•</span>
                   <span>{credential}</span>
                 </li>
               ))}
@@ -53,26 +53,27 @@ export default function Instruction() {
         </div>
       </div>
 
-      {/* Contact form */}
-      <TrainingContactForm />
+      {/* Contact form + Destinations callout */}
+      <div className="grid gap-6 lg:grid-cols-2">
+        <TrainingContactForm />
 
-      {/* Dinks Destinations callout */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-2xl">Love to Travel?</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-base leading-7 text-slate-600">
-            David &amp; Bailey also organize <strong>Dinks Destinations</strong>{" "}
-            - pickleball vacation trips to beautiful locations around the world.
-            Improve your game while exploring amazing destinations with fellow
-            pickleball enthusiasts!
-          </p>
-          <Button asChild>
-            <Link href="/destinations">Explore Destinations</Link>
-          </Button>
-        </CardContent>
-      </Card>
+        <Card className="flex flex-col">
+          <CardHeader>
+            <CardTitle className="text-2xl">Love to Travel?</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-1 flex-col justify-between space-y-4">
+            <p className="text-base leading-7 text-white/70">
+              David &amp; Bailey also organize <strong>Dinks Destinations</strong>{" "}
+              - pickleball vacation trips to beautiful locations around the world.
+              Improve your game while exploring amazing destinations with fellow
+              pickleball enthusiasts!
+            </p>
+            <Button asChild>
+              <Link href="/destinations">Explore Destinations</Link>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
     </section>
   );
 }

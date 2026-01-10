@@ -15,17 +15,17 @@ export const courtRatesData: CourtRatesData = {
     {
       name: "Day",
       ratePerHour: 16,
-      timeRange: "Monday-Friday: 6am-4pm",
+      timeRange: "Mon–Fri · 6am–4pm",
     },
     {
       name: "Evening",
       ratePerHour: 22,
-      timeRange: "Monday-Friday: 4pm-12am",
+      timeRange: "Mon–Fri · 4pm–midnight",
     },
     {
       name: "Weekend",
       ratePerHour: 28,
-      timeRange: "Saturday & Sunday",
+      timeRange: "Sat & Sun",
     },
   ],
 };

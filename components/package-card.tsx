@@ -1,73 +1,71 @@
 import Link from "next/link";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 // Generic package tier shape covering membership & sponsorship differences.
 export interface PackageTier {
   name: string;
   price: string;
-  description?: string; // Optional for sponsorship tiers that might not need a blurb
-  keyDifferences?: string[]; // Membership-specific label ("Key differences")
-  whatsDifferent?: string[]; // Sponsorship-specific label ("What's Different")
-  included?: string[]; // Common included items list
-  ctaHref: string; // Link target for action
-  ctaLabel: string; // Button text
+  description?: string;
+  keyDifferences?: string[];
+  whatsDifferent?: string[];
+  included?: string[];
+  ctaHref: string;
+  ctaLabel: string;
 }
 
 interface PackageCardProps {
   tier: PackageTier;
-  variant?: "membership" | "sponsorship" | "auto"; // auto chooses based on presence of whatsDifferent vs keyDifferences
-  compact?: boolean; // When true, suppress description & included list for tighter layouts (e.g., homepage)
+  compact?: boolean;
+  highlighted?: boolean;
 }
 
 export function PackageCard({
   tier,
-  variant = "auto",
   compact = false,
+  highlighted = false,
 }: PackageCardProps) {
-  const derivedVariant =
-    variant === "auto"
-      ? tier.whatsDifferent
-        ? "sponsorship"
-        : "membership"
-      : variant;
-
-  const differences =
-    derivedVariant === "sponsorship"
-      ? tier.whatsDifferent
-      : tier.keyDifferences;
-  const differencesLabel = "Differences";
+  const differences = tier.whatsDifferent ?? tier.keyDifferences;
 
   return (
-    <Card className="flex h-full flex-col">
-      <CardHeader>
-        <CardTitle className="text-xl font-bold text-slate-900">
+    <div
+      className={`relative flex h-full flex-col overflow-hidden rounded-2xl border p-6 transition ${
+        highlighted
+          ? "border-brand-yellow-500 bg-white/10"
+          : "border-white/10 bg-white/5 hover:bg-white/10"
+      }`}
+    >
+      {/* Highlighted badge */}
+      {highlighted && (
+        <div className="absolute -right-8 top-4 rotate-45 bg-brand-red-500 px-10 py-1 text-xs font-bold uppercase tracking-wide text-white">
+          Popular
+        </div>
+      )}
+
+      <div className="mb-4">
+        <h3 className="text-2xl font-black tracking-tight text-white">
           {tier.name}
-        </CardTitle>
-        <CardDescription className="text-base font-semibold text-slate-600">
+        </h3>
+        <p className="text-lg font-bold text-brand-yellow-500">
           {tier.price}
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="flex flex-1 flex-col space-y-4">
+        </p>
+      </div>
+
+      <div className="flex flex-1 flex-col space-y-4">
         {!compact && tier.description && (
-          <p className="h-[4.5rem] text-sm leading-6 text-slate-600">{tier.description}</p>
+          <p className="text-sm leading-6 text-white/80">{tier.description}</p>
         )}
 
         {differences && differences.length > 0 && (
-          <div className="space-y-2 text-sm leading-relaxed text-slate-700">
-            <p className="font-bold text-slate-900">{differencesLabel}</p>
+          <div className="space-y-2 text-sm leading-relaxed text-white/80">
+            <p className="text-xs font-bold uppercase tracking-wider text-white/50">
+              Differences
+            </p>
             <ul className="space-y-1.5">
               {differences.map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <span
                     aria-hidden
-                    className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-700"
+                    className="mt-1.5 h-1.5 w-1.5 rounded-full bg-brand-yellow-500"
                   />
                   <span>{item}</span>
                 </li>
@@ -77,14 +75,14 @@ export function PackageCard({
         )}
 
         {!compact && tier.included && tier.included.length > 0 && (
-          <div className="space-y-2 text-xs leading-relaxed text-slate-600">
-            <p className="font-semibold text-slate-900">Included</p>
+          <div className="space-y-2 text-xs leading-relaxed text-white/70">
+            <p className="font-bold uppercase tracking-wider text-white/50">Included</p>
             <ul className="space-y-1">
               {tier.included.map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <span
                     aria-hidden
-                    className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-300"
+                    className="mt-1 h-1.5 w-1.5 rounded-full bg-white/30"
                   />
                   <span>{item}</span>
                 </li>
@@ -93,12 +91,12 @@ export function PackageCard({
           </div>
         )}
 
-        <div className="mt-auto pt-2">
+        <div className="mt-auto pt-4">
           <Button asChild className="w-full">
             <Link href={tier.ctaHref}>{tier.ctaLabel}</Link>
           </Button>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }

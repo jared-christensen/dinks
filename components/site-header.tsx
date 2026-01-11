@@ -63,7 +63,7 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 md:flex">
           <Button asChild variant="destructive">
-            <Link href="/membership">JOIN DINKS</Link>
+            <Link href="/membership" className="uppercase tracking-wide">Join Dinks</Link>
           </Button>
         </div>
 
@@ -98,7 +98,7 @@ export function SiteHeader() {
           </div>
           <div className="flex flex-col gap-2 pt-2">
             <Button asChild variant="primary" className="w-full">
-              <Link href="/membership" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/membership" onClick={() => setIsMenuOpen(false)} className="uppercase tracking-wide">
                 Join Dinks
               </Link>
             </Button>

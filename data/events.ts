@@ -9,7 +9,7 @@ export interface EventsData {
 }
 
 export const eventsData: EventsData = {
-  pageTitle: "Leagues, Tournaments & Events",
+  pageTitle: "Leagues, tournaments and events",
   intro:
     "Dinks Pickleball hosts leagues, tournaments, DUPR events, and more. Check CourtReserve for our current schedule and to register for upcoming events.",
   courtReserveUrl: "https://app.courtreserve.com/Online/Events/Categories/10812",

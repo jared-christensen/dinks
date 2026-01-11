@@ -92,7 +92,7 @@ export function PackageCard({
         )}
 
         <div className="mt-auto pt-4">
-          <span className="flex w-full items-center justify-center rounded-full bg-brand-yellow-500 px-5 py-2 text-sm font-semibold text-black transition-transform group-hover:scale-110">
+          <span className="flex w-full items-center justify-center rounded-full bg-brand-yellow-500 px-5 py-2 text-sm font-semibold uppercase tracking-wide text-black transition-transform group-hover:scale-110">
             {tier.ctaLabel}
           </span>
         </div>

@@ -39,12 +39,12 @@ export const membershipsData: MembershipsData = {
       name: "Gold",
       price: "$125/Year + $25 activation",
       description:
-        "Adds a longer booking window and early access to tournaments & special events.",
+        "Adds a longer booking window and early access to tournaments and special events.",
       keyDifferences: [
         "Book 14 days in advance",
         "Up to 8 courts per day",
         "24-hour cancellation policy",
-        "Early access to tournaments & events",
+        "Early access to tournaments and events",
       ],
     },
     {
@@ -56,7 +56,7 @@ export const membershipsData: MembershipsData = {
         "Book 6 months in advance",
         "Up to 8 courts per day",
         "8-hour cancellation policy",
-        "Early access to tournaments & events",
+        "Early access to tournaments and events",
       ],
     },
   ],

@@ -22,11 +22,11 @@ export interface DestinationsData {
 export const destinationsData: DestinationsData = {
   pageTitle: "Dinks Destinations: Pickleball Getaway Vacations",
   tagline:
-    "What's better than pickleball? Pickleball Vacations at some of the most beautiful locations in the world!",
+    "What's better than pickleball? Pickleball vacations at some of the most beautiful locations in the world!",
   intro:
-    "Join David & Bailey Lanning, Co-Owners of Dinks Pickleball & PPR Professional Instructors on your next vacation. If you want to improve your game while having an absolute blast and creating lifelong memories and fun - these trips are for you!",
+    "Join David and Bailey Lanning, co-owners of Dinks Pickleball and PPR Professional Instructors, on your next vacation. If you want to improve your game while having an absolute blast and creating lifelong memories and fun - these trips are for you!",
   benefits: [
-    "Improve your game with professional instruction from David & Bailey",
+    "Improve your game with professional instruction from David and Bailey",
     "Have an absolute blast in beautiful locations",
     "Create lifelong memories with fellow pickleball enthusiasts",
     "Experience destinations you've always dreamed of visiting",

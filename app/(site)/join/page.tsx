@@ -68,6 +68,7 @@ export default function Join() {
                 href="https://app.courtreserve.com/Account/Register?t=2"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="uppercase tracking-wide"
               >
                 Join on CourtReserve
               </Link>

@@ -17,9 +17,9 @@ export interface InstructionData {
 }
 
 export const instructionData: InstructionData = {
-  pageTitle: "Lessons & Clinics",
+  pageTitle: "Lessons and clinics",
   intro:
-    "Whether you're picking up a paddle for the first time or looking to refine advanced techniques, our PPR-certified instructors David & Bailey provide professional instruction for all skill levels.",
+    "Whether you're picking up a paddle for the first time or looking to refine advanced techniques, our PPR-certified instructors David and Bailey provide professional instruction for all skill levels.",
   instructorsName: "David & Bailey Lanning",
   instructorsCredentials: [
     "Co-Owners of Dinks Pickleball",

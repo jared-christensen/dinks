@@ -73,7 +73,7 @@ export function SiteFooter() {
               className="gap-2"
             >
               <FaLocationArrow className="h-3 w-3" />
-              Directions
+              Get directions
             </Link>
           </Button>
         </div>

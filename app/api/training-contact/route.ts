@@ -34,11 +34,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // TODO: Update to production emails
-    // from: "Dinks Website <noreply@dinkspickleballdsm.com>",
-    // to: "lanningpickleball@gmail.com",
+    // TODO: Update to production: to: "lanningpickleball@gmail.com"
     await resend.emails.send({
-      from: "Dinks Website <onboarding@resend.dev>",
+      from: "Dinks Website <noreply@dinkspickleballdsm.com>",
       to: "jared.christensen@gmail.com",
       replyTo: email,
       subject: "New Training Inquiry from Dinks Website",

@@ -74,11 +74,11 @@ export default function Instruction() {
 
         <Card className="flex flex-col">
           <CardHeader>
-            <CardTitle className="text-2xl">Love to Travel?</CardTitle>
+            <CardTitle className="text-2xl">Ready to travel</CardTitle>
           </CardHeader>
           <CardContent className="flex flex-1 flex-col justify-between space-y-4">
             <p className="text-base leading-7 text-white/70">
-              David &amp; Bailey also organize{" "}
+              David and Bailey also organize{" "}
               <strong>Dinks Destinations</strong> - pickleball vacation trips to
               beautiful locations around the world. Improve your game while
               exploring amazing destinations with fellow pickleball enthusiasts!

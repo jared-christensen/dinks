@@ -44,6 +44,55 @@ Tiny: text-xs (12px)
 - **Medium** (`font-medium`): Supporting text that needs slight emphasis
 - **Regular** (default): Body text
 
+### Text Case Rules
+
+**Content case** (how words are written in code) vs **visual styling** (CSS `uppercase`) are separate concerns.
+
+#### Content: Always Sentence Case
+
+All user-facing content should be written in **sentence case** (capitalize first word and proper nouns only):
+
+- Headings: "Lessons and clinics" not "Lessons And Clinics"
+- Buttons: "Join Dinks" not "JOIN DINKS"
+- Labels: "Become a member" not "Become A Member"
+
+This ensures consistency and readability. The visual treatment is handled separately via CSS.
+
+#### Visual: When to Use CSS `uppercase`
+
+Apply `uppercase tracking-wide` or `tracking-wider` for visual emphasis on:
+
+| Element | Use uppercase? | Example |
+|---------|---------------|---------|
+| Navigation links | ✅ Yes | `uppercase tracking-wide` |
+| Eyebrow labels | ✅ Yes | "BECOME A MEMBER" above headings |
+| Hero CTAs | ✅ Yes | "JOIN NOW", "BOOK A COURT" |
+| Header CTA button | ✅ Yes | "JOIN DINKS" |
+| Page titles (H1) | ❌ No | Keep natural case |
+| Section headings (H2) | ❌ No | Keep natural case |
+| Body text | ❌ No | Never |
+| Error messages | ❌ No | Feels like shouting |
+| Form labels | ❌ No | Keep natural case |
+
+#### Implementation Pattern
+
+Write content in sentence case, style visually with CSS:
+
+```tsx
+// ✅ Correct: sentence case content + CSS uppercase
+<Link href="/membership" className="uppercase tracking-wide">
+  Join Dinks
+</Link>
+
+// ❌ Wrong: ALL CAPS in content
+<Link href="/membership">JOIN DINKS</Link>
+
+// ✅ Correct: eyebrow label
+<p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-yellow-500">
+  Become a member
+</p>
+```
+
 ### Examples from Homepage
 
 ```tsx

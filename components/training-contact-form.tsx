@@ -69,7 +69,7 @@ export function TrainingContactForm() {
         Get Started with Instruction
       </h2>
       <p className="mt-1 text-sm text-brand-blue-500/70">
-        Share your contact info and David &amp; Bailey will reach out to discuss
+        Share your contact info and David and Bailey will reach out to discuss
         instruction options.
       </p>
 

@@ -54,7 +54,7 @@ export default function Home() {
             Level Up
           </p>
           <h2 className="text-3xl font-bold text-white md:text-4xl">
-            Programs & Experiences
+            Programs and experiences
           </h2>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">

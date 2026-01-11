@@ -30,7 +30,7 @@ export default function Destinations() {
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl">
-            Why Join a Dinks Destination Trip?
+            Benefits of a Dinks Destination trip
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -91,14 +91,14 @@ export default function Destinations() {
                 href={destinationsData.facebookGroupUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gap-2"
+                className="gap-2 uppercase tracking-wide"
               >
                 <FaFacebook className="h-4 w-4" />
                 Join Facebook Group
               </Link>
             </Button>
             <Button asChild variant="outline">
-              <Link href="/contact">Contact us about trips</Link>
+              <Link href="/contact">Ask about trips</Link>
             </Button>
           </div>
         </CardContent>
@@ -126,7 +126,7 @@ export default function Destinations() {
               {destinationsData.instructorsDescription}
             </p>
             <Button asChild variant="outline" className="mt-4">
-              <Link href="/lessons">Learn more about lessons</Link>
+              <Link href="/lessons">Explore lessons</Link>
             </Button>
           </CardContent>
         </Card>

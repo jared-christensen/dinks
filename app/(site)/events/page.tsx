@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { eventsData } from "@/data/events";
 import { NeedHelpCard } from "@/components/need-help-card";
+import { CourtReserveWidget } from "@/components/court-reserve-events";
 
 export default function Events() {
   return (
@@ -13,15 +14,11 @@ export default function Events() {
         <p className="max-w-2xl text-base leading-7 text-white/80">
           {eventsData.intro}
         </p>
-        <Button asChild>
-          <Link
-            href={eventsData.courtReserveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View events on CourtReserve
-          </Link>
-        </Button>
+      </div>
+
+      {/* CourtReserve Events Widget */}
+      <div className="rounded-2xl bg-white p-4">
+        <CourtReserveWidget embedCodeId="80212" title="Events Calendar" />
       </div>
 
       {/* Leagues */}

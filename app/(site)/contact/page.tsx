@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { FaLocationArrow } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -80,86 +81,90 @@ export default function Contact() {
 
       <div className="grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2">
-          <Card>
-            <CardContent className="pt-6">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-4">
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Your name"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-                  </div>
-
+          <div className="rounded-lg border border-white/10 bg-white p-6">
+            <h2 className="mb-6 text-2xl font-semibold text-brand-blue-500">Send a Message</h2>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-4">
+                <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="subject">Subject *</Label>
+                    <Label htmlFor="name" className="text-brand-blue-500">Name *</Label>
                     <Input
-                      id="subject"
-                      name="subject"
+                      id="name"
+                      name="name"
                       type="text"
                       required
-                      value={formData.subject}
+                      value={formData.name}
                       onChange={handleChange}
-                      placeholder="What is this regarding?"
+                      placeholder="Your name"
+                      className="border-brand-blue-500/40 bg-brand-blue-500/5 text-brand-blue-500 placeholder:text-brand-blue-500/40 focus-visible:border-brand-yellow-500 focus-visible:ring-brand-yellow-500/30"
                     />
                   </div>
-
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
+                    <Label htmlFor="email" className="text-brand-blue-500">Email *</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
                       required
-                      value={formData.message}
+                      value={formData.email}
                       onChange={handleChange}
-                      placeholder="Tell us more about your question or inquiry..."
-                      rows={6}
+                      placeholder="your.email@example.com"
+                      className="border-brand-blue-500/40 bg-brand-blue-500/5 text-brand-blue-500 placeholder:text-brand-blue-500/40 focus-visible:border-brand-yellow-500 focus-visible:ring-brand-yellow-500/30"
                     />
                   </div>
                 </div>
 
-                {submitStatus.type && (
-                  <div
-                    className={`rounded-lg p-4 ${
-                      submitStatus.type === "success"
-                        ? "bg-green-50 text-green-800"
-                        : "bg-red-50 text-red-800"
-                    }`}
-                  >
-                    <p className="text-sm">{submitStatus.message}</p>
-                  </div>
-                )}
+                <div className="space-y-2">
+                  <Label htmlFor="subject" className="text-brand-blue-500">Subject *</Label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    required
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="What is this regarding?"
+                    className="border-brand-blue-500/40 bg-brand-blue-500/5 text-brand-blue-500 placeholder:text-brand-blue-500/40 focus-visible:border-brand-yellow-500 focus-visible:ring-brand-yellow-500/30"
+                  />
+                </div>
 
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-brand-blue-500">Message *</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell us more about your question or inquiry..."
+                    rows={12}
+                    className="min-h-48 border-brand-blue-500/40 bg-brand-blue-500/5 text-brand-blue-500 placeholder:text-brand-blue-500/40 focus-visible:border-brand-yellow-500 focus-visible:ring-brand-yellow-500/30"
+                  />
+                </div>
+              </div>
+
+              {submitStatus.type && (
+                <div
+                  className={`rounded-lg p-4 ${
+                    submitStatus.type === "success"
+                      ? "bg-green-50 text-green-800"
+                      : "bg-red-50 text-red-800"
+                  }`}
+                >
+                  <p className="text-sm">{submitStatus.message}</p>
+                </div>
+              )}
+
+              <div className="flex justify-end">
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
-              </form>
-            </CardContent>
-          </Card>
+              </div>
+            </form>
+          </div>
         </div>
 
         <div className="space-y-6">
@@ -189,7 +194,9 @@ export default function Contact() {
                   href="https://maps.google.com/?q=Dinks+Pickleball+Des+Moines"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="gap-2"
                 >
+                  <FaLocationArrow className="h-3 w-3" />
                   Get Directions
                 </Link>
               </Button>

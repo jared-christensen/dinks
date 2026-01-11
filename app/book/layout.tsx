@@ -1,9 +1,14 @@
+import { SiteHeader } from "@/components/site-header";
+
 export default function BookLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <div className="h-screen w-screen">{children}</div>
+    <div className="flex h-dvh flex-col overflow-hidden">
+      <SiteHeader />
+      <main className="min-h-0 flex-1">{children}</main>
+    </div>
   );
 }

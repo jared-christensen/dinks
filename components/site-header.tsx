@@ -8,10 +8,10 @@ import { Container } from "@/components/container";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/events", label: "Events" },
-  { href: "/lessons", label: "Lessons" },
-  { href: "/destinations", label: "Destinations" },
-  { href: "/book", label: "Book a Court" },
+  { href: "/events", label: "Play" },
+  { href: "/lessons", label: "Learn" },
+  { href: "/destinations", label: "Travel" },
+  { href: "/book", label: "Schedule" },
 ];
 
 export function SiteHeader() {
@@ -29,9 +29,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b border-black/10 bg-white backdrop-blur transition-shadow ${
-        isScrolled ? "shadow-lg shadow-black/10" : ""
-      }`}
+      className="sticky top-0 z-50 w-full border-b-4 border-brand-blue-500 bg-white shadow-xl shadow-black/30"
     >
       <Container className="flex h-16 items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-3">
@@ -64,8 +62,8 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button asChild variant="primary">
-            <Link href="/membership">Join Dinks</Link>
+          <Button asChild variant="destructive">
+            <Link href="/membership">JOIN DINKS</Link>
           </Button>
         </div>
 

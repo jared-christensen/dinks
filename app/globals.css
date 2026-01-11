@@ -10,9 +10,9 @@
    * ===========================================
    *
    * Brand Colors (from logo):
-   * - Blue:   #0F223D - Primary, headers, dark sections
-   * - Green:  #2F5435 - "Dinks" in logo, accents, success
-   * - Red:    #B4342C - Accents, alerts, energy
+   * - Blue:   #142E52 - Primary, headers, dark sections
+   * - Green:  #2F5536 - "Dinks" in logo, accents, success
+   * - Red:    #B43329 - Accents, alerts, energy
    * - Yellow: #EBCD3D - CTAs, highlights, "Pickleball" accent
    *
    * Usage in Tailwind:
@@ -20,9 +20,9 @@
    * - Full scale available: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950
    */
 
-  --brand-blue: #0F223D;
-  --brand-green: #2F5435;
-  --brand-red: #B4342C;
+  --brand-blue: #142E52;
+  --brand-green: #2F5536;
+  --brand-red: #B43329;
   --brand-yellow: #EBCD3D;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -192,7 +192,10 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply h-full overscroll-none;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground min-h-full;
   }
 }

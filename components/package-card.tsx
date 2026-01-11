@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 // Generic package tier shape covering membership & sponsorship differences.
 export interface PackageTier {
@@ -27,11 +26,12 @@ export function PackageCard({
   const differences = tier.whatsDifferent ?? tier.keyDifferences;
 
   return (
-    <div
-      className={`relative flex h-full flex-col overflow-hidden rounded-2xl border p-6 transition ${
+    <Link
+      href={tier.ctaHref}
+      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border-8 p-6 transition ${
         highlighted
-          ? "border-brand-yellow-500 bg-white/10"
-          : "border-white/10 bg-white/5 hover:bg-white/10"
+          ? "border-brand-yellow-500 bg-brand-green-400"
+          : "border-white/10 bg-brand-green-500 hover:bg-brand-green-400"
       }`}
     >
       {/* Highlighted badge */}
@@ -92,11 +92,11 @@ export function PackageCard({
         )}
 
         <div className="mt-auto pt-4">
-          <Button asChild className="w-full">
-            <Link href={tier.ctaHref}>{tier.ctaLabel}</Link>
-          </Button>
+          <span className="flex w-full items-center justify-center rounded-full bg-brand-yellow-500 px-5 py-2 text-sm font-semibold text-black transition-transform group-hover:scale-110">
+            {tier.ctaLabel}
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

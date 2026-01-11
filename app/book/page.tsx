@@ -5,6 +5,8 @@ export default function BookPage() {
     <CourtReserveEmbed
       src="https://widgets.courtreserve.com/Online/Public/EmbedCode/10812/80194"
       title="Dinks Pickleball Court Reservation"
+      height="100%"
+      className="h-full"
     />
   );
 }

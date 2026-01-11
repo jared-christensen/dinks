@@ -16,49 +16,32 @@ export default function About() {
         </div>
       </div>
 
-      <div className="space-y-12">
+      <div className="grid gap-8 md:grid-cols-2">
         {aboutData.families.map((family, index) => (
           <article
             key={family.familyName}
-            className={`grid gap-8 md:items-start ${
-              index % 2 === 0
-                ? "md:grid-cols-[minmax(0,1fr)_minmax(0,3fr)]"
-                : "md:grid-cols-[minmax(0,3fr)_minmax(0,1fr)]"
-            }`}
+            className="overflow-hidden rounded-2xl border-8 border-white/10 bg-white"
           >
-            {index % 2 === 0 && (
-              <div className="overflow-hidden rounded-3xl bg-white/10">
-                <Image
-                  src={family.imageSrc}
-                  alt={family.imageAlt}
-                  width={960}
-                  height={720}
-                  className="h-full w-full object-cover"
-                  priority={index === 0}
-                />
-              </div>
-            )}
-            <div className="space-y-4">
-              <h2 className="text-2xl font-semibold text-white">
+            <div className="aspect-[4/3] overflow-hidden">
+              <Image
+                src={family.imageSrc}
+                alt={family.imageAlt}
+                width={960}
+                height={720}
+                className="h-full w-full object-cover"
+                priority={index === 0}
+              />
+            </div>
+            <div className="p-8 space-y-4">
+              <h2 className="text-2xl font-semibold text-brand-blue-500">
                 {family.familyName}
               </h2>
-              <div className="space-y-4 text-base leading-7 text-white/80">
+              <div className="space-y-4 text-base leading-7 text-brand-blue-500/80">
                 {family.paragraphs.map((paragraph, pIndex) => (
                   <p key={pIndex}>{paragraph}</p>
                 ))}
               </div>
             </div>
-            {index % 2 === 1 && (
-              <div className="overflow-hidden rounded-3xl bg-white/10">
-                <Image
-                  src={family.imageSrc}
-                  alt={family.imageAlt}
-                  width={960}
-                  height={720}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            )}
           </article>
         ))}
       </div>

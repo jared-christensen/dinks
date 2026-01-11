@@ -4,13 +4,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+
+const inputClassName =
+  "border-brand-blue-500/40 bg-brand-blue-500/5 text-brand-blue-500 placeholder:text-brand-blue-500/40 focus-visible:border-brand-yellow-500 focus-visible:ring-brand-yellow-500/30";
 
 export function TrainingContactForm() {
   const [formData, setFormData] = useState({
@@ -48,7 +44,7 @@ export function TrainingContactForm() {
       } else {
         throw new Error("Failed to send message");
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: "error",
         message:
@@ -67,73 +63,83 @@ export function TrainingContactForm() {
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Get Started with Instruction</CardTitle>
-        <CardDescription>
-          Share your contact info and David &amp; Bailey will reach out to
-          discuss instruction options.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="training-name">Name *</Label>
-              <Input
-                id="training-name"
-                name="name"
-                type="text"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Your name"
-              />
-            </div>
+    <div className="rounded-lg border border-white/10 bg-white p-6">
+      <h2 className="text-2xl font-semibold text-brand-blue-500">
+        Get Started with Instruction
+      </h2>
+      <p className="mt-1 text-sm text-brand-blue-500/70">
+        Share your contact info and David &amp; Bailey will reach out to discuss
+        instruction options.
+      </p>
 
-            <div className="space-y-2">
-              <Label htmlFor="training-email">Email *</Label>
-              <Input
-                id="training-email"
-                name="email"
-                type="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="your.email@example.com"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="training-phone">Phone (optional)</Label>
-              <Input
-                id="training-phone"
-                name="phone"
-                type="tel"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="(555) 123-4567"
-              />
-            </div>
+      <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="training-name" className="text-brand-blue-500">
+              Name *
+            </Label>
+            <Input
+              id="training-name"
+              name="name"
+              type="text"
+              required
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your name"
+              className={inputClassName}
+            />
           </div>
 
-          {submitStatus.type && (
-            <div
-              className={`rounded-lg p-4 text-sm ${
-                submitStatus.type === "success"
-                  ? "bg-brand-green-500/20 text-white"
-                  : "bg-brand-red-500/20 text-white"
-              }`}
-            >
-              {submitStatus.message}
-            </div>
-          )}
+          <div className="space-y-2">
+            <Label htmlFor="training-email" className="text-brand-blue-500">
+              Email *
+            </Label>
+            <Input
+              id="training-email"
+              name="email"
+              type="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="your.email@example.com"
+              className={inputClassName}
+            />
+          </div>
 
-          <Button type="submit" disabled={isSubmitting} className="w-full">
+          <div className="space-y-2">
+            <Label htmlFor="training-phone" className="text-brand-blue-500">
+              Phone (optional)
+            </Label>
+            <Input
+              id="training-phone"
+              name="phone"
+              type="tel"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="(555) 123-4567"
+              className={inputClassName}
+            />
+          </div>
+        </div>
+
+        {submitStatus.type && (
+          <div
+            className={`rounded-lg p-4 text-sm ${
+              submitStatus.type === "success"
+                ? "bg-green-50 text-green-800"
+                : "bg-red-50 text-red-800"
+            }`}
+          >
+            {submitStatus.message}
+          </div>
+        )}
+
+        <div className="flex justify-end">
+          <Button type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Sending..." : "Request Information"}
           </Button>
-        </form>
-      </CardContent>
-    </Card>
+        </div>
+      </form>
+    </div>
   );
 }

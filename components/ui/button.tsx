@@ -5,23 +5,25 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-brand-yellow-500 text-black font-semibold hover:bg-brand-yellow-400",
+        default:
+          "bg-brand-yellow-500 text-black font-semibold hover:bg-brand-yellow-400 active:scale-95 active:bg-brand-yellow-600",
         primary:
-          "bg-brand-blue-400 text-white font-semibold hover:bg-brand-blue-300",
+          "bg-brand-blue-400 text-white font-semibold hover:bg-brand-blue-300 active:scale-95 active:bg-brand-blue-500",
         destructive:
-          "bg-brand-red-500 text-white hover:bg-brand-red-600",
+          "bg-brand-red-500 text-white hover:bg-brand-red-600 active:scale-95 active:bg-brand-red-700",
         outline:
-          "border border-white/30 bg-transparent text-white hover:bg-white/10",
+          "border border-white/30 bg-transparent text-white hover:bg-white/10 active:scale-95 active:bg-white/20",
         secondary:
-          "bg-white/10 text-white hover:bg-white/20",
+          "bg-white/10 text-white hover:bg-white/20 active:scale-95 active:bg-white/30",
         "secondary-blue":
-          "bg-brand-blue-500/10 text-brand-blue-500 hover:bg-brand-blue-500/20",
-        ghost: "text-white/70 hover:bg-white/10 hover:text-white",
-        link: "text-white underline-offset-4 hover:underline",
+          "bg-brand-blue-500/10 text-brand-blue-500 hover:bg-brand-blue-500/20 active:scale-95 active:bg-brand-blue-500/30",
+        ghost:
+          "text-white/70 hover:bg-white/10 hover:text-white active:scale-95 active:bg-white/20",
+        link: "text-white underline-offset-4 hover:underline active:text-white/70",
       },
       size: {
         default: "h-9 px-5 py-2",

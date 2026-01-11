@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getFeaturedSponsors, getSponsorsByTier } from "@/data/sponsors";
+import { Card } from "@/components/ui/card";
 
 export function FeaturedSponsors({
   limit = 6,
@@ -38,6 +39,8 @@ export function FeaturedSponsors({
         </p>
       </div>
 
+      <Card className="p-8 space-y-6">
+
       {/* Platinum Sponsors */}
       {featured.length > 0 && (
         <div className="space-y-3">
@@ -50,7 +53,7 @@ export function FeaturedSponsors({
                 key={s.name}
                 href={s.href ?? "#"}
                 aria-label={`Visit ${s.name} website`}
-                className="group flex items-center justify-center rounded-2xl border-2 border-brand-yellow-500/30 bg-white p-5 shadow-lg shadow-black/20 transition hover:border-brand-yellow-500"
+                className="group flex items-center justify-center rounded-2xl border-4 border-brand-yellow-500/30 bg-white p-5 shadow-lg shadow-black/20 transition hover:border-brand-yellow-500"
               >
                 <Image
                   src={s.imageSrc!}
@@ -78,7 +81,7 @@ export function FeaturedSponsors({
                 key={s.name}
                 href={s.href ?? "#"}
                 aria-label={`Visit ${s.name} website`}
-                className="group flex items-center justify-center rounded-xl border-2 border-white/50 bg-white p-3 shadow-md shadow-black/10 transition hover:border-brand-yellow-500"
+                className="group flex items-center justify-center rounded-xl border-4 border-white/50 bg-white p-3 shadow-md shadow-black/10 transition hover:border-brand-yellow-500"
               >
                 <Image
                   src={s.imageSrc!}
@@ -105,7 +108,7 @@ export function FeaturedSponsors({
               <Link
                 key={s.name}
                 href={s.href ?? "#"}
-                className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 transition hover:bg-brand-yellow-500 hover:text-black hover:border-brand-yellow-500"
+                className="inline-flex items-center justify-center rounded-lg border-2 border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 transition hover:bg-brand-yellow-500 hover:text-black hover:border-brand-yellow-500"
               >
                 {s.name}
               </Link>
@@ -113,6 +116,7 @@ export function FeaturedSponsors({
           </div>
         </div>
       )}
+      </Card>
     </section>
   );
 }

@@ -1,9 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, subject, message } = body;
+    const { name, email, subject, message, website } = body;
+
+    // Honeypot check - if filled, it's a bot
+    if (website) {
+      // Silently succeed to not tip off bots
+      return NextResponse.json(
+        { message: "Form submitted successfully" },
+        { status: 200 }
+      );
+    }
 
     // Validate required fields
     if (!name || !email || !subject || !message) {
@@ -22,31 +34,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // TODO: Add email service integration here
-    // For now, we'll log the form submission
-    // You can integrate with services like:
-    // - Resend (recommended for Next.js)
-    // - SendGrid
-    // - AWS SES
-    // - Nodemailer with your SMTP server
-
-    console.log("Contact form submission:", {
-      name,
-      email,
-      subject,
-      message,
-      timestamp: new Date().toISOString(),
-    });
-
-    // In production, you would send the email here
-    // Example with Resend (after installing: npm install resend)
-    /*
-    import { Resend } from 'resend';
-    const resend = new Resend(process.env.RESEND_API_KEY);
-
+    // TODO: Update to production emails
+    // from: "Dinks Website <noreply@dinkspickleballdsm.com>",
+    // to: "info@dinkspickleballdsm.com",
     await resend.emails.send({
-      from: 'noreply@dinkspickleballdsm.com',
-      to: 'info@dinkspickleballdsm.com',
+      from: "Dinks Website <onboarding@resend.dev>",
+      to: "jared.christensen@gmail.com",
       replyTo: email,
       subject: `Contact Form: ${subject}`,
       html: `
@@ -54,10 +47,9 @@ export async function POST(request: NextRequest) {
         <p><strong>From:</strong> ${name} (${email})</p>
         <p><strong>Subject:</strong> ${subject}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${message.replace(/\n/g, "<br>")}</p>
       `,
     });
-    */
 
     return NextResponse.json(
       { message: "Form submitted successfully" },

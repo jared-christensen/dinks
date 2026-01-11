@@ -63,7 +63,7 @@ export function SiteFooter() {
         <div className="mt-6 flex flex-col items-start gap-3 border-t border-white/20 pt-6 text-sm text-white/70">
           <div className="space-y-1">
             <span className="block">3800 Merle Hay Rd Suite 1000, Des Moines, IA</span>
-            <span className="block">Open daily 6am–midnight</span>
+            <span className="block">Open daily 6am–12am</span>
           </div>
           <Button asChild variant="outline" size="sm">
             <Link

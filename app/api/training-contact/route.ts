@@ -1,9 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone } = body;
+    const { name, email, phone, website } = body;
+
+    // Honeypot check - if filled, it's a bot
+    if (website) {
+      // Silently succeed to not tip off bots
+      return NextResponse.json(
+        { message: "Training inquiry submitted successfully" },
+        { status: 200 }
+      );
+    }
 
     // Validate required fields
     if (!name || !email) {
@@ -22,42 +34,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // TODO: Add email service integration here
-    // This should send to lanningpickleball@gmail.com
-    // For now, we'll log the form submission
-    // You can integrate with services like:
-    // - Resend (recommended for Next.js)
-    // - SendGrid
-    // - AWS SES
-    // - Nodemailer with your SMTP server
-
-    console.log("Training inquiry submission:", {
-      name,
-      email,
-      phone: phone || "Not provided",
-      timestamp: new Date().toISOString(),
-    });
-
-    // In production, you would send the email here
-    // Example with Resend (after installing: npm install resend)
-    /*
-    import { Resend } from 'resend';
-    const resend = new Resend(process.env.RESEND_API_KEY);
-
+    // TODO: Update to production emails
+    // from: "Dinks Website <noreply@dinkspickleballdsm.com>",
+    // to: "lanningpickleball@gmail.com",
     await resend.emails.send({
-      from: 'noreply@dinkspickleballdsm.com',
-      to: 'lanningpickleball@gmail.com',
+      from: "Dinks Website <onboarding@resend.dev>",
+      to: "jared.christensen@gmail.com",
       replyTo: email,
-      subject: 'New Training Inquiry from Dinks Website',
+      subject: "New Training Inquiry from Dinks Website",
       html: `
         <h2>New Training Inquiry</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
         <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
       `,
     });
-    */
 
     return NextResponse.json(
       { message: "Training inquiry submitted successfully" },

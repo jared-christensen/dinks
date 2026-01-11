@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Dinks Pickleball | Des Moines Indoor Pickleball",
   description:
-    "Des Moines' largest indoor pickleball facility with 13 professional courts. Open daily 6am-midnight.",
+    "Des Moines' largest indoor pickleball facility with 13 professional courts. Open daily 6am-12am.",
 };
 
 export default function RootLayout({

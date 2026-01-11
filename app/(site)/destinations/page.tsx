@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { FaFacebook } from "react-icons/fa";
 import {
   Card,
   CardContent,
@@ -90,7 +91,9 @@ export default function Destinations() {
                 href={destinationsData.facebookGroupUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="gap-2"
               >
+                <FaFacebook className="h-4 w-4" />
                 Join Facebook Group
               </Link>
             </Button>

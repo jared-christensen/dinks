@@ -15,6 +15,7 @@ export default function Contact() {
     email: "",
     subject: "",
     message: "",
+    website: "", // honeypot field
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
@@ -42,7 +43,7 @@ export default function Contact() {
           message:
             "Thank you for your message! We'll get back to you as soon as possible.",
         });
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setFormData({ name: "", email: "", subject: "", message: "", website: "" });
       } else {
         throw new Error("Failed to send message");
       }
@@ -84,6 +85,16 @@ export default function Contact() {
           <div className="rounded-lg border border-white/10 bg-white p-6">
             <h2 className="mb-6 text-2xl font-semibold text-brand-blue-500">Send a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot field - hidden from users, bots will fill it */}
+              <input
+                type="text"
+                name="website"
+                value={formData.website}
+                onChange={handleChange}
+                className="absolute -left-[9999px]"
+                tabIndex={-1}
+                autoComplete="off"
+              />
               <div className="space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
@@ -182,11 +193,11 @@ export default function Contact() {
                 <div>
                   <p className="font-semibold">Location</p>
                   <p>North end of Merle Hay Mall</p>
-                  <p>Next to food court and Kids Empire</p>
+                  <p>Next to Kids Empire</p>
                 </div>
                 <div>
                   <p className="font-semibold">Hours</p>
-                  <p>Open daily: 6am – midnight</p>
+                  <p>Open daily: 6am – 12am</p>
                 </div>
               </div>
               <Button asChild variant="outline" className="mt-4 w-full">

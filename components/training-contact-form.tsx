@@ -13,6 +13,7 @@ export function TrainingContactForm() {
     name: "",
     email: "",
     phone: "",
+    website: "", // honeypot field
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
@@ -40,7 +41,7 @@ export function TrainingContactForm() {
           message:
             "Thank you! David & Bailey will get back to you soon to discuss instruction options.",
         });
-        setFormData({ name: "", email: "", phone: "" });
+        setFormData({ name: "", email: "", phone: "", website: "" });
       } else {
         throw new Error("Failed to send message");
       }
@@ -73,6 +74,16 @@ export function TrainingContactForm() {
       </p>
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+        {/* Honeypot field - hidden from users, bots will fill it */}
+        <input
+          type="text"
+          name="website"
+          value={formData.website}
+          onChange={handleChange}
+          className="absolute -left-[9999px]"
+          tabIndex={-1}
+          autoComplete="off"
+        />
         <div className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="training-name" className="text-brand-blue-500">

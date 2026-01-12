@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/container";
 import { Button } from "@/components/ui/button";
 import { FaFacebook, FaLocationArrow } from "react-icons/fa";
+import { FACILITY } from "@/constants/facility";
 
 export function SiteFooter() {
   return (
@@ -43,11 +44,11 @@ export function SiteFooter() {
                 Apps
               </Link>
               <Link
-                href="https://www.facebook.com/dinkspickleball"
+                href={FACILITY.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/80 transition hover:text-white"
-                aria-label="Facebook"
+                aria-label="Visit our Facebook page (opens in new tab)"
               >
                 <FaFacebook className="h-5 w-5" />
               </Link>
@@ -55,22 +56,23 @@ export function SiteFooter() {
           </div>
 
           <p className="text-sm text-white/60">
-            © {new Date().getFullYear()} Dinks Pickleball
+            © {new Date().getFullYear()} {FACILITY.name}
           </p>
         </div>
 
         {/* Address row */}
         <div className="mt-6 flex flex-col items-start gap-3 border-t border-white/20 pt-6 text-sm text-white/70">
           <div className="space-y-1">
-            <span className="block">3800 Merle Hay Rd Suite 1000, Des Moines, IA</span>
-            <span className="block">Open daily 6am–12am</span>
+            <span className="block">{FACILITY.address.short}</span>
+            <span className="block">{FACILITY.hours.description}</span>
           </div>
           <Button asChild variant="outline" size="sm">
             <Link
-              href="https://maps.google.com/?q=Dinks+Pickleball+Des+Moines"
+              href={FACILITY.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="gap-2"
+              aria-label="Get directions to Dinks Pickleball (opens in new tab)"
             >
               <FaLocationArrow className="h-3 w-3" />
               Get directions

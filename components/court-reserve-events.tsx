@@ -2,35 +2,76 @@
 
 import { useEffect } from "react";
 
+const ALLOWED_ORIGIN = "https://widgets.courtreserve.com";
+
+interface CourtReserveMessageData {
+  action: "setHeight" | "redirectAfterLogin" | "scrollBottom" | "scrollTop";
+  embedCodeId?: string;
+  height?: number;
+  urlToRedirect?: string;
+  scrollHeight?: number;
+}
+
 interface CourtReserveWidgetProps {
   embedCodeId: string;
   title?: string;
 }
 
-export function CourtReserveWidget({ embedCodeId, title = "CourtReserve Widget" }: CourtReserveWidgetProps) {
+function isValidCourtReserveUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    return (
+      parsed.protocol === "https:" &&
+      (parsed.hostname === "courtreserve.com" ||
+        parsed.hostname.endsWith(".courtreserve.com"))
+    );
+  } catch {
+    return false;
+  }
+}
+
+export function CourtReserveWidget({
+  embedCodeId,
+  title = "CourtReserve Widget",
+}: CourtReserveWidgetProps) {
   useEffect(() => {
-    const handleMessage = (e: MessageEvent) => {
-      switch (e.data.action) {
+    const handleMessage = (e: MessageEvent<CourtReserveMessageData>) => {
+      // Validate origin to prevent malicious messages
+      if (e.origin !== ALLOWED_ORIGIN) {
+        return;
+      }
+
+      const data = e.data;
+      if (!data || typeof data.action !== "string") {
+        return;
+      }
+
+      switch (data.action) {
         case "setHeight": {
-          const id = e.data.embedCodeId;
-          if (id != null && id !== "") {
+          const id = data.embedCodeId;
+          if (id != null && id !== "" && typeof data.height === "number") {
             const elements = document.getElementsByClassName("form-iframe-" + id);
             for (let i = 0; i < elements.length; i++) {
-              (elements[i] as HTMLElement).style.height = e.data.height + "px";
+              const element = elements[i];
+              if (element instanceof HTMLElement) {
+                element.style.height = data.height + "px";
+              }
             }
           }
           break;
         }
         case "redirectAfterLogin": {
-          const url = e.data.urlToRedirect;
-          setTimeout(() => {
-            window.location.href = url;
-          }, 100);
+          const url = data.urlToRedirect;
+          if (url && isValidCourtReserveUrl(url)) {
+            setTimeout(() => {
+              window.location.href = url;
+            }, 100);
+          }
           break;
         }
         case "scrollBottom": {
-          if (e.data.scrollHeight) {
-            window.scrollTo(0, e.data.scrollHeight);
+          if (typeof data.scrollHeight === "number") {
+            window.scrollTo(0, data.scrollHeight);
           }
           break;
         }

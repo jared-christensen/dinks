@@ -86,6 +86,7 @@ export function TrainingContactForm() {
           className="absolute -left-[9999px]"
           tabIndex={-1}
           autoComplete="off"
+          aria-hidden="true"
         />
         <div className="space-y-4">
           <div className="space-y-2">

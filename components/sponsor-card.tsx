@@ -43,14 +43,8 @@ export function SponsorCard({
           />
         </div>
       ) : (
-        <div className="mb-4 flex items-center justify-center">
-          <Image
-            src="https://placehold.co/320x120?text=Sponsor+Logo"
-            alt="Placeholder sponsor logo"
-            width={320}
-            height={120}
-            className="h-16 w-auto rounded-xl object-contain"
-          />
+        <div className="mb-4 flex h-16 items-center justify-center rounded-xl bg-white/10">
+          <span className="text-sm font-medium text-white/40">{sponsor.name}</span>
         </div>
       )}
 
@@ -72,7 +66,10 @@ export function SponsorCard({
         <div className="mt-4">
           <Link
             href={sponsor.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-semibold text-white underline underline-offset-4 hover:text-brand-yellow-500"
+            aria-label={`Visit ${sponsor.name} website (opens in new tab)`}
           >
             Visit website
           </Link>

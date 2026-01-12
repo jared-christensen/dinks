@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FACILITY } from "@/constants/facility";
 
 export function HomeHero() {
   return (
@@ -31,7 +32,7 @@ export function HomeHero() {
 
           {/* Subhead */}
           <p className="mt-6 text-balance text-lg leading-relaxed text-white/90">
-            13 professional indoor courts. Open daily 6am to 12am.
+            {FACILITY.courts} professional indoor courts. {FACILITY.hours.description}.
           </p>
 
           {/* CTA */}

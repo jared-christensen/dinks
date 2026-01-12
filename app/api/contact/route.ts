@@ -28,8 +28,8 @@ export async function POST(request: NextRequest) {
     }
 
     await resend.emails.send({
-      from: "Dinks Website <noreply@dinkspickleballdsm.com>",
-      to: "info@dinkspickleballdsm.com",
+      from: process.env.EMAIL_FROM || "Dinks Website <noreply@dinkspickleballdsm.com>",
+      to: process.env.CONTACT_EMAIL || "info@dinkspickleballdsm.com",
       replyTo: email,
       subject: `Contact Form: ${subject}`,
       html: `

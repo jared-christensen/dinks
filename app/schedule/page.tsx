@@ -1,6 +1,6 @@
 import { CourtReserveEmbed } from "@/components/courtreserve-embed";
 
-export default function BookPage() {
+export default function Schedule() {
   return (
     <CourtReserveEmbed
       src="https://widgets.courtreserve.com/Online/Public/EmbedCode/10812/80194"

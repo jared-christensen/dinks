@@ -11,7 +11,7 @@ const navLinks = [
   { href: "/events", label: "Play" },
   { href: "/lessons", label: "Learn" },
   { href: "/destinations", label: "Travel" },
-  { href: "/book", label: "Schedule" },
+  { href: "/schedule", label: "Schedule" },
 ];
 
 export function SiteHeader() {

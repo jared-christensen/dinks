@@ -37,10 +37,10 @@ export function SiteFooter() {
                 Sponsors
               </Link>
               <Link
-                href="/resources"
+                href="/apps"
                 className="text-white/80 transition hover:text-white"
               >
-                Resources
+                Apps
               </Link>
               <Link
                 href="https://www.facebook.com/dinkspickleball"

@@ -61,12 +61,12 @@ const platforms = [
   },
 ];
 
-export default function Resources() {
+export default function Apps() {
   return (
     <section className="space-y-12">
       {/* Header */}
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold text-white">Resources</h1>
+        <h1 className="text-4xl font-bold text-white">Apps</h1>
         <p className="max-w-2xl text-balance text-base leading-7 text-white/80">
           Dinks uses a few different platforms to manage memberships, facility
           access, open play, and events. Here&apos;s what you need to know.

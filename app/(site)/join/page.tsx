@@ -138,10 +138,10 @@ export default function Join() {
         <p className="mt-4 text-sm text-white/70">
           See our{" "}
           <Link
-            href="/resources"
+            href="/apps"
             className="text-brand-yellow-500 underline underline-offset-2 hover:text-brand-yellow-400"
           >
-            Resources page
+            Apps page
           </Link>{" "}
           for info on all the apps and platforms we use.
         </p>

@@ -34,7 +34,7 @@ const credentials = [
   "Experience with all skill levels from beginners to advanced",
 ];
 
-export default function Instruction() {
+export default function Lessons() {
   return (
     <section className="space-y-16">
       {/* Page Header */}

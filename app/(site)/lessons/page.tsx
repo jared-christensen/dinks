@@ -3,18 +3,47 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrainingContactForm } from "@/components/training-contact-form";
-import { instructionData } from "@/data/instruction";
+
+const services = [
+  {
+    title: "Private Instruction",
+    details:
+      "Personalized instruction tailored to your skill level. Work one-on-one with our certified instructors to focus on your specific goals and improve your game.",
+  },
+  {
+    title: "Group Instruction",
+    details:
+      "Group lessons available for friends, families, or individuals looking to meet new players. Perfect for learning in a fun, social environment.",
+  },
+  {
+    title: "Youth Training",
+    details:
+      "Dedicated youth programs designed to get kids started in pickleball the right way. Age-appropriate instruction in a safe, encouraging environment.",
+  },
+  {
+    title: "Clinics",
+    details:
+      "From Intro to Pickleball for complete beginners to advanced skill-specific clinics. Find the right clinic for your level and goals.",
+  },
+];
+
+const credentials = [
+  "Co-owners of Dinks Pickleball",
+  "PPR Professional Instructors",
+  "Certified pickleball instructors",
+  "Experience with all skill levels from beginners to advanced",
+];
 
 export default function Instruction() {
   return (
     <section className="space-y-16">
       {/* Page Header */}
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold text-white">
-          {instructionData.pageTitle}
-        </h1>
+        <h1 className="text-4xl font-bold text-white">Lessons and clinics</h1>
         <p className="max-w-2xl text-base leading-7 text-white/80">
-          {instructionData.intro}
+          Whether you&apos;re picking up a paddle for the first time or looking
+          to refine advanced techniques, our PPR-certified instructors David and
+          Bailey provide professional instruction for all skill levels.
         </p>
       </div>
 
@@ -24,8 +53,8 @@ export default function Instruction() {
           {/* Image - takes 3/5 on desktop */}
           <div className="relative aspect-[4/3] lg:col-span-3 lg:aspect-auto">
             <Image
-              src={instructionData.instructorsImageSrc}
-              alt={instructionData.instructorsName}
+              src="/david-bailey.webp"
+              alt="David and Bailey Lanning"
               fill
               className="object-cover object-[center_40%]"
               priority
@@ -37,10 +66,10 @@ export default function Instruction() {
               Meet Your Instructors
             </p>
             <h2 className="mt-2 text-3xl font-bold text-brand-blue-500">
-              {instructionData.instructorsName}
+              David and Bailey Lanning
             </h2>
             <ul className="mt-6 space-y-3 text-base leading-7 text-brand-blue-500/80">
-              {instructionData.instructorsCredentials.map((credential) => (
+              {credentials.map((credential) => (
                 <li key={credential} className="flex items-start gap-3">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-yellow-500" />
                   <span>{credential}</span>
@@ -55,7 +84,7 @@ export default function Instruction() {
       <div className="space-y-6">
         <h2 className="text-3xl font-bold text-white">What We Offer</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {instructionData.services.map((service) => (
+          {services.map((service) => (
             <div key={service.title} className="space-y-2">
               <h3 className="text-xl font-semibold text-white">
                 {service.title}

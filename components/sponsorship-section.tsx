@@ -1,15 +1,43 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PackageCard } from "@/components/package-card";
-import { sponsorshipsData } from "@/data/sponsorships";
+
+const tiers = [
+  {
+    name: "Gold",
+    price: "$1,000/Year",
+    description: "Includes 1 VIP membership plus banner and website branding.",
+    whatsDifferent: ["Banner at facility", "Logo on Dinks website"],
+  },
+  {
+    name: "Premier",
+    price: "$2,500/Year",
+    description: "Includes 1 VIP membership plus premier advertising space.",
+    whatsDifferent: [
+      "Premier 4'x30' advertisement space near entrance and courts",
+      "Logo on Dinks website",
+      "Mesh windscreen printing is sponsor responsibility",
+    ],
+  },
+  {
+    name: "Platinum",
+    price: "$5,000/Year",
+    description:
+      "Includes 2 VIP memberships plus court naming and premium branding.",
+    whatsDifferent: [
+      "Court naming rights (shown during reservations)",
+      "On-court branding opportunities",
+      "Banner at facility",
+      "Logo on Dinks website",
+    ],
+  },
+];
 
 export function SponsorshipSection() {
   return (
     <section id="business-sponsorships" className="space-y-6">
       <div className="space-y-4">
-        <h2 className="text-3xl font-bold text-white">
-          Sponsorship Packages
-        </h2>
+        <h2 className="text-3xl font-bold text-white">Sponsorship Packages</h2>
         <p className="max-w-2xl text-base text-white/80">
           Partner with Dinks to connect your business with the Des Moines
           pickleball community. Our sponsorship packages offer visibility, brand
@@ -19,7 +47,7 @@ export function SponsorshipSection() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        {sponsorshipsData.tiers.map((tier) => (
+        {tiers.map((tier) => (
           <PackageCard
             key={tier.name}
             tier={{

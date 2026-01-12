@@ -9,20 +9,49 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { destinationsData } from "@/data/destinations";
+
+const pastDestinations = [
+  {
+    location: "Sonoma, California",
+    description: "Wine country experience",
+    details: "Pair your pickleball with your favorite wine",
+  },
+  {
+    location: "Budapest, Hungary",
+    description: "Danube River boat experience",
+    details: "Take your game abroad down the Danube River",
+  },
+  {
+    location: "Riviera Maya, Mexico",
+    description: "All-inclusive resort",
+    details: "Don't have to worry about a thing but keeping score",
+  },
+];
+
+const benefits = [
+  "Improve your game with professional instruction from David and Bailey",
+  "Have an absolute blast in beautiful locations",
+  "Create lifelong memories with fellow pickleball enthusiasts",
+  "Experience destinations you've always dreamed of visiting",
+  "Organized trips - we handle the details, you enjoy the fun",
+];
 
 export default function Destinations() {
   return (
     <section className="space-y-8">
       <div className="space-y-4">
         <h1 className="text-4xl font-bold text-white">
-          {destinationsData.pageTitle}
+          Dinks Destinations: Pickleball Getaway Vacations
         </h1>
         <p className="text-lg font-semibold text-white/90">
-          {destinationsData.tagline}
+          What&apos;s better than pickleball? Pickleball vacations at some of
+          the most beautiful locations in the world!
         </p>
         <p className="max-w-2xl text-base leading-7 text-white/80">
-          {destinationsData.intro}
+          Join David and Bailey Lanning, co-owners of Dinks Pickleball and PPR
+          Professional Instructors, on your next vacation. If you want to
+          improve your game while having an absolute blast and creating lifelong
+          memories and fun - these trips are for you!
         </p>
       </div>
 
@@ -35,7 +64,7 @@ export default function Destinations() {
         </CardHeader>
         <CardContent>
           <ul className="space-y-3 text-base leading-7">
-            {destinationsData.benefits.map((benefit) => (
+            {benefits.map((benefit) => (
               <li key={benefit} className="flex items-start gap-3">
                 <span className="text-xl text-brand-yellow-500">✓</span>
                 <span>{benefit}</span>
@@ -55,7 +84,7 @@ export default function Destinations() {
           the world:
         </p>
         <div className="grid gap-6 md:grid-cols-3">
-          {destinationsData.pastDestinations.map((dest) => (
+          {pastDestinations.map((dest) => (
             <Card key={dest.location}>
               <CardHeader>
                 <CardTitle>{dest.location}</CardTitle>
@@ -88,7 +117,7 @@ export default function Destinations() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild>
               <Link
-                href={destinationsData.facebookGroupUrl}
+                href="https://www.facebook.com/groups/380792678025831/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="gap-2 uppercase tracking-wide"
@@ -108,8 +137,8 @@ export default function Destinations() {
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="relative h-64 overflow-hidden rounded-xl lg:h-auto">
           <Image
-            src={destinationsData.instructorsImageSrc}
-            alt={destinationsData.instructorsName}
+            src="/david-bailey.webp"
+            alt="David and Bailey Lanning"
             fill
             className="object-cover"
           />
@@ -118,12 +147,16 @@ export default function Destinations() {
           <CardHeader>
             <CardTitle>Your Trip Organizers</CardTitle>
             <CardDescription className="text-lg font-semibold text-white/90">
-              {destinationsData.instructorsName}
+              David and Bailey Lanning
             </CardDescription>
           </CardHeader>
           <CardContent>
             <p className="text-base leading-7">
-              {destinationsData.instructorsDescription}
+              Co-owners of Dinks Pickleball and PPR Professional Instructors.
+              They bring their passion for pickleball and love of travel
+              together to create unforgettable experiences. You&apos;ll get
+              professional instruction, organized play, and the chance to
+              explore amazing destinations with fellow pickleball enthusiasts.
             </p>
             <Button asChild variant="outline" className="mt-4">
               <Link href="/lessons">Explore lessons</Link>

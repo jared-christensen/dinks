@@ -1,4 +1,3 @@
-import { courtRatesData } from "@/data/court-rates";
 import {
   Card,
   CardContent,
@@ -6,6 +5,24 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
+const rates = [
+  {
+    name: "Day",
+    ratePerHour: 16,
+    timeRange: "Mon–Fri · 6am–4pm",
+  },
+  {
+    name: "Evening",
+    ratePerHour: 22,
+    timeRange: "Mon–Fri · 4pm–12am",
+  },
+  {
+    name: "Weekend",
+    ratePerHour: 28,
+    timeRange: "Sat & Sun",
+  },
+];
 
 export function CourtRates() {
   return (
@@ -15,7 +32,7 @@ export function CourtRates() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        {courtRatesData.rates.map((rate) => (
+        {rates.map((rate) => (
           <Card key={rate.name} className="flex h-full flex-col">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-white">

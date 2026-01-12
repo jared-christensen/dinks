@@ -1,9 +1,26 @@
 import Link from "next/link";
 import { FeaturedSponsors } from "@/components/featured-sponsors";
 import { MembershipSection } from "@/components/membership-section";
-import { courtRatesData } from "@/data/court-rates";
 import { HomeHero } from "@/components/home-hero";
 import { ArrowRight } from "lucide-react";
+
+const courtRates = [
+  {
+    name: "Day",
+    ratePerHour: 16,
+    timeRange: "Mon–Fri · 6am–4pm",
+  },
+  {
+    name: "Evening",
+    ratePerHour: 22,
+    timeRange: "Mon–Fri · 4pm–12am",
+  },
+  {
+    name: "Weekend",
+    ratePerHour: 28,
+    timeRange: "Sat & Sun",
+  },
+];
 
 export default function Home() {
   return (
@@ -26,7 +43,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
-            {courtRatesData.rates.map((rate) => (
+            {courtRates.map((rate) => (
               <div
                 key={rate.name}
                 className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center"

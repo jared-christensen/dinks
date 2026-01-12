@@ -94,25 +94,6 @@ Currently using slate scale for grayscale-first approach.
 - Inline types for component props (unless reused)
 - Follow user's personal coding preferences in `~/.claude/CLAUDE.md`
 
-### Content Architecture (CMS-Ready)
-
-**All page content lives in typed data files in `data/` folder:**
-
-- `data/destinations.ts` - Destinations page content
-- `data/instruction.ts` - Instruction/lessons page content
-- `data/about.ts` - About page family bios
-- `data/memberships.ts` - Membership tiers and benefits
-- `data/sponsorships.ts` - Sponsorship packages
-- `data/sponsors.ts` - Individual sponsor records
-- `data/facts.ts` - Facility constants and info
-
-**Architecture principles:**
-
-- Types are defined inline within each data file (NOT in a separate types.ts)
-- Pages import and consume data from these files
-- This structure prepares for future CMS integration - data files can be replaced with CMS API calls
-- Single source of truth for all content
-
 ---
 
 ## Current Focus

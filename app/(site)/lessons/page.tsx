@@ -3,36 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrainingContactForm } from "@/components/training-contact-form";
-
-const services = [
-  {
-    title: "Private Instruction",
-    details:
-      "Personalized instruction tailored to your skill level. Work one-on-one with our certified instructors to focus on your specific goals and improve your game.",
-  },
-  {
-    title: "Group Instruction",
-    details:
-      "Group lessons available for friends, families, or individuals looking to meet new players. Perfect for learning in a fun, social environment.",
-  },
-  {
-    title: "Youth Training",
-    details:
-      "Dedicated youth programs designed to get kids started in pickleball the right way. Age-appropriate instruction in a safe, encouraging environment.",
-  },
-  {
-    title: "Clinics",
-    details:
-      "From Intro to Pickleball for complete beginners to advanced skill-specific clinics. Find the right clinic for your level and goals.",
-  },
-];
-
-const credentials = [
-  "Co-owners of Dinks Pickleball",
-  "PPR Professional Instructors",
-  "Certified pickleball instructors",
-  "Experience with all skill levels from beginners to advanced",
-];
+import { LESSON_SERVICES, INSTRUCTOR_CREDENTIALS } from "@/constants/lessons";
 
 export default function Lessons() {
   return (
@@ -69,7 +40,7 @@ export default function Lessons() {
               David and Bailey Lanning
             </h2>
             <ul className="mt-6 space-y-3 text-base leading-7 text-brand-blue-500/80">
-              {credentials.map((credential) => (
+              {INSTRUCTOR_CREDENTIALS.map((credential) => (
                 <li key={credential} className="flex items-start gap-3">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-yellow-500" />
                   <span>{credential}</span>
@@ -84,7 +55,7 @@ export default function Lessons() {
       <div className="space-y-6">
         <h2 className="text-3xl font-bold text-white">What We Offer</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((service) => (
+          {LESSON_SERVICES.map((service) => (
             <div key={service.title} className="space-y-2">
               <h3 className="text-xl font-semibold text-white">
                 {service.title}

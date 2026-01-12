@@ -1,37 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PackageCard } from "@/components/package-card";
-
-const tiers = [
-  {
-    name: "Gold",
-    price: "$1,000/Year",
-    description: "Includes 1 VIP membership plus banner and website branding.",
-    whatsDifferent: ["Banner at facility", "Logo on Dinks website"],
-  },
-  {
-    name: "Premier",
-    price: "$2,500/Year",
-    description: "Includes 1 VIP membership plus premier advertising space.",
-    whatsDifferent: [
-      "Premier 4'x30' advertisement space near entrance and courts",
-      "Logo on Dinks website",
-      "Mesh windscreen printing is sponsor responsibility",
-    ],
-  },
-  {
-    name: "Platinum",
-    price: "$5,000/Year",
-    description:
-      "Includes 2 VIP memberships plus court naming and premium branding.",
-    whatsDifferent: [
-      "Court naming rights (shown during reservations)",
-      "On-court branding opportunities",
-      "Banner at facility",
-      "Logo on Dinks website",
-    ],
-  },
-];
+import { SPONSORSHIP_TIERS } from "@/constants/sponsorships";
 
 export function SponsorshipSection() {
   return (
@@ -47,7 +17,7 @@ export function SponsorshipSection() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        {tiers.map((tier) => (
+        {SPONSORSHIP_TIERS.map((tier) => (
           <PackageCard
             key={tier.name}
             tier={{

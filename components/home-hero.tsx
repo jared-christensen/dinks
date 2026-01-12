@@ -43,7 +43,7 @@ export function HomeHero() {
               Join Now
             </Link>
             <Link
-              href="/book"
+              href="/schedule"
               className="inline-flex items-center justify-center rounded-full border-2 border-white/30 px-8 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all hover:border-white/50 hover:bg-white/10 active:scale-95 active:bg-white/20"
             >
               Book a Court

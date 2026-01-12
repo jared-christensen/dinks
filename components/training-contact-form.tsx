@@ -4,9 +4,12 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
-const inputClassName =
-  "border-brand-blue-500/40 bg-brand-blue-500/5 text-brand-blue-500 placeholder:text-brand-blue-500/40 focus-visible:border-brand-yellow-500 focus-visible:ring-brand-yellow-500/30";
+import {
+  formInputClassName,
+  formLabelClassName,
+  formContainerClassName,
+  formStatusClassName,
+} from "@/lib/form-styles";
 
 export function TrainingContactForm() {
   const [formData, setFormData] = useState({
@@ -64,7 +67,7 @@ export function TrainingContactForm() {
   };
 
   return (
-    <div className="rounded-lg border border-white/10 bg-white p-6">
+    <div className={formContainerClassName}>
       <h2 className="text-2xl font-semibold text-brand-blue-500">
         Get Started with Instruction
       </h2>
@@ -86,7 +89,7 @@ export function TrainingContactForm() {
         />
         <div className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="training-name" className="text-brand-blue-500">
+            <Label htmlFor="training-name" className={formLabelClassName}>
               Name *
             </Label>
             <Input
@@ -97,12 +100,12 @@ export function TrainingContactForm() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Your name"
-              className={inputClassName}
+              className={formInputClassName}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="training-email" className="text-brand-blue-500">
+            <Label htmlFor="training-email" className={formLabelClassName}>
               Email *
             </Label>
             <Input
@@ -113,12 +116,12 @@ export function TrainingContactForm() {
               value={formData.email}
               onChange={handleChange}
               placeholder="your.email@example.com"
-              className={inputClassName}
+              className={formInputClassName}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="training-phone" className="text-brand-blue-500">
+            <Label htmlFor="training-phone" className={formLabelClassName}>
               Phone (optional)
             </Label>
             <Input
@@ -128,19 +131,13 @@ export function TrainingContactForm() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="(555) 123-4567"
-              className={inputClassName}
+              className={formInputClassName}
             />
           </div>
         </div>
 
         {submitStatus.type && (
-          <div
-            className={`rounded-lg p-4 text-sm ${
-              submitStatus.type === "success"
-                ? "bg-green-50 text-green-800"
-                : "bg-red-50 text-red-800"
-            }`}
-          >
+          <div className={formStatusClassName[submitStatus.type]}>
             {submitStatus.message}
           </div>
         )}

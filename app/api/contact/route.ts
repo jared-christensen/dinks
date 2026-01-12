@@ -1,12 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { contactFormSchema } from "@/lib/validations";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, subject, message, website } = body;
+
+    // Validate with Zod
+    const result = contactFormSchema.safeParse(body);
+    if (!result.success) {
+      const errors = result.error.flatten().fieldErrors;
+      const firstError = Object.values(errors)[0]?.[0] || "Invalid form data";
+      return NextResponse.json({ error: firstError }, { status: 400 });
+    }
+
+    const { name, email, subject, message, website } = result.data;
 
     // Honeypot check - if filled, it's a bot
     if (website) {
@@ -17,27 +27,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate required fields
-    if (!name || !email || !subject || !message) {
-      return NextResponse.json(
-        { error: "All fields are required" },
-        { status: 400 }
-      );
-    }
-
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: "Invalid email address" },
-        { status: 400 }
-      );
-    }
-
-    // TODO: Update to production: to: "info@dinkspickleballdsm.com"
     await resend.emails.send({
       from: "Dinks Website <noreply@dinkspickleballdsm.com>",
-      to: "jared.christensen@gmail.com",
+      to: "info@dinkspickleballdsm.com",
       replyTo: email,
       subject: `Contact Form: ${subject}`,
       html: `

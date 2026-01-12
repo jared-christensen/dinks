@@ -8,6 +8,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FaLocationArrow } from "react-icons/fa";
+import {
+  formInputClassName,
+  formLabelClassName,
+  formContainerClassName,
+  formStatusClassName,
+} from "@/lib/form-styles";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -82,7 +88,7 @@ export default function Contact() {
 
       <div className="grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2">
-          <div className="rounded-lg border border-white/10 bg-white p-6">
+          <div className={formContainerClassName}>
             <h2 className="mb-6 text-2xl font-semibold text-brand-blue-500">Send a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Honeypot field - hidden from users, bots will fill it */}
@@ -98,7 +104,7 @@ export default function Contact() {
               <div className="space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-brand-blue-500">Name *</Label>
+                    <Label htmlFor="name" className={formLabelClassName}>Name *</Label>
                     <Input
                       id="name"
                       name="name"
@@ -107,11 +113,11 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your name"
-                      className="border-brand-blue-500/40 bg-brand-blue-500/5 text-brand-blue-500 placeholder:text-brand-blue-500/40 focus-visible:border-brand-yellow-500 focus-visible:ring-brand-yellow-500/30"
+                      className={formInputClassName}
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-brand-blue-500">Email *</Label>
+                    <Label htmlFor="email" className={formLabelClassName}>Email *</Label>
                     <Input
                       id="email"
                       name="email"
@@ -120,13 +126,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="your.email@example.com"
-                      className="border-brand-blue-500/40 bg-brand-blue-500/5 text-brand-blue-500 placeholder:text-brand-blue-500/40 focus-visible:border-brand-yellow-500 focus-visible:ring-brand-yellow-500/30"
+                      className={formInputClassName}
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="subject" className="text-brand-blue-500">Subject *</Label>
+                  <Label htmlFor="subject" className={formLabelClassName}>Subject *</Label>
                   <Input
                     id="subject"
                     name="subject"
@@ -135,12 +141,12 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="What is this regarding?"
-                    className="border-brand-blue-500/40 bg-brand-blue-500/5 text-brand-blue-500 placeholder:text-brand-blue-500/40 focus-visible:border-brand-yellow-500 focus-visible:ring-brand-yellow-500/30"
+                    className={formInputClassName}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-brand-blue-500">Message *</Label>
+                  <Label htmlFor="message" className={formLabelClassName}>Message *</Label>
                   <Textarea
                     id="message"
                     name="message"
@@ -149,20 +155,14 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Tell us more about your question or inquiry..."
                     rows={12}
-                    className="min-h-48 border-brand-blue-500/40 bg-brand-blue-500/5 text-brand-blue-500 placeholder:text-brand-blue-500/40 focus-visible:border-brand-yellow-500 focus-visible:ring-brand-yellow-500/30"
+                    className={`min-h-48 ${formInputClassName}`}
                   />
                 </div>
               </div>
 
               {submitStatus.type && (
-                <div
-                  className={`rounded-lg p-4 ${
-                    submitStatus.type === "success"
-                      ? "bg-green-50 text-green-800"
-                      : "bg-red-50 text-red-800"
-                  }`}
-                >
-                  <p className="text-sm">{submitStatus.message}</p>
+                <div className={formStatusClassName[submitStatus.type]}>
+                  {submitStatus.message}
                 </div>
               )}
 

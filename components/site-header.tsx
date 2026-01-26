@@ -11,7 +11,7 @@ const navLinks = [
   { href: "/events", label: "Play" },
   { href: "/lessons", label: "Learn" },
   { href: "/destinations", label: "Travel" },
-  { href: "/schedule", label: "Schedule" },
+  { href: "/schedule", label: "Reserve", icon: "/courtreserve-icon.webp" },
 ];
 
 export function SiteHeader() {
@@ -28,9 +28,7 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header
-      className="sticky top-0 z-50 w-full border-b-4 border-brand-blue-500 bg-white shadow-xl shadow-black/30"
-    >
+    <header className="sticky top-0 z-50 w-full border-b-4 border-brand-blue-500 bg-white shadow-xl shadow-black/30">
       <Container className="flex h-16 items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-3">
           <Link
@@ -54,8 +52,17 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-semibold uppercase tracking-wide text-brand-blue-900/70 transition hover:text-brand-blue-900"
+              className="flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-brand-blue-900/70 transition hover:text-brand-blue-900"
             >
+              {link.icon && (
+                <Image
+                  src={link.icon}
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="h-5 w-5 rounded"
+                />
+              )}
               {link.label}
             </Link>
           ))}
@@ -63,7 +70,9 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 md:flex">
           <Button asChild variant="destructive">
-            <Link href="/membership" className="uppercase tracking-wide">Join Dinks</Link>
+            <Link href="/membership" className="uppercase tracking-wide">
+              Join Dinks
+            </Link>
           </Button>
         </div>
 
@@ -89,16 +98,29 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-semibold uppercase tracking-wide text-brand-blue-900/70 transition hover:text-brand-blue-900"
+                className="flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-brand-blue-900/70 transition hover:text-brand-blue-900"
                 onClick={() => setIsMenuOpen(false)}
               >
+                {link.icon && (
+                  <Image
+                    src={link.icon}
+                    alt=""
+                    width={20}
+                    height={20}
+                    className="h-5 w-5 rounded"
+                  />
+                )}
                 {link.label}
               </Link>
             ))}
           </div>
           <div className="flex flex-col gap-2 pt-2">
             <Button asChild variant="primary" className="w-full">
-              <Link href="/membership" onClick={() => setIsMenuOpen(false)} className="uppercase tracking-wide">
+              <Link
+                href="/membership"
+                onClick={() => setIsMenuOpen(false)}
+                className="uppercase tracking-wide"
+              >
                 Join Dinks
               </Link>
             </Button>

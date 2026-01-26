@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FeaturedSponsors } from "@/components/featured-sponsors";
+import { HowItWorksSection } from "@/components/how-it-works-section";
 import { MembershipSection } from "@/components/membership-section";
 import { HomeHero } from "@/components/home-hero";
 import { ArrowRight } from "lucide-react";
@@ -12,6 +13,8 @@ export default function Home() {
 
       {/* Main content */}
       <section className="mt-16 space-y-24">
+        <HowItWorksSection />
+
         <MembershipSection />
 
         {/* Court Rates */}
@@ -36,7 +39,9 @@ export default function Home() {
                 </div>
                 <div className="mt-2 text-4xl font-black tracking-tight text-white">
                   ${rate.ratePerHour}
-                  <span className="text-lg font-semibold text-white/60">/hr</span>
+                  <span className="text-lg font-semibold text-white/60">
+                    /hr
+                  </span>
                 </div>
                 <div className="mt-2 text-sm text-white/60">
                   {rate.timeRange}

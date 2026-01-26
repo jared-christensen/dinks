@@ -4,7 +4,7 @@ import { SponsorshipSection } from "@/components/sponsorship-section";
 export default function Membership() {
   return (
     <section className="space-y-24">
-      <MembershipSection />
+      <MembershipSection showGuestInfo />
 
       <SponsorshipSection />
     </section>

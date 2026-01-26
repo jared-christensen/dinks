@@ -5,7 +5,7 @@ const platforms = [
   {
     name: "CourtReserve",
     description:
-      "Your hub for membership, court bookings, and open play registration. This is where you'll manage your Dinks membership and reserve courts.",
+      "Your hub for membership, court reservations, and open play registration. This is where you'll manage your Dinks membership and reserve courts.",
     when: "Required for all members",
     links: {
       website: "https://app.courtreserve.com",

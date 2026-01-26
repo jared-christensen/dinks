@@ -32,7 +32,8 @@ export function HomeHero() {
 
           {/* Subhead */}
           <p className="mt-6 text-balance text-lg leading-relaxed text-white/90">
-            {FACILITY.courts} professional indoor courts. {FACILITY.hours.description}.
+            {FACILITY.courts} professional indoor courts.{" "}
+            {FACILITY.hours.description}.
           </p>
 
           {/* CTA */}
@@ -41,13 +42,13 @@ export function HomeHero() {
               href="/membership"
               className="inline-flex items-center justify-center rounded-full bg-brand-yellow-500 px-8 py-3 text-sm font-bold uppercase tracking-wide text-black transition-all hover:scale-105 hover:bg-brand-yellow-300 active:scale-95 active:bg-brand-yellow-600"
             >
-              Join Now
+              Become a Member
             </Link>
             <Link
               href="/schedule"
               className="inline-flex items-center justify-center rounded-full border-2 border-white/30 px-8 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all hover:border-white/50 hover:bg-white/10 active:scale-95 active:bg-white/20"
             >
-              Book a Court
+              Reserve a Court
             </Link>
           </div>
         </div>

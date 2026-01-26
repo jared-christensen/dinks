@@ -2,7 +2,11 @@ import { PackageCard } from "@/components/package-card";
 import { Info } from "lucide-react";
 import { MEMBERSHIP_TIERS } from "@/constants/memberships";
 
-export function MembershipSection() {
+interface MembershipSectionProps {
+  showGuestInfo?: boolean;
+}
+
+export function MembershipSection({ showGuestInfo = false }: MembershipSectionProps) {
   return (
     <section className="space-y-8">
       <div className="space-y-3">
@@ -13,7 +17,7 @@ export function MembershipSection() {
           Choose Your Game
         </h2>
         <p className="max-w-2xl text-base text-white/80">
-          All members get personal door code, court booking, ball machine
+          All members get personal door code, court reservations, ball machine
           rental.
         </p>
       </div>
@@ -28,19 +32,21 @@ export function MembershipSection() {
               description: tier.description,
               keyDifferences: tier.keyDifferences,
               ctaHref: "/join",
-              ctaLabel: "Join Now",
+              ctaLabel: "Join",
             }}
           />
         ))}
       </div>
 
-      <div className="flex items-start gap-3 rounded-lg border border-white/10 bg-white/5 p-4">
-        <Info className="h-5 w-5 flex-shrink-0 text-white/50" />
-        <p className="text-sm text-white/80">
-          Members may bring guests to their reservation. Guest fee is $10 per
-          person.
-        </p>
-      </div>
+      {showGuestInfo && (
+        <div className="flex items-start gap-3 rounded-lg border border-white/10 bg-white/5 p-4">
+          <Info className="h-5 w-5 flex-shrink-0 text-white/50" />
+          <p className="text-sm text-white/80">
+            Members may bring guests to their reservation. Guest fee is $10 per
+            person.
+          </p>
+        </div>
+      )}
     </section>
   );
 }

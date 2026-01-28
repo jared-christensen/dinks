@@ -16,7 +16,7 @@ export default function Events() {
 
       {/* Events Calendar */}
       <div className="overflow-hidden rounded-2xl border-8 border-white/10 bg-white p-4">
-        <CourtReserveWidget embedCodeId="80212" title="Events Calendar" />
+        <CourtReserveWidget embedCodeId="100495" title="Events Calendar" />
       </div>
 
       {/* Event Types */}

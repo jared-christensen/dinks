@@ -1,11 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
-
-const ALLOWED_ORIGIN = "https://widgets.courtreserve.com";
+import { useEffect, useRef } from "react";
 
 interface CourtReserveMessageData {
-  action: "setHeight" | "redirectAfterLogin" | "scrollBottom" | "scrollTop";
+  action: string;
   embedCodeId?: string;
   height?: number;
   urlToRedirect?: string;
@@ -34,14 +32,12 @@ export function CourtReserveWidget({
   embedCodeId,
   title = "CourtReserve Widget",
 }: CourtReserveWidgetProps) {
-  useEffect(() => {
-    const handleMessage = (e: MessageEvent<CourtReserveMessageData>) => {
-      // Validate origin to prevent malicious messages
-      if (e.origin !== ALLOWED_ORIGIN) {
-        return;
-      }
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
-      const data = e.data;
+  useEffect(() => {
+    const handleMessage = (e: MessageEvent) => {
+      // Only process messages that look like CourtReserve data
+      const data = e.data as CourtReserveMessageData;
       if (!data || typeof data.action !== "string") {
         return;
       }
@@ -49,12 +45,23 @@ export function CourtReserveWidget({
       switch (data.action) {
         case "setHeight": {
           const id = data.embedCodeId;
-          if (id != null && id !== "" && typeof data.height === "number") {
-            const elements = document.getElementsByClassName("form-iframe-" + id);
-            for (let i = 0; i < elements.length; i++) {
-              const element = elements[i];
-              if (element instanceof HTMLElement) {
-                element.style.height = data.height + "px";
+          const height = data.height;
+
+          if (typeof height === "number") {
+            if (id != null && id !== "") {
+              // Target by class (multiple widgets support)
+              const elements = document.getElementsByClassName("form-iframe-" + id);
+              for (let i = 0; i < elements.length; i++) {
+                const element = elements[i];
+                if (element instanceof HTMLElement) {
+                  element.style.height = height + "px";
+                }
+              }
+            } else {
+              // Fallback to id selector
+              const element = document.getElementById("form-iframe");
+              if (element) {
+                element.style.height = height + "px";
               }
             }
           }
@@ -88,9 +95,17 @@ export function CourtReserveWidget({
 
   return (
     <iframe
+      ref={iframeRef}
+      id="form-iframe"
       className={`form-iframe-${embedCodeId}`}
       src={`https://widgets.courtreserve.com/Online/Public/EmbedCode/10812/${embedCodeId}`}
-      style={{ margin: 0, width: "100%", border: "none", overflow: "hidden" }}
+      style={{
+        margin: 0,
+        width: "100%",
+        border: "none",
+        overflow: "hidden",
+        minHeight: "600px",
+      }}
       scrolling="no"
       title={title}
     />

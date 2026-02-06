@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { CourtReserveWidget } from "@/components/court-reserve-events";
 
 export default function Events() {
   return (
@@ -14,11 +13,6 @@ export default function Events() {
         </p>
       </div>
 
-      {/* Events Calendar */}
-      <div className="overflow-hidden rounded-2xl border-8 border-white/10 bg-white p-4">
-        <CourtReserveWidget embedCodeId="100495" title="Events Calendar" />
-      </div>
-
       {/* Event Types */}
       <div className="grid gap-6 md:grid-cols-2">
         {/* Open Play */}
@@ -26,8 +20,8 @@ export default function Events() {
           <h2 className="font-semibold text-white">Open Play</h2>
           <p className="mt-2 text-sm leading-6 text-white/70">
             Drop-in sessions where you get matched with other players and
-            rotate through games. No partner needed. Look for Afternoon and
-            Twilight Open Play sessions in the calendar.
+            rotate through games. No partner needed. Check CourtReserve for
+            upcoming Afternoon and Twilight Open Play sessions.
           </p>
         </div>
 

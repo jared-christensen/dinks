@@ -54,15 +54,6 @@ export function SiteHeader() {
               href={link.href}
               className="flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-brand-blue-900/70 transition hover:text-brand-blue-900"
             >
-              {link.icon && (
-                <Image
-                  src={link.icon}
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="h-5 w-5 rounded"
-                />
-              )}
               {link.label}
             </Link>
           ))}
@@ -101,15 +92,6 @@ export function SiteHeader() {
                 className="flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-brand-blue-900/70 transition hover:text-brand-blue-900"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {link.icon && (
-                  <Image
-                    src={link.icon}
-                    alt=""
-                    width={20}
-                    height={20}
-                    className="h-5 w-5 rounded"
-                  />
-                )}
                 {link.label}
               </Link>
             ))}

@@ -41,20 +41,6 @@ const sponsors: SponsorRecord[] = [
     imageAlt: "East Village Foot & Ankle Ankle Surgeons logo",
     href: "http://www.eastvillagefootandankle.com/",
   },
-  {
-    name: "Fellows & Blake",
-    tier: "platinum",
-    imageSrc: "/sponsors/platinum/fellows-blake.webp",
-    imageAlt: "Fellows & Blake logo",
-    href: "https://fellowsfg.com/",
-  },
-  {
-    name: "Aetna Medicare",
-    tier: "platinum",
-    imageSrc: "/sponsors/platinum/Aetna-Medicare.webp",
-    imageAlt: "Aetna Medicare logo",
-    href: "http://www.aetnamedicare.com/",
-  },
   // Premier
   {
     name: "Capital Defender Advisors",
@@ -62,36 +48,42 @@ const sponsors: SponsorRecord[] = [
     imageSrc: "/sponsors/premier/capital-defender.webp",
     href: "http://www.capitaldefenderadvisors.com/",
   },
-  {
-    name: "AssuredPartners",
-    tier: "premier",
-    imageSrc: "/sponsors/premier/assured-partners.webp",
-    href: "http://www.assuredpartners.com/",
-  },
-  {
-    name: "Key Potential Chiropractic",
-    tier: "premier",
-    imageSrc: "/sponsors/premier/key-potential.webp",
-    href: "https://www.keypotentialchiropractic.com/",
-  },
   // Gold (alphabetized)
-  { name: "29th State Apparel", tier: "gold", href: "https://29thstateapparel.com/" },
-  { name: "Amy Boom Real Estate", tier: "gold", href: "https://www.facebook.com/p/Amy-Boom-Real-Estate-100089396266403/" },
-  { name: "Cass Muse - Loan Officer", tier: "gold", href: "http://www.cassmuse.com/" },
-  { name: "Cindy's Boutique in Valley Junction", tier: "gold", href: "https://cindysboutiquevalleyjunction.com/" },
-  { name: "Clarity Chiropractic", tier: "gold", href: "https://www.claritychirotrt.com/" },
-  { name: "Community Greetings", tier: "gold", href: "https://communitygreetings.com/" },
-  { name: "Craig Montgomery - Aris Agency", tier: "gold", href: "https://www.arisagency.com/" },
-  { name: "Elevate Physical Therapy & Sports Medicine", tier: "gold", href: "https://elevateptiowa.com/" },
-  { name: "Grounds For Celebration", tier: "gold", href: "https://groundsforcelebration.com/" },
-  { name: "Happy Roof", tier: "gold", href: "https://www.happyroof.biz/" },
-  { name: "Image360 Urbandale", tier: "gold", href: "https://image360.com/urbandale-ia" },
-  { name: "Potthoff Foods", tier: "gold", href: "https://potthofffoods.com/" },
-  { name: "RoofSmart", tier: "gold", href: "https://www.roofsmartiowa.com/" },
-  { name: "Sherwood Forest Event Center", tier: "gold", href: "https://www.sherwoodforesteventcenter.com/" },
-  { name: "Skateland", tier: "gold", href: "https://skatelanddm.com/" },
-  { name: "The Ridgemont", tier: "gold", href: "https://www.facebook.com/theridgemont/" },
-  { name: "Tony Muse - Iowa Realtor", tier: "gold", href: "https://myiowarealtor.com/" },
+  {
+    name: "29th State Apparel",
+    tier: "gold",
+    href: "https://29thstateapparel.com/",
+  },
+  {
+    name: "Amy Boom Real Estate",
+    tier: "gold",
+    href: "https://www.facebook.com/p/Amy-Boom-Real-Estate-100089396266403/",
+  },
+  {
+    name: "Cass Muse - Loan Officer",
+    tier: "gold",
+    href: "http://www.cassmuse.com/",
+  },
+  {
+    name: "Cindy's Boutique in Valley Junction",
+    tier: "gold",
+    href: "https://cindysboutiquevalleyjunction.com/",
+  },
+  {
+    name: "Craig Montgomery - Aris Agency",
+    tier: "gold",
+    href: "https://www.arisagency.com/",
+  },
+  {
+    name: "Image360 Urbandale",
+    tier: "gold",
+    href: "https://image360.com/urbandale-ia",
+  },
+  {
+    name: "Tony Muse - Iowa Realtor",
+    tier: "gold",
+    href: "https://myiowarealtor.com/",
+  },
 ];
 
 function getFeaturedSponsors(limit = 6) {
@@ -100,7 +92,7 @@ function getFeaturedSponsors(limit = 6) {
   const fallbackNeeded = featured.length < limit;
   const combined = fallbackNeeded ? [...featured, ...platinum] : featured;
   const unique = combined.filter(
-    (s, idx, arr) => arr.findIndex((x) => x.name === s.name) === idx
+    (s, idx, arr) => arr.findIndex((x) => x.name === s.name) === idx,
   );
   return unique.slice(0, limit);
 }
@@ -148,82 +140,81 @@ export function FeaturedSponsors({
       </div>
 
       <Card className="p-8 space-y-6">
-
-      {/* Platinum Sponsors */}
-      {featured.length > 0 && (
-        <div className="space-y-3">
-          <p className="text-[10px] font-semibold uppercase tracking-widest text-white/50">
-            Platinum
-          </p>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
-            {featured.map((s) => (
-              <Link
-                key={s.name}
-                href={s.href ?? "#"}
-                aria-label={`Visit ${s.name} website`}
-                className="group flex items-center justify-center rounded-2xl border-4 border-brand-yellow-500/30 bg-white p-5 shadow-lg shadow-black/20 transition hover:border-brand-yellow-500"
-              >
-                <Image
-                  src={s.imageSrc!}
-                  alt={s.imageAlt ?? `${s.name} logo`}
-                  width={200}
-                  height={80}
-                  loading="lazy"
-                  className="h-14 w-auto object-contain"
-                />
-              </Link>
-            ))}
+        {/* Platinum Sponsors */}
+        {featured.length > 0 && (
+          <div className="space-y-3">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-white/50">
+              Platinum
+            </p>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
+              {featured.map((s) => (
+                <Link
+                  key={s.name}
+                  href={s.href ?? "#"}
+                  aria-label={`Visit ${s.name} website`}
+                  className="group flex items-center justify-center rounded-2xl border-4 border-brand-yellow-500/30 bg-white p-5 shadow-lg shadow-black/20 transition hover:border-brand-yellow-500"
+                >
+                  <Image
+                    src={s.imageSrc!}
+                    alt={s.imageAlt ?? `${s.name} logo`}
+                    width={200}
+                    height={80}
+                    loading="lazy"
+                    className="h-14 w-auto object-contain"
+                  />
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Premier Sponsors */}
-      {premier.length > 0 && (
-        <div className="space-y-3">
-          <p className="text-[10px] font-semibold uppercase tracking-widest text-white/50">
-            Premier
-          </p>
-          <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6">
-            {premier.map((s) => (
-              <Link
-                key={s.name}
-                href={s.href ?? "#"}
-                aria-label={`Visit ${s.name} website`}
-                className="group flex items-center justify-center rounded-xl border-4 border-white/50 bg-white p-3 shadow-md shadow-black/10 transition hover:border-brand-yellow-500"
-              >
-                <Image
-                  src={s.imageSrc!}
-                  alt={s.imageAlt ?? `${s.name} logo`}
-                  width={160}
-                  height={64}
-                  loading="lazy"
-                  className="h-8 w-auto object-contain"
-                />
-              </Link>
-            ))}
+        {/* Premier Sponsors */}
+        {premier.length > 0 && (
+          <div className="space-y-3">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-white/50">
+              Premier
+            </p>
+            <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6">
+              {premier.map((s) => (
+                <Link
+                  key={s.name}
+                  href={s.href ?? "#"}
+                  aria-label={`Visit ${s.name} website`}
+                  className="group flex items-center justify-center rounded-xl border-4 border-white/50 bg-white p-3 shadow-md shadow-black/10 transition hover:border-brand-yellow-500"
+                >
+                  <Image
+                    src={s.imageSrc!}
+                    alt={s.imageAlt ?? `${s.name} logo`}
+                    width={160}
+                    height={64}
+                    loading="lazy"
+                    className="h-8 w-auto object-contain"
+                  />
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Gold Sponsors */}
-      {showGold && gold.length > 0 && (
-        <div className="space-y-3">
-          <p className="text-[10px] font-semibold uppercase tracking-widest text-white/50">
-            Gold
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {gold.map((s) => (
-              <Link
-                key={s.name}
-                href={s.href ?? "#"}
-                className="inline-flex items-center justify-center rounded-lg border-2 border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 transition hover:bg-brand-yellow-500 hover:text-black hover:border-brand-yellow-500"
-              >
-                {s.name}
-              </Link>
-            ))}
+        {/* Gold Sponsors */}
+        {showGold && gold.length > 0 && (
+          <div className="space-y-3">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-white/50">
+              Gold
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {gold.map((s) => (
+                <Link
+                  key={s.name}
+                  href={s.href ?? "#"}
+                  className="inline-flex items-center justify-center rounded-lg border-2 border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 transition hover:bg-brand-yellow-500 hover:text-black hover:border-brand-yellow-500"
+                >
+                  {s.name}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
       </Card>
     </section>
   );

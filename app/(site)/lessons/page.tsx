@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 import { TrainingContactForm } from "@/components/training-contact-form";
 import { LESSON_SERVICES, INSTRUCTOR_CREDENTIALS } from "@/constants/lessons";
 
@@ -72,22 +71,26 @@ export default function Lessons() {
       <div className="grid gap-6 lg:grid-cols-2">
         <TrainingContactForm />
 
-        <Card className="flex flex-col">
-          <CardHeader>
-            <CardTitle className="text-2xl">Ready to travel</CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-1 flex-col justify-between space-y-4">
-            <p className="text-base leading-7 text-white/70">
-              David and Bailey also organize{" "}
-              <strong>Dinks Destinations</strong> - pickleball vacation trips to
-              beautiful locations around the world. Improve your game while
-              exploring amazing destinations with fellow pickleball enthusiasts!
-            </p>
-            <Button asChild>
-              <Link href="/destinations">Explore Destinations</Link>
-            </Button>
-          </CardContent>
-        </Card>
+        <Link
+          href="/destinations"
+          className="group self-start overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition hover:bg-white/10"
+        >
+          <div className="flex items-start justify-between">
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold text-white">
+                Ready to travel?
+              </h3>
+              <p className="max-w-sm text-white/80">
+                David and Bailey also organize{" "}
+                Dinks Destinations, pickleball vacation trips
+                to beautiful locations around the world.
+              </p>
+            </div>
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-yellow-500 text-black transition group-hover:scale-110">
+              <ArrowRight className="h-5 w-5" />
+            </div>
+          </div>
+        </Link>
       </div>
     </section>
   );

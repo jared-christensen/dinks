@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: firstError }, { status: 400 });
     }
 
-    const { name, email, phone, website } = result.data;
+    const { name, email, phone, message, website } = result.data;
 
     // Honeypot check - if filled, it's a bot
     if (website) {
@@ -37,6 +37,7 @@ export async function POST(request: NextRequest) {
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+        ${message ? `<p><strong>Message:</strong> ${message}</p>` : ""}
         <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
       `,
     });

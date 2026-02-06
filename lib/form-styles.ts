@@ -4,6 +4,9 @@
 export const formInputClassName =
   "border-brand-blue-500/40 bg-brand-blue-500/5 text-brand-blue-500 placeholder:text-brand-blue-500/40 focus-visible:border-brand-yellow-500 focus-visible:ring-brand-yellow-500/30";
 
+export const formTextareaClassName =
+  "border-brand-blue-500/40 bg-brand-blue-500/5 text-brand-blue-500 placeholder:text-brand-blue-500/40 focus-visible:border-brand-yellow-500 focus-visible:ring-brand-yellow-500/30 min-h-[100px]";
+
 export const formLabelClassName = "text-brand-blue-500";
 
 export const formContainerClassName =

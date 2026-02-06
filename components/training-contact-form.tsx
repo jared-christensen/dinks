@@ -3,9 +3,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
   formInputClassName,
+  formTextareaClassName,
   formLabelClassName,
   formContainerClassName,
   formStatusClassName,
@@ -16,6 +18,7 @@ export function TrainingContactForm() {
     name: "",
     email: "",
     phone: "",
+    message: "",
     website: "", // honeypot field
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -44,7 +47,7 @@ export function TrainingContactForm() {
           message:
             "Thank you! David & Bailey will get back to you soon to discuss instruction options.",
         });
-        setFormData({ name: "", email: "", phone: "", website: "" });
+        setFormData({ name: "", email: "", phone: "", message: "", website: "" });
       } else {
         throw new Error("Failed to send message");
       }
@@ -59,7 +62,7 @@ export function TrainingContactForm() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
@@ -133,6 +136,20 @@ export function TrainingContactForm() {
               onChange={handleChange}
               placeholder="(555) 123-4567"
               className={formInputClassName}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="training-message" className={formLabelClassName}>
+              Message (optional)
+            </Label>
+            <Textarea
+              id="training-message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Tell us about your goals, experience level, or any questions you have"
+              className={formTextareaClassName}
             />
           </div>
         </div>

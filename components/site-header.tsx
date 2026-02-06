@@ -11,7 +11,7 @@ const navLinks = [
   { href: "/events", label: "Play" },
   { href: "/lessons", label: "Learn" },
   { href: "/destinations", label: "Travel" },
-  { href: "/schedule", label: "Reserve", icon: "/courtreserve-icon.webp" },
+  { href: "/schedule", label: "Reserve" },
 ];
 
 export function SiteHeader() {

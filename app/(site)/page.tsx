@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FacebookFeed } from "@/components/facebook-feed";
 import { FeaturedSponsors } from "@/components/featured-sponsors";
 import { HowItWorksSection } from "@/components/how-it-works-section";
 import { MembershipSection } from "@/components/membership-section";
@@ -106,6 +107,11 @@ export default function Home() {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* Facebook Feed */}
+      <section className="mt-24">
+        <FacebookFeed />
       </section>
 
       {/* Sponsors */}

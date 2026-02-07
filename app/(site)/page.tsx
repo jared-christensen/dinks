@@ -54,7 +54,7 @@ export default function Home() {
       </section>
 
       {/* Full-bleed section - Programs */}
-      <section className="relative left-1/2 right-1/2 mt-24 -ml-[50vw] w-screen bg-brand-blue-500 py-20">
+      <section className="relative left-1/2 right-1/2 mt-4 -ml-[50vw] w-screen bg-brand-blue-500 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <p className="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-brand-yellow-500">
             Level Up
@@ -110,7 +110,7 @@ export default function Home() {
       </section>
 
       {/* Facebook Feed */}
-      <section className="mt-24">
+      <section className="mt-16">
         <FacebookFeed />
       </section>
 

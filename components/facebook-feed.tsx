@@ -31,8 +31,8 @@ export function FacebookFeed() {
         </div>
 
         {/* Right column — Facebook embed */}
-        <div className="overflow-hidden p-8 lg:p-0">
-          <div className="overflow-hidden rounded-lg border border-white/10 shadow-lg shadow-black/20 lg:rounded-none lg:border-0 lg:shadow-none">
+        <div className="overflow-hidden p-8 lg:p-0 leading-[0]">
+          <div className="inline-block  overflow-hidden rounded-lg border border-white/10 shadow-lg shadow-black/20 lg:rounded-none lg:border-0 lg:shadow-none">
             <iframe
               src={`https://www.facebook.com/plugins/page.php?href=${FACEBOOK_PAGE_URL}&tabs=timeline&width=500&height=400&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&hide_cta=true`}
               width="500"

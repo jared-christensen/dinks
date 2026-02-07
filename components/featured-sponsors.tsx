@@ -79,11 +79,6 @@ const sponsors: SponsorRecord[] = [
     tier: "gold",
     href: "https://image360.com/urbandale-ia",
   },
-  {
-    name: "Tony Muse - Iowa Realtor",
-    tier: "gold",
-    href: "https://myiowarealtor.com/",
-  },
 ];
 
 function getFeaturedSponsors(limit = 6) {

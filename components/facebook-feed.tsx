@@ -31,17 +31,19 @@ export function FacebookFeed() {
         </div>
 
         {/* Right column — Facebook embed */}
-        <div className="p-8 lg:p-0">
-          <iframe
-            src={`https://www.facebook.com/plugins/page.php?href=${FACEBOOK_PAGE_URL}&tabs=timeline&width=500&height=600&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&hide_cta=true`}
-            width="500"
-            height="400"
-            className="inline-block rounded-lg border border-white/10 shadow-lg shadow-black/20 lg:rounded-none lg:border-0 lg:shadow-none"
-            scrolling="no"
-            allowFullScreen
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            title="Dinks Pickleball Facebook feed"
-          />
+        <div className="overflow-hidden p-8 lg:p-0">
+          <div className="overflow-hidden rounded-lg border border-white/10 shadow-lg shadow-black/20 lg:rounded-none lg:border-0 lg:shadow-none">
+            <iframe
+              src={`https://www.facebook.com/plugins/page.php?href=${FACEBOOK_PAGE_URL}&tabs=timeline&width=500&height=400&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&hide_cta=true`}
+              width="500"
+              height="400"
+         
+              scrolling="no"
+              allowFullScreen
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              title="Dinks Pickleball Facebook feed"
+            />
+          </div>
         </div>
       </div>
     </section>

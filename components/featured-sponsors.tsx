@@ -55,21 +55,6 @@ const sponsors: SponsorRecord[] = [
     href: "https://29thstateapparel.com/",
   },
   {
-    name: "Amy Boom Real Estate",
-    tier: "gold",
-    href: "https://www.facebook.com/p/Amy-Boom-Real-Estate-100089396266403/",
-  },
-  {
-    name: "Cass Muse - Loan Officer",
-    tier: "gold",
-    href: "http://www.cassmuse.com/",
-  },
-  {
-    name: "Cindy's Boutique in Valley Junction",
-    tier: "gold",
-    href: "https://cindysboutiquevalleyjunction.com/",
-  },
-  {
     name: "Craig Montgomery - Aris Agency",
     tier: "gold",
     href: "https://www.arisagency.com/",

@@ -6,6 +6,7 @@ import { MembershipSection } from "@/components/membership-section";
 import { HomeHero } from "@/components/home-hero";
 import { ArrowRight } from "lucide-react";
 import { COURT_RATES } from "@/constants/court-rates";
+import { UPCOMING_EVENTS } from "@/constants/events";
 
 export default function Home() {
   return (
@@ -108,6 +109,61 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Play - Upcoming Events */}
+      {UPCOMING_EVENTS.length > 0 && (
+        <section className="mt-4 mb-8 space-y-6">
+          <div className="space-y-2">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-yellow-500">
+              Play
+            </p>
+            <h2 className="text-3xl font-bold text-white">Upcoming Events</h2>
+          </div>
+          <div
+            className={`grid gap-3 ${
+              UPCOMING_EVENTS.length === 1
+                ? "max-w-sm"
+                : UPCOMING_EVENTS.length === 2
+                  ? "md:grid-cols-2"
+                  : "md:grid-cols-3"
+            }`}
+          >
+            {UPCOMING_EVENTS.map((event) => (
+              <Link
+                key={event.title}
+                href={event.ctaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/10"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 rounded-md bg-white/10 px-2 py-1 text-center">
+                    <p className="text-[10px] font-semibold uppercase text-white/50">
+                      {event.dateLabel}
+                    </p>
+                    <p className="text-lg font-bold leading-tight text-white">
+                      {event.dateValue}
+                    </p>
+                  </div>
+                  <div className="min-w-0">
+                    <p className="font-semibold text-white">{event.title}</p>
+                    <p className="mt-0.5 text-xs text-white/50">
+                      {event.organizer}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <Link
+            href="/events"
+            className="inline-flex items-center gap-1 text-sm text-brand-yellow-500 hover:text-brand-yellow-400"
+          >
+            View all events
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </section>
+      )}
 
       {/* Facebook Feed */}
       <section className="mt-16">

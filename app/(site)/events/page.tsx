@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { UPCOMING_EVENTS } from "@/constants/events";
 
 export default function Events() {
   return (
@@ -13,15 +14,61 @@ export default function Events() {
         </p>
       </div>
 
+      {/* Upcoming Events */}
+      <div className="space-y-6">
+        <h2 className="text-sm font-semibold uppercase tracking-widest text-white/50">
+          Upcoming Events
+        </h2>
+
+        {UPCOMING_EVENTS.map((event) => (
+          <div
+            key={event.title}
+            className="flex items-start justify-between gap-4 rounded-xl border border-white/10 bg-white/5 p-6"
+          >
+            <div className="min-w-0 flex-1">
+              <p className="text-[10px] font-semibold uppercase tracking-widest text-brand-yellow-500">
+                {event.type === "tournament" ? "Tournament" : "League"}
+              </p>
+              <h3 className="mt-1 text-lg font-bold text-white">
+                {event.title}
+              </h3>
+              <p className="mt-0.5 text-sm text-white/60">{event.organizer}</p>
+              <p className="mt-3 text-sm leading-6 text-white/70">
+                {event.description}
+              </p>
+              <div className="mt-4">
+                <Button asChild variant="outline" size="sm">
+                  <Link
+                    href={event.ctaUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {event.ctaLabel}
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <div className="flex-shrink-0 rounded-lg bg-white/10 px-3 py-2 text-center">
+              <p className="text-xs font-semibold uppercase text-white/50">
+                {event.dateLabel}
+              </p>
+              <p className="text-2xl font-bold leading-tight text-white">
+                {event.dateValue}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Event Types */}
       <div className="grid gap-6 md:grid-cols-2">
         {/* Open Play */}
         <div className="rounded-xl border border-white/10 bg-white/5 p-6">
           <h2 className="font-semibold text-white">Open Play</h2>
           <p className="mt-2 text-sm leading-6 text-white/70">
-            Drop-in sessions where you get matched with other players and
-            rotate through games. No partner needed. Check CourtReserve for
-            upcoming Afternoon and Twilight Open Play sessions.
+            Drop-in sessions where you get matched with other players and rotate
+            through games. No partner needed. Check CourtReserve for upcoming
+            Afternoon and Twilight Open Play sessions.
           </p>
         </div>
 
@@ -47,41 +94,38 @@ export default function Events() {
       </div>
 
       {/* DUPR Events */}
-      <div className="overflow-hidden rounded-2xl border-8 border-white/10 bg-white">
-        <div className="p-6">
-          <h2 className="text-2xl font-bold text-brand-blue-500">DUPR Events</h2>
-          <p className="mt-2 text-sm leading-6 text-brand-blue-500/70">
-            Rated events that count toward your official DUPR rating.
-            Register on CourtReserve, then we manage brackets and scoring
-            through Pickleheads which syncs with your DUPR profile.
+      <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+        <h2 className="font-semibold text-white">DUPR Events</h2>
+        <p className="mt-2 text-sm leading-6 text-white/70">
+          Rated events that count toward your official DUPR rating. Register on
+          CourtReserve, then we manage brackets and scoring through Pickleheads
+          which syncs with your DUPR profile.
+        </p>
+        <div className="mt-4 space-y-2 text-sm text-white/70">
+          <p className="text-xs font-medium text-white/50">
+            Before your first DUPR event:
           </p>
-        </div>
-        <div className="border-t border-brand-blue-500/10 bg-brand-blue-500/5 px-6 py-5">
-          <p className="text-sm font-medium text-brand-blue-500">
-            Before your first DUPR event, you&apos;ll need to:
-          </p>
-          <ul className="mt-3 space-y-2 text-sm text-brand-blue-500/70">
+          <ul className="space-y-1.5">
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-yellow-500" />
-              <span>Create a <strong className="text-brand-blue-500">DUPR</strong> account and get your rating</span>
+              Create a DUPR account and get your rating
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-yellow-500" />
-              <span>Create a <strong className="text-brand-blue-500">Pickleheads</strong> account and link it to your DUPR profile</span>
+              Create a Pickleheads account and link it to your DUPR profile
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-yellow-500" />
-              <span>Join the{" "}
-                <Link
-                  href="https://dashboard.dupr.com/dashboard/browse/clubs/4933707109"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-brand-yellow-600 underline underline-offset-2 hover:text-brand-yellow-500"
-                >
-                  Dinks Mafia
-                </Link>{" "}
-                club on DUPR
-              </span>
+              Join the{" "}
+              <Link
+                href="https://dashboard.dupr.com/dashboard/browse/clubs/4933707109"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-yellow-500 underline underline-offset-2 hover:text-brand-yellow-400"
+              >
+                Dinks Mafia
+              </Link>{" "}
+              club on DUPR
             </li>
           </ul>
         </div>

@@ -3,6 +3,7 @@ export interface SponsorshipTier {
   price: string;
   description: string;
   whatsDifferent: string[];
+  enabled?: boolean;
 }
 
 export const SPONSORSHIP_TIERS: SponsorshipTier[] = [
@@ -21,6 +22,7 @@ export const SPONSORSHIP_TIERS: SponsorshipTier[] = [
       "Logo on Dinks website",
       "Mesh windscreen printing is sponsor responsibility",
     ],
+    enabled: false,
   },
   {
     name: "Platinum",

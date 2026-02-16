@@ -15,6 +15,7 @@ export const MEMBERSHIP_TIERS: MembershipTier[] = [
       "Reserve 5 days in advance",
       "Up to 4 courts per day",
       "48-hour cancellation policy",
+      "50% credit back on cancellations",
     ],
   },
   {
@@ -26,6 +27,7 @@ export const MEMBERSHIP_TIERS: MembershipTier[] = [
       "Reserve 14 days in advance",
       "Up to 8 courts per day",
       "24-hour cancellation policy",
+      "50% credit back on cancellations",
       "Early access to tournaments and events",
     ],
   },
@@ -38,6 +40,7 @@ export const MEMBERSHIP_TIERS: MembershipTier[] = [
       "Reserve 6 months in advance",
       "Up to 8 courts per day",
       "8-hour cancellation policy",
+      "50% credit back on cancellations",
       "Early access to tournaments and events",
     ],
   },

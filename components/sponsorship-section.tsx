@@ -17,7 +17,7 @@ export function SponsorshipSection() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        {SPONSORSHIP_TIERS.map((tier) => (
+        {SPONSORSHIP_TIERS.filter((tier) => tier.enabled !== false).map((tier) => (
           <PackageCard
             key={tier.name}
             tier={{

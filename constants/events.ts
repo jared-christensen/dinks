@@ -11,17 +11,6 @@ export interface UpcomingEvent {
 
 export const UPCOMING_EVENTS: UpcomingEvent[] = [
   {
-    title: "Picklepalooza 2026",
-    organizer: "Des Moines Metro Pickleball Club",
-    type: "tournament",
-    dateLabel: "Feb",
-    dateValue: "20–21",
-    description:
-      "One of the largest pickleball events in Central Iowa! Two days of competitive MLP-style play with multiple divisions and age brackets.",
-    ctaLabel: "Learn More",
-    ctaUrl: "https://www.dmmp.club/events",
-  },
-  {
     title: "Pickle with a Purpose",
     organizer: "Foster Group & World of Pickleball",
     type: "tournament",

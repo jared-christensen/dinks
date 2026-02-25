@@ -7,7 +7,7 @@ export default function Events() {
     <section className="space-y-12">
       {/* Header */}
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold text-white">Play</h1>
+        <h1 className="text-4xl font-bold text-white">Events</h1>
         <p className="max-w-2xl text-base leading-7 text-white/80">
           From casual open play to competitive leagues and DUPR-rated events,
           there&apos;s always a way to get on the court at Dinks.

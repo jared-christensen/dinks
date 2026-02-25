@@ -8,7 +8,7 @@ import { Container } from "@/components/container";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/events", label: "Play" },
+  { href: "/events", label: "Events" },
   { href: "/lessons", label: "Learn" },
   { href: "/destinations", label: "Travel" },
   { href: "/schedule", label: "Reserve" },

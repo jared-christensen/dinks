@@ -20,44 +20,54 @@ export default function Events() {
           Upcoming Events
         </h2>
 
-        {UPCOMING_EVENTS.map((event) => (
-          <div
-            key={event.title}
-            className="flex items-start justify-between gap-4 rounded-xl border border-white/10 bg-white/5 p-6"
-          >
-            <div className="min-w-0 flex-1">
-              <p className="text-[10px] font-semibold uppercase tracking-widest text-brand-yellow-500">
-                {event.type === "tournament" ? "Tournament" : "League"}
-              </p>
-              <h3 className="mt-1 text-lg font-bold text-white">
-                {event.title}
-              </h3>
-              <p className="mt-0.5 text-sm text-white/60">{event.organizer}</p>
-              <p className="mt-3 text-sm leading-6 text-white/70">
-                {event.description}
-              </p>
-              <div className="mt-4">
-                <Button asChild variant="outline" size="sm">
-                  <Link
-                    href={event.ctaUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {event.ctaLabel}
-                  </Link>
-                </Button>
+        {UPCOMING_EVENTS.length > 0 ? (
+          UPCOMING_EVENTS.map((event) => (
+            <div
+              key={event.title}
+              className="flex items-start justify-between gap-4 rounded-xl border border-white/10 bg-white/5 p-6"
+            >
+              <div className="min-w-0 flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-brand-yellow-500">
+                  {event.type === "tournament" ? "Tournament" : "League"}
+                </p>
+                <h3 className="mt-1 text-lg font-bold text-white">
+                  {event.title}
+                </h3>
+                <p className="mt-0.5 text-sm text-white/60">
+                  {event.organizer}
+                </p>
+                <p className="mt-3 text-sm leading-6 text-white/70">
+                  {event.description}
+                </p>
+                <div className="mt-4">
+                  <Button asChild variant="outline" size="sm">
+                    <Link
+                      href={event.ctaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {event.ctaLabel}
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+              <div className="flex-shrink-0 rounded-lg bg-white/10 px-3 py-2 text-center">
+                <p className="text-xs font-semibold uppercase text-white/50">
+                  {event.dateLabel}
+                </p>
+                <p className="text-2xl font-bold leading-tight text-white">
+                  {event.dateValue}
+                </p>
               </div>
             </div>
-            <div className="flex-shrink-0 rounded-lg bg-white/10 px-3 py-2 text-center">
-              <p className="text-xs font-semibold uppercase text-white/50">
-                {event.dateLabel}
-              </p>
-              <p className="text-2xl font-bold leading-tight text-white">
-                {event.dateValue}
-              </p>
-            </div>
+          ))
+        ) : (
+          <div className="rounded-xl border border-white/10 bg-white/5 p-6 text-center">
+            <p className="text-sm text-white/60">
+              No upcoming events right now. Check back soon!
+            </p>
           </div>
-        ))}
+        )}
       </div>
 
       {/* DUPR Events */}

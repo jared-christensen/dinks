@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { UPCOMING_EVENTS } from "@/constants/events";
+import { getActiveEvents } from "@/constants/events";
 
 export default function Events() {
+  const activeEvents = getActiveEvents();
   return (
     <section className="space-y-12">
       {/* Header */}
@@ -20,8 +21,8 @@ export default function Events() {
           Upcoming Events
         </h2>
 
-        {UPCOMING_EVENTS.length > 0 ? (
-          UPCOMING_EVENTS.map((event) => (
+        {activeEvents.length > 0 ? (
+          activeEvents.map((event) => (
             <div
               key={event.title}
               className="flex items-start justify-between gap-4 rounded-xl border border-white/10 bg-white/5 p-6"

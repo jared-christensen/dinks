@@ -6,9 +6,10 @@ import { MembershipSection } from "@/components/membership-section";
 import { HomeHero } from "@/components/home-hero";
 import { ArrowRight } from "lucide-react";
 import { COURT_RATES } from "@/constants/court-rates";
-import { UPCOMING_EVENTS } from "@/constants/events";
+import { getActiveEvents } from "@/constants/events";
 
 export default function Home() {
+  const activeEvents = getActiveEvents();
   return (
     <>
       <HomeHero />
@@ -111,7 +112,7 @@ export default function Home() {
       </section>
 
       {/* Play - Upcoming Events */}
-      {UPCOMING_EVENTS.length > 0 && (
+      {activeEvents.length > 0 && (
         <section className="mt-4 mb-8 space-y-6">
           <div className="space-y-2">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-yellow-500">
@@ -121,14 +122,14 @@ export default function Home() {
           </div>
           <div
             className={`grid gap-3 ${
-              UPCOMING_EVENTS.length === 1
+              activeEvents.length === 1
                 ? "max-w-sm"
-                : UPCOMING_EVENTS.length === 2
+                : activeEvents.length === 2
                   ? "md:grid-cols-2"
                   : "md:grid-cols-3"
             }`}
           >
-            {UPCOMING_EVENTS.map((event) => (
+            {activeEvents.map((event) => (
               <Link
                 key={event.title}
                 href={event.ctaUrl}

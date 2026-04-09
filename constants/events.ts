@@ -12,6 +12,32 @@ export interface UpcomingEvent {
 
 export const UPCOMING_EVENTS: UpcomingEvent[] = [
   {
+    title: "DUPR Ladder",
+    organizer: "Dinks Mafia Club",
+    type: "league",
+    date: "2026-04-13",
+    dateLabel: "Apr",
+    dateValue: "13",
+    description:
+      "Build your DUPR rating in a fun, competitive King of the Court format. Players are seeded by skill level — top player moves up, bottom moves down. Scores submitted to DUPR after the event.",
+    ctaLabel: "Register",
+    ctaUrl:
+      "https://app.courtreserve.com/Online/Events/Details/10812/MKDEXE110812617?resId=52027949",
+  },
+  {
+    title: "DUPR Ladder",
+    organizer: "Dinks Mafia Club",
+    type: "league",
+    date: "2026-04-27",
+    dateLabel: "Apr",
+    dateValue: "27",
+    description:
+      "Build your DUPR rating in a fun, competitive King of the Court format. Players are seeded by skill level — top player moves up, bottom moves down. Scores submitted to DUPR after the event.",
+    ctaLabel: "Register",
+    ctaUrl:
+      "https://app.courtreserve.com/Online/Events/Details/10812/MKDEXE110812617?resId=52027949&tab=dates",
+  },
+  {
     title: "Dink for Heart",
     organizer: "Iowa Heart Foundation",
     type: "tournament",

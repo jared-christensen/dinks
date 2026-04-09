@@ -29,7 +29,11 @@ export default function Events() {
             >
               <div className="min-w-0 flex-1">
                 <p className="text-[10px] font-semibold uppercase tracking-widest text-brand-yellow-500">
-                  {event.type === "tournament" ? "Tournament" : "League"}
+                  {event.type === "tournament"
+                    ? "Tournament"
+                    : event.type === "league"
+                      ? "League"
+                      : "Event"}
                 </p>
                 <h3 className="mt-1 text-lg font-bold text-white">
                   {event.title}

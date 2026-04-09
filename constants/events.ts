@@ -1,7 +1,7 @@
 export interface UpcomingEvent {
   title: string;
   organizer: string;
-  type: "tournament" | "league";
+  type: "tournament" | "league" | "event";
   date: string; // YYYY-MM-DD — event is hidden after this date
   dateLabel: string;
   dateValue: string;
@@ -14,7 +14,7 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
   {
     title: "DUPR Ladder",
     organizer: "Dinks Mafia Club",
-    type: "league",
+    type: "event",
     date: "2026-04-13",
     dateLabel: "Apr",
     dateValue: "13",
@@ -27,7 +27,7 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
   {
     title: "DUPR Ladder",
     organizer: "Dinks Mafia Club",
-    type: "league",
+    type: "event",
     date: "2026-04-27",
     dateLabel: "Apr",
     dateValue: "27",

@@ -84,14 +84,15 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
     ctaUrl: "https://event.iowagames.org/sig-pickleball/detail",
   },
   {
-    title: "PPA Iowa Amateur Challenge",
-    organizer: "PPA Tour",
+    title: "2026 IOWA Powerball Amateur Pickleball Championships",
+    organizer: "Carvana PPA Tour & Pickleball Is Great",
     type: "tournament",
     date: "2026-08-09",
     dateLabel: "Aug",
     dateValue: "7–9",
-    description: "PPA amateur challenge event. Registration coming soon.",
-    ctaLabel: "Coming Soon",
+    description:
+      "Iowa's Amateur Pickleball State Championship Series hosted at Dinks. Skill levels 3.0–5.0 across all age groups. Gold medalists earn a free spot at the 2026 World Championships in Dallas. Early registration is $45 (price increases Jun 1).",
+    ctaLabel: "Register Now",
     ctaUrl: "https://pickleballtournaments.com",
   },
   {

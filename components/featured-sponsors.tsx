@@ -100,14 +100,9 @@ export function FeaturedSponsors({
   if (!featured.length && !premier.length && !gold.length) return null;
 
   return (
-    <section className="mt-24 space-y-6">
+    <section className="mt-48 space-y-6">
       <div className="space-y-2">
-        <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-yellow-500">
-          Our Partners
-        </p>
-        <h2 className="text-3xl font-bold text-white md:text-4xl">
-          Thank You, Sponsors
-        </h2>
+        <h2 className="text-3xl font-bold text-white">Thank You, Sponsors</h2>
         <p className="text-base text-white/80">
           These sponsors keep the courts open and our players thriving.{" "}
           <Link

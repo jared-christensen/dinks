@@ -19,7 +19,7 @@ export default function Home() {
 
       {/* Upcoming Events */}
       {soonEvents.length > 0 && (
-        <section className="mt-10 mb-8 space-y-6">
+        <section className="mt-16 space-y-6">
           <h2 className="text-3xl font-bold text-white">Upcoming Events</h2>
 
           {/* Next event callout */}
@@ -115,7 +115,7 @@ export default function Home() {
       )}
 
       {/* Main content */}
-      <section className="mt-16 space-y-24">
+      <section className="mt-48 space-y-48">
         <HowItWorksSection />
 
         <MembershipSection />
@@ -152,35 +152,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Full-bleed section - Programs */}
-      <section className="relative left-1/2 right-1/2 mt-4 -ml-[50vw] w-screen bg-brand-blue-500 py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl font-bold text-white md:text-4xl">
-            Programs & Instruction
-          </h2>
-
-          <div className="mt-10 max-w-xl">
-            <Link
-              href="/lessons"
-              className="group block rounded-2xl border border-white/10 bg-white/5 p-8 transition hover:bg-white/10"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div className="space-y-3">
-                  <h3 className="text-2xl font-bold text-white">
-                    Lessons & Clinics
-                  </h3>
-                  <p className="max-w-sm text-white/80">
-                    Private and group instruction with PPR-certified
-                    professionals David & Bailey Lanning.
-                  </p>
-                </div>
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-yellow-500 text-black transition group-hover:scale-110">
-                  <ArrowRight className="h-5 w-5" />
-                </div>
-              </div>
-            </Link>
+      {/* Programs */}
+      <section className="mt-48 space-y-6">
+        <h2 className="text-3xl font-bold text-white">
+          Programs & Instruction
+        </h2>
+        <Link
+          href="/lessons"
+          className="group block rounded-2xl border border-white/10 bg-white/5 p-8 transition hover:bg-white/10"
+        >
+          <div className="flex items-start justify-between gap-4">
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold text-white">
+                Lessons & Clinics
+              </h3>
+              <p className="max-w-sm text-white/80">
+                Private and group instruction with PPR-certified professionals
+                David & Bailey Lanning.
+              </p>
+            </div>
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-yellow-500 text-black transition group-hover:scale-110">
+              <ArrowRight className="h-5 w-5" />
+            </div>
           </div>
-        </div>
+        </Link>
       </section>
 
       {/* Sponsors */}

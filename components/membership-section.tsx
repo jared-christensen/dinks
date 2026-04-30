@@ -12,9 +12,7 @@ export function MembershipSection({
   return (
     <section className="space-y-8">
       <div className="space-y-3">
-        <h2 className="text-3xl font-bold text-white md:text-4xl">
-          Choose Your Game
-        </h2>
+        <h2 className="text-3xl font-bold text-white">Choose Your Game</h2>
         <p className="max-w-2xl text-base text-white/80">
           All members get personal door code, court reservations, ball machine
           rental.

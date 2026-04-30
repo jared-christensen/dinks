@@ -125,3 +125,13 @@ export function getActiveEvents() {
   const today = new Date().toISOString().split("T")[0];
   return UPCOMING_EVENTS.filter((event) => event.date >= today);
 }
+
+export function getUpcomingEventsSoon(days = 60) {
+  const today = new Date().toISOString().split("T")[0];
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() + days);
+  const cutoffStr = cutoff.toISOString().split("T")[0];
+  return UPCOMING_EVENTS.filter(
+    (event) => event.date >= today && event.date <= cutoffStr,
+  );
+}

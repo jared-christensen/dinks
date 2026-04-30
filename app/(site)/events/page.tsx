@@ -26,7 +26,7 @@ export default function Events() {
         {activeEvents.length > 0 ? (
           activeEvents.map((event) => (
             <div
-              key={event.title}
+              key={event.title + event.date}
               className="flex items-start justify-between gap-4 rounded-xl border border-white/10 bg-white/5 p-6"
             >
               <div className="min-w-0 flex-1">
@@ -58,7 +58,7 @@ export default function Events() {
                   </Button>
                 </div>
               </div>
-              <div className="flex-shrink-0 rounded-lg bg-white/10 px-3 py-2 text-center">
+              <div className="shrink-0 rounded-lg bg-white/10 px-3 py-2 text-center">
                 <p className="text-xs font-semibold uppercase text-white/50">
                   {event.dateLabel}
                 </p>
@@ -91,15 +91,15 @@ export default function Events() {
           </p>
           <ul className="space-y-1.5">
             <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-yellow-500" />
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-yellow-500" />
               Create a DUPR account and get your rating
             </li>
             <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-yellow-500" />
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-yellow-500" />
               Create a Pickleheads account and link it to your DUPR profile
             </li>
             <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-yellow-500" />
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-yellow-500" />
               Join the{" "}
               <Link
                 href="https://dashboard.dupr.com/dashboard/browse/clubs/4933707109"

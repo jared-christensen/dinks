@@ -93,7 +93,8 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
     description:
       "Iowa's Amateur Pickleball State Championship Series hosted at Dinks. Skill levels 3.0–5.0 across all age groups. Gold medalists earn a free spot at the 2026 World Championships in Dallas. Early registration is $45 (price increases Jun 1).",
     ctaLabel: "Register Now",
-    ctaUrl: "https://pickleballtournaments.com",
+    ctaUrl:
+      "https://pickleballtournaments.com/tournaments/2026-iowa-powerball-amateur-pickleball-championships-powered-by-carvana-ppa-tour-and-pig",
   },
   {
     title: "World of Pickleball $2,000 Prize Tournament",

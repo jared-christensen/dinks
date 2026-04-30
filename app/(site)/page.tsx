@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { FacebookFeed } from "@/components/facebook-feed";
 import { FeaturedSponsors } from "@/components/featured-sponsors";
 import { HowItWorksSection } from "@/components/how-it-works-section";
 import { MembershipSection } from "@/components/membership-section";
@@ -21,12 +20,7 @@ export default function Home() {
       {/* Upcoming Events */}
       {soonEvents.length > 0 && (
         <section className="mt-10 mb-8 space-y-6">
-          <div className="space-y-2">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-yellow-500">
-              Play
-            </p>
-            <h2 className="text-3xl font-bold text-white">Coming Up</h2>
-          </div>
+          <h2 className="text-3xl font-bold text-white">Upcoming Events</h2>
 
           {/* Next event callout */}
           {nextEvent && (
@@ -129,9 +123,6 @@ export default function Home() {
         {/* Court Rates */}
         <div className="space-y-6">
           <div className="space-y-2">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-yellow-500">
-              Rates
-            </p>
             <h2 className="text-3xl font-bold text-white">Court Rates</h2>
             <p className="text-base text-white/80">
               Members can reserve courts by the hour at these rates.
@@ -164,20 +155,16 @@ export default function Home() {
       {/* Full-bleed section - Programs */}
       <section className="relative left-1/2 right-1/2 mt-4 -ml-[50vw] w-screen bg-brand-blue-500 py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-brand-yellow-500">
-            Level Up
-          </p>
           <h2 className="text-3xl font-bold text-white md:text-4xl">
-            Programs and experiences
+            Programs & Instruction
           </h2>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {/* Lessons Card */}
+          <div className="mt-10 max-w-xl">
             <Link
               href="/lessons"
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition hover:bg-white/10"
+              className="group block rounded-2xl border border-white/10 bg-white/5 p-8 transition hover:bg-white/10"
             >
-              <div className="flex items-start justify-between">
+              <div className="flex items-start justify-between gap-4">
                 <div className="space-y-3">
                   <h3 className="text-2xl font-bold text-white">
                     Lessons & Clinics
@@ -192,34 +179,8 @@ export default function Home() {
                 </div>
               </div>
             </Link>
-
-            {/* Destinations Card */}
-            <Link
-              href="/destinations"
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition hover:bg-white/10"
-            >
-              <div className="flex items-start justify-between">
-                <div className="space-y-3">
-                  <h3 className="text-2xl font-bold text-white">
-                    Dinks Destinations
-                  </h3>
-                  <p className="max-w-sm text-white/80">
-                    Travel with fellow players to Sonoma, Budapest, Riviera
-                    Maya, and beyond.
-                  </p>
-                </div>
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-yellow-500 text-black transition group-hover:scale-110">
-                  <ArrowRight className="h-5 w-5" />
-                </div>
-              </div>
-            </Link>
           </div>
         </div>
-      </section>
-
-      {/* Facebook Feed */}
-      <section className="mt-16">
-        <FacebookFeed />
       </section>
 
       {/* Sponsors */}

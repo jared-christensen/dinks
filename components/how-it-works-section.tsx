@@ -7,10 +7,7 @@ export function HowItWorksSection() {
   return (
     <section className="space-y-6">
       <div className="space-y-2">
-        <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-yellow-500">
-          Get Started
-        </p>
-        <h2 className="text-3xl font-bold text-white">How It Works</h2>
+        <h2 className="text-3xl font-bold text-white">New to Dinks?</h2>
         <p className="text-base text-white/80">
           Playing at Dinks is simple. Here&apos;s everything you need to know.
         </p>

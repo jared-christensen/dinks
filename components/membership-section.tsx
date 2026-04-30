@@ -6,13 +6,12 @@ interface MembershipSectionProps {
   showGuestInfo?: boolean;
 }
 
-export function MembershipSection({ showGuestInfo = false }: MembershipSectionProps) {
+export function MembershipSection({
+  showGuestInfo = false,
+}: MembershipSectionProps) {
   return (
     <section className="space-y-8">
       <div className="space-y-3">
-        <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-yellow-500">
-          Become a Member
-        </p>
         <h2 className="text-3xl font-bold text-white md:text-4xl">
           Choose Your Game
         </h2>

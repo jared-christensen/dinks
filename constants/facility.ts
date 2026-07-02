@@ -25,6 +25,8 @@ export const FACILITY = {
   },
   contact: {
     email: "info@dinkspickleballdsm.com",
+    phone: "(515) 585-3335",
+    phoneHref: "tel:+15155853335",
   },
   guestFee: 10,
 } as const;

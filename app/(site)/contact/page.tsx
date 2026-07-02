@@ -50,7 +50,13 @@ export default function Contact() {
           message:
             "Thank you for your message! We'll get back to you as soon as possible.",
         });
-        setFormData({ name: "", email: "", subject: "", message: "", website: "" });
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+          website: "",
+        });
       } else {
         throw new Error("Failed to send message");
       }
@@ -66,7 +72,7 @@ export default function Contact() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -77,9 +83,7 @@ export default function Contact() {
   return (
     <section className="space-y-8">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold text-white">
-          Contact Us
-        </h1>
+        <h1 className="text-4xl font-bold text-white">Contact Us</h1>
         <p className="max-w-2xl text-base leading-7 text-white/80">
           Have a question about memberships, sponsorships, or facility details?
           We&apos;d love to hear from you. Fill out the form below and
@@ -90,7 +94,9 @@ export default function Contact() {
       <div className="grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <div className={formContainerClassName}>
-            <h2 className="mb-6 text-2xl font-semibold text-brand-blue-500">Send a Message</h2>
+            <h2 className="mb-6 text-2xl font-semibold text-brand-blue-500">
+              Send a Message
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Honeypot field - hidden from users, bots will fill it */}
               <input
@@ -106,7 +112,9 @@ export default function Contact() {
               <div className="space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className={formLabelClassName}>Name *</Label>
+                    <Label htmlFor="name" className={formLabelClassName}>
+                      Name *
+                    </Label>
                     <Input
                       id="name"
                       name="name"
@@ -119,7 +127,9 @@ export default function Contact() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email" className={formLabelClassName}>Email *</Label>
+                    <Label htmlFor="email" className={formLabelClassName}>
+                      Email *
+                    </Label>
                     <Input
                       id="email"
                       name="email"
@@ -134,7 +144,9 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="subject" className={formLabelClassName}>Subject *</Label>
+                  <Label htmlFor="subject" className={formLabelClassName}>
+                    Subject *
+                  </Label>
                   <Input
                     id="subject"
                     name="subject"
@@ -148,7 +160,9 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className={formLabelClassName}>Message *</Label>
+                  <Label htmlFor="message" className={formLabelClassName}>
+                    Message *
+                  </Label>
                   <Textarea
                     id="message"
                     name="message"
@@ -169,10 +183,7 @@ export default function Contact() {
               )}
 
               <div className="flex justify-end">
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                >
+                <Button type="submit" disabled={isSubmitting}>
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </div>
@@ -190,12 +201,26 @@ export default function Contact() {
                 <div>
                   <p className="font-semibold">Address</p>
                   <p>{FACILITY.address.street}</p>
-                  <p>{FACILITY.address.city}, {FACILITY.address.state} {FACILITY.address.zip}</p>
+                  <p>
+                    {FACILITY.address.city}, {FACILITY.address.state}{" "}
+                    {FACILITY.address.zip}
+                  </p>
                 </div>
                 <div>
                   <p className="font-semibold">Location</p>
                   <p>{FACILITY.location.description}</p>
                   <p>{FACILITY.location.landmark}</p>
+                </div>
+                <div>
+                  <p className="font-semibold">Phone</p>
+                  <p>
+                    <Link
+                      href={FACILITY.contact.phoneHref}
+                      className="transition hover:text-brand-blue-500"
+                    >
+                      {FACILITY.contact.phone}
+                    </Link>
+                  </p>
                 </div>
                 <div>
                   <p className="font-semibold">Hours</p>

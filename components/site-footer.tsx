@@ -65,6 +65,12 @@ export function SiteFooter() {
           <div className="space-y-1">
             <span className="block">{FACILITY.address.short}</span>
             <span className="block">{FACILITY.hours.description}</span>
+            <Link
+              href={FACILITY.contact.phoneHref}
+              className="block transition hover:text-white"
+            >
+              {FACILITY.contact.phone}
+            </Link>
           </div>
           <Button asChild variant="outline" size="sm">
             <Link

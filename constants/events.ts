@@ -81,7 +81,7 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
     dateValue: "11–12",
     description: "First time held at Dinks on dedicated pickleball courts!",
     ctaLabel: "Register",
-    ctaUrl: "https://event.iowagames.org/sig-pickleball/detail",
+    ctaUrl: "https://event.iowagames.org/sig-pickleball",
   },
   {
     title: "Paddles for a Purpose: Pickleball Event",

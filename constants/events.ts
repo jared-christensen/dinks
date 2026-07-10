@@ -84,6 +84,19 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
     ctaUrl: "https://event.iowagames.org/sig-pickleball/detail",
   },
   {
+    title: "Paddles for a Purpose: Pickleball Event",
+    organizer: "Ronald McDonald House Charities of Central Iowa",
+    type: "tournament",
+    date: "2026-08-06",
+    dateLabel: "Aug",
+    dateValue: "6",
+    description:
+      "The second annual Pickleball Tournament in support of RMHCCI, hosted by their Young Professionals Committee. A day of friendly competition to help Keep Families Close — 4:30–6:30 PM. $100/team (tournament and/or free play). Bring your own equipment!",
+    ctaLabel: "Register",
+    ctaUrl:
+      "https://www.rmhdesmoines.org/events/details?id=2448a3c9-6207-4c15-9f5d-57c9908e4016",
+  },
+  {
     title: "2026 IOWA Powerball Amateur Pickleball Championships",
     organizer: "Carvana PPA Tour & Pickleball Is Great",
     type: "tournament",

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import posthog from "posthog-js";
 import { FACILITY } from "@/constants/facility";
 
 export function HomeHero() {
@@ -40,12 +43,14 @@ export function HomeHero() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/membership"
+              onClick={() => posthog.capture("hero_become_member_clicked")}
               className="inline-flex items-center justify-center rounded-full bg-brand-yellow-500 px-8 py-3 text-sm font-bold uppercase tracking-wide text-black transition-all hover:scale-105 hover:bg-brand-yellow-300 active:scale-95 active:bg-brand-yellow-600"
             >
               Become a Member
             </Link>
             <Link
               href="/schedule"
+              onClick={() => posthog.capture("hero_reserve_court_clicked")}
               className="inline-flex items-center justify-center rounded-full border-2 border-white/30 px-8 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all hover:border-white/50 hover:bg-white/10 active:scale-95 active:bg-white/20"
             >
               Reserve a Court

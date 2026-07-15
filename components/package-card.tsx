@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import posthog from "posthog-js";
 
 // Generic package tier shape covering membership & sponsorship differences.
 export interface PackageTier {
@@ -28,6 +31,7 @@ export function PackageCard({
   return (
     <Link
       href={tier.ctaHref}
+      onClick={() => posthog.capture("membership_tier_clicked", { tier_name: tier.name })}
       className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border-8 p-6 transition ${
         highlighted
           ? "border-brand-yellow-500 bg-brand-green-400"

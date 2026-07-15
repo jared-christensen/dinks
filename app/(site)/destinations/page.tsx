@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import posthog from "posthog-js";
 import { Button } from "@/components/ui/button";
 import { FaFacebook } from "react-icons/fa";
 import {
@@ -120,6 +123,7 @@ export default function Destinations() {
                 href="https://www.facebook.com/groups/380792678025831/"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => posthog.capture("destinations_facebook_clicked")}
                 className="gap-2 uppercase tracking-wide"
               >
                 <FaFacebook className="h-4 w-4" />
@@ -127,7 +131,12 @@ export default function Destinations() {
               </Link>
             </Button>
             <Button asChild variant="outline">
-              <Link href="/contact">Ask about trips</Link>
+              <Link
+                href="/contact"
+                onClick={() => posthog.capture("destinations_ask_about_trips_clicked")}
+              >
+                Ask about trips
+              </Link>
             </Button>
           </div>
         </CardContent>

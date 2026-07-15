@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { trainingFormSchema } from "@/lib/validations";
+import { getPostHogClient } from "@/lib/posthog-server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -41,6 +42,15 @@ export async function POST(request: NextRequest) {
         <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
       `,
     });
+
+    const distinctId = request.headers.get("X-POSTHOG-DISTINCT-ID") || crypto.randomUUID();
+    const posthog = getPostHogClient();
+    posthog.capture({
+      distinctId,
+      event: "training_inquiry_email_sent",
+      properties: { has_phone: !!phone, has_message: !!message },
+    });
+    await posthog.flush();
 
     return NextResponse.json(
       { message: "Training inquiry submitted successfully" },

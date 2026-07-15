@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import posthog from "posthog-js";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -37,11 +38,14 @@ export function TrainingContactForm() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "X-POSTHOG-DISTINCT-ID": posthog.get_distinct_id() ?? "",
+          "X-POSTHOG-SESSION-ID": posthog.get_session_id() ?? "",
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
+        posthog.capture("training_inquiry_submitted");
         setSubmitStatus({
           type: "success",
           message:

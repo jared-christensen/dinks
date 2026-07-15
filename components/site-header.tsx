@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import posthog from "posthog-js";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/container";
 
@@ -61,7 +62,11 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 md:flex">
           <Button asChild variant="destructive">
-            <Link href="/membership" className="uppercase tracking-wide">
+            <Link
+              href="/membership"
+              onClick={() => posthog.capture("header_join_dinks_clicked", { nav_location: "desktop" })}
+              className="uppercase tracking-wide"
+            >
               Join Dinks
             </Link>
           </Button>
@@ -100,7 +105,10 @@ export function SiteHeader() {
             <Button asChild variant="primary" className="w-full">
               <Link
                 href="/membership"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  posthog.capture("header_join_dinks_clicked", { nav_location: "mobile" });
+                }}
                 className="uppercase tracking-wide"
               >
                 Join Dinks

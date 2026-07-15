@@ -1,8 +1,9 @@
+"use client";
+
 import Link from "next/link";
+import posthog from "posthog-js";
 import { Button } from "@/components/ui/button";
 import { getActiveEvents } from "@/constants/events";
-
-export const dynamic = "force-dynamic";
 
 export default function Events() {
   const activeEvents = getActiveEvents();
@@ -52,6 +53,7 @@ export default function Events() {
                       href={event.ctaUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => posthog.capture("event_register_clicked", { event_title: event.title, event_type: event.type })}
                     >
                       {event.ctaLabel}
                     </Link>
@@ -62,6 +64,7 @@ export default function Events() {
                         href={event.secondaryCtaUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => posthog.capture("event_register_clicked", { event_title: event.title, event_type: event.type, cta: "secondary" })}
                       >
                         {event.secondaryCtaLabel}
                       </Link>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import posthog from "posthog-js";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -40,11 +41,14 @@ export default function Contact() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "X-POSTHOG-DISTINCT-ID": posthog.get_distinct_id() ?? "",
+          "X-POSTHOG-SESSION-ID": posthog.get_session_id() ?? "",
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
+        posthog.capture("contact_form_submitted", { subject: formData.subject });
         setSubmitStatus({
           type: "success",
           message:

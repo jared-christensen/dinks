@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import posthog from "posthog-js";
 import { Button } from "@/components/ui/button";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 
@@ -64,6 +67,7 @@ export default function Join() {
                 href="https://app.courtreserve.com/Account/Register?t=2"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => posthog.capture("courtreserve_get_started_clicked")}
                 className="flex items-center gap-2 uppercase tracking-wide"
               >
                 <Image
@@ -90,6 +94,7 @@ export default function Join() {
               href="https://apps.apple.com/us/app/courtreserve/id1392556575"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => posthog.capture("app_download_clicked", { platform: "ios", app: "courtreserve" })}
               className="inline-flex items-center gap-2 rounded-lg border border-brand-blue-500/20 bg-white px-4 py-2 text-sm font-medium text-brand-blue-500 transition hover:border-brand-blue-500/40 hover:bg-brand-blue-500/5"
             >
               <FaApple className="h-4 w-4" />
@@ -99,6 +104,7 @@ export default function Join() {
               href="https://play.google.com/store/apps/details?id=com.courtreserve"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => posthog.capture("app_download_clicked", { platform: "android", app: "courtreserve" })}
               className="inline-flex items-center gap-2 rounded-lg border border-brand-blue-500/20 bg-white px-4 py-2 text-sm font-medium text-brand-blue-500 transition hover:border-brand-blue-500/40 hover:bg-brand-blue-500/5"
             >
               <FaGooglePlay className="h-4 w-4" />

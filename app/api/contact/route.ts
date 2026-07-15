@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactFormSchema } from "@/lib/validations";
+import { getPostHogClient } from "@/lib/posthog-server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -40,6 +41,15 @@ export async function POST(request: NextRequest) {
         <p>${message.replace(/\n/g, "<br>")}</p>
       `,
     });
+
+    const distinctId = request.headers.get("X-POSTHOG-DISTINCT-ID") || crypto.randomUUID();
+    const posthog = getPostHogClient();
+    posthog.capture({
+      distinctId,
+      event: "contact_email_sent",
+      properties: { subject },
+    });
+    await posthog.flush();
 
     return NextResponse.json(
       { message: "Form submitted successfully" },

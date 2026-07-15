@@ -67,7 +67,7 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
     dateLabel: "Jul",
     dateValue: "27",
     description:
-      "A team-format pickleball event at Dinks starting at 5:30 PM. Register as a team (space is limited to 16 teams). Contact Nathan Blocker at (515) 571-9953 or iowamoneyball@gmail.com.",
+      "A team-format pickleball event at Dinks on Monday, July 27, starting at 5:30 PM. $60/team, capped at 16 teams, with a 4 game guarantee. Pool play followed by a bracket, and all teams make the tournament. Top 3 places paid out. Contact Nathan Blockner at (515) 571-9953 or iowamoneyball@gmail.com to sign up.",
     ctaLabel: "Contact to Register",
     ctaUrl: "mailto:iowamoneyball@gmail.com",
     secondaryCtaLabel: "Follow on Facebook",

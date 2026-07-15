@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import posthog from "posthog-js";
 import { FaApple, FaGooglePlay, FaGlobe, FaUsers } from "react-icons/fa";
 
 const platforms = [
@@ -100,6 +103,7 @@ export default function Apps() {
                     href={platform.links.website}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => posthog.capture("platform_link_clicked", { platform_name: platform.name, link_type: "website" })}
                     className="inline-flex items-center gap-2 rounded-lg border border-brand-blue-500/20 bg-brand-blue-500/5 px-4 py-2 text-sm font-medium text-brand-blue-500 transition hover:border-brand-blue-500/40 hover:bg-brand-blue-500/10"
                   >
                     <FaGlobe className="h-4 w-4" />
@@ -111,6 +115,7 @@ export default function Apps() {
                     href={platform.links.club}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => posthog.capture("platform_link_clicked", { platform_name: platform.name, link_type: "club" })}
                     className="inline-flex items-center gap-2 rounded-lg border border-brand-blue-500/20 bg-brand-blue-500/5 px-4 py-2 text-sm font-medium text-brand-blue-500 transition hover:border-brand-blue-500/40 hover:bg-brand-blue-500/10"
                   >
                     <FaUsers className="h-4 w-4" />
@@ -122,6 +127,7 @@ export default function Apps() {
                     href={platform.links.ios}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => posthog.capture("platform_link_clicked", { platform_name: platform.name, link_type: "ios" })}
                     className="inline-flex items-center gap-2 rounded-lg border border-brand-blue-500/20 bg-white px-4 py-2 text-sm font-medium text-brand-blue-500 transition hover:border-brand-blue-500/40 hover:bg-brand-blue-500/5"
                   >
                     <FaApple className="h-4 w-4" />
@@ -133,6 +139,7 @@ export default function Apps() {
                     href={platform.links.android}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => posthog.capture("platform_link_clicked", { platform_name: platform.name, link_type: "android" })}
                     className="inline-flex items-center gap-2 rounded-lg border border-brand-blue-500/20 bg-white px-4 py-2 text-sm font-medium text-brand-blue-500 transition hover:border-brand-blue-500/40 hover:bg-brand-blue-500/5"
                   >
                     <FaGooglePlay className="h-4 w-4" />

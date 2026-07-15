@@ -106,6 +106,7 @@ export default function Events() {
                 href="https://app.courtreserve.com/Online/Events/List/10812"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => posthog.capture("open_play_schedule_clicked")}
               >
                 View on CourtReserve
               </Link>
@@ -126,6 +127,7 @@ export default function Events() {
                 href="https://teamsideline.com/sites/DINKSpickleball/current-programs"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => posthog.capture("leagues_signup_clicked")}
               >
                 Sign Up on Team Sideline
               </Link>

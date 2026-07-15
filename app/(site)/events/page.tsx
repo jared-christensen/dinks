@@ -46,7 +46,7 @@ export default function Events() {
                 <p className="mt-3 text-sm leading-6 text-white/70">
                   {event.description}
                 </p>
-                <div className="mt-4">
+                <div className="mt-4 flex flex-wrap gap-2">
                   <Button asChild variant="outline" size="sm">
                     <Link
                       href={event.ctaUrl}
@@ -56,6 +56,17 @@ export default function Events() {
                       {event.ctaLabel}
                     </Link>
                   </Button>
+                  {event.secondaryCtaUrl && event.secondaryCtaLabel && (
+                    <Button asChild variant="ghost" size="sm">
+                      <Link
+                        href={event.secondaryCtaUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {event.secondaryCtaLabel}
+                      </Link>
+                    </Button>
+                  )}
                 </div>
               </div>
               <div className="shrink-0 rounded-lg bg-white/10 px-3 py-2 text-center">

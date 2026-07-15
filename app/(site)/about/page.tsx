@@ -12,7 +12,7 @@ const families = [
       "Bailey is a licensed mental health therapist and owns her own private practice. She is very involved in our kids' activities, sits on boards, PTO and coaches the girls' volleyball team.",
       "Campbell & Lolo are Dinks VPs of Youth Experience. While they are up-and-coming pickleball stars - they also focus their time on soccer, volleyball, tumbling, track and field, tennis, and basketball!",
       "We could not be more excited to open Dinks and in addition to 13 dedicated courts - provide training, tournaments, leagues, events and most of all a central hub for the Des Moines pickleball community!",
-      "We sincerely appreciate your support!\n— David Lanning and Bailey Saal-Lanning",
+      "We sincerely appreciate your support!\nDavid Lanning and Bailey Saal-Lanning",
     ],
   },
   {

@@ -8,35 +8,11 @@ export interface UpcomingEvent {
   description: string;
   ctaLabel: string;
   ctaUrl: string;
+  secondaryCtaLabel?: string;
+  secondaryCtaUrl?: string;
 }
 
 export const UPCOMING_EVENTS: UpcomingEvent[] = [
-  {
-    title: "DUPR Ladder",
-    organizer: "Dinks Mafia Club",
-    type: "event",
-    date: "2026-04-13",
-    dateLabel: "Apr",
-    dateValue: "13",
-    description:
-      "Build your DUPR rating in a fun, competitive King of the Court format. Players are seeded by skill level — top player moves up, bottom moves down. Scores submitted to DUPR after the event.",
-    ctaLabel: "Register",
-    ctaUrl:
-      "https://app.courtreserve.com/Online/Events/Details/10812/MKDEXE110812617?resId=52027949",
-  },
-  {
-    title: "DUPR Ladder",
-    organizer: "Dinks Mafia Club",
-    type: "event",
-    date: "2026-04-27",
-    dateLabel: "Apr",
-    dateValue: "27",
-    description:
-      "Build your DUPR rating in a fun, competitive King of the Court format. Players are seeded by skill level — top player moves up, bottom moves down. Scores submitted to DUPR after the event.",
-    ctaLabel: "Register",
-    ctaUrl:
-      "https://app.courtreserve.com/Online/Events/Details/10812/MKDEXE110812617?resId=52027949&tab=dates",
-  },
   {
     title: "Dink for Heart",
     organizer: "Iowa Heart Foundation",
@@ -84,6 +60,20 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
     ctaUrl: "https://event.iowagames.org/sig-pickleball",
   },
   {
+    title: "Iowa Moneyball Pickleball",
+    organizer: "Iowa Moneyball Pickleball",
+    type: "tournament",
+    date: "2026-07-27",
+    dateLabel: "Jul",
+    dateValue: "27",
+    description:
+      "A team-format pickleball event at Dinks starting at 5:30 PM. Register as a team (space is limited to 16 teams). Contact Nathan Blocker at (515) 571-9953 or iowamoneyball@gmail.com.",
+    ctaLabel: "Contact to Register",
+    ctaUrl: "mailto:iowamoneyball@gmail.com",
+    secondaryCtaLabel: "Follow on Facebook",
+    secondaryCtaUrl: "https://www.facebook.com/profile.php?id=61591969192008",
+  },
+  {
     title: "Paddles for a Purpose: Pickleball Event",
     organizer: "Ronald McDonald House Charities of Central Iowa",
     type: "tournament",
@@ -91,7 +81,7 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
     dateLabel: "Aug",
     dateValue: "6",
     description:
-      "The second annual Pickleball Tournament in support of RMHCCI, hosted by their Young Professionals Committee. A day of friendly competition to help Keep Families Close — 4:30–6:30 PM. $100/team (tournament and/or free play). Bring your own equipment!",
+      "The second annual Pickleball Tournament in support of RMHCCI, hosted by their Young Professionals Committee. A day of friendly competition to help Keep Families Close, 4:30–6:30 PM. $100/team (tournament and/or free play). Bring your own equipment!",
     ctaLabel: "Register",
     ctaUrl:
       "https://www.rmhdesmoines.org/events/details?id=2448a3c9-6207-4c15-9f5d-57c9908e4016",

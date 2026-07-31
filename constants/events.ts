@@ -67,7 +67,7 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
     dateLabel: "Jul",
     dateValue: "27",
     description:
-      "A team-format pickleball event at Dinks on Monday, July 27, starting at 5:30 PM. $60/team, capped at 16 teams, with a 4 game guarantee. Pool play followed by a bracket, and all teams make the tournament. Top 3 places paid out. Contact Nathan Blockner at (515) 571-9953 or iowamoneyball@gmail.com to sign up.",
+      "A team-format pickleball event at Dinks on Monday, July 27, starting at 5:30 PM. $60/team, capped at 16 teams, with a 4 game guarantee. Pool play followed by a bracket, and all teams make the tournament. Top 3 places paid out. Contact Nathan Blocker at (515) 571-9953 or iowamoneyball@gmail.com to sign up.",
     ctaLabel: "Contact to Register",
     ctaUrl: "mailto:iowamoneyball@gmail.com",
     secondaryCtaLabel: "Follow on Facebook",
@@ -98,6 +98,20 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
     ctaLabel: "Register Now",
     ctaUrl:
       "https://pickleballtournaments.com/tournaments/2026-iowa-powerball-amateur-pickleball-championships-powered-by-carvana-ppa-tour-and-pig",
+  },
+  {
+    title: "Iowa Moneyball Pickleball: Event #6",
+    organizer: "Iowa Moneyball Pickleball",
+    type: "tournament",
+    date: "2026-08-10",
+    dateLabel: "Aug",
+    dateValue: "10",
+    description:
+      "A team-format pickleball event at Dinks on Monday, August 10, starting at 5:30 PM. $60/team. Two divisions this time: Open (scores not entered into DUPR) and 9.0 DUPR cap (scores entered into DUPR), each with a minimum of 8 and maximum of 12 teams. Top 2 teams in each division earn a payout. Contact Nathan Blocker at (515) 571-9953 or iowamoneyball@gmail.com to sign up.",
+    ctaLabel: "Contact to Register",
+    ctaUrl: "mailto:iowamoneyball@gmail.com",
+    secondaryCtaLabel: "Follow on Facebook",
+    secondaryCtaUrl: "https://www.facebook.com/profile.php?id=61591969192008",
   },
   {
     title: "World of Pickleball $2,000 Prize Tournament",

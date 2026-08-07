@@ -117,9 +117,9 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
     title: "World of Pickleball $2,000 Prize Tournament",
     organizer: "World of Pickleball",
     type: "tournament",
-    date: "2026-09-06",
+    date: "2026-09-13",
     dateLabel: "Sep",
-    dateValue: "4–6",
+    dateValue: "11–13",
     description: "$2,000 prize tournament hosted at Dinks.",
     ctaLabel: "Register",
     ctaUrl:

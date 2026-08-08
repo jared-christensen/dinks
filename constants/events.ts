@@ -132,9 +132,10 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
     date: "2026-10-18",
     dateLabel: "Oct",
     dateValue: "17–18",
-    description: "Charity tournament. Registration details coming in May.",
-    ctaLabel: "Details Coming Soon",
-    ctaUrl: "/events",
+    description: "Charity tournament.",
+    ctaLabel: "Register",
+    ctaUrl:
+      "https://app.fluidpb.com/tournaments/2026-des-moines-pickleball-team-classic",
   },
 ];
 

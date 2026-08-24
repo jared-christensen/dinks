@@ -126,6 +126,18 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
       "https://pickleballtournaments.com/tournaments/world-of-pickleball-des-moines-2-000-2",
   },
   {
+    title: "Silly Pickles Fall League",
+    organizer: "Silly Pickles",
+    type: "league",
+    date: "2026-09-20",
+    dateLabel: "Sep",
+    dateValue: "20",
+    description:
+      "Looking for a fun, social pickleball league to meet new players? Silly Pickles has you covered and Fall league sign-up is LIVE! Sign up as an individual; each week you will have different partners at your skill level. Open to non-members—Sundays 3–5 PM, 9/20–11/8. Secure your spot now, this will sell out!",
+    ctaLabel: "Register",
+    ctaUrl: "https://sillypickles.com/dinks-desmoines",
+  },
+  {
     title: "Des Moines Team Classic Charity Tournament",
     organizer: "Des Moines Team Classic",
     type: "tournament",

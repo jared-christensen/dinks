@@ -113,27 +113,6 @@ export default function Events() {
             </Button>
           </div>
         </div>
-
-        {/* Leagues */}
-        <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-          <h2 className="font-semibold text-white">Leagues</h2>
-          <p className="mt-2 text-sm leading-6 text-white/70">
-            Seasonal league play with teams and weekly matches. League signups
-            are managed through Team Sideline.
-          </p>
-          <div className="mt-4">
-            <Button asChild variant="outline" size="sm">
-              <Link
-                href="https://teamsideline.com/sites/DINKSpickleball/current-programs"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => posthog.capture("leagues_signup_clicked")}
-              >
-                Sign Up on Team Sideline
-              </Link>
-            </Button>
-          </div>
-        </div>
       </div>
     </section>
   );

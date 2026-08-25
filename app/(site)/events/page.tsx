@@ -18,6 +18,27 @@ export default function Events() {
         </p>
       </div>
 
+      {/* Open Play */}
+      <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+        <h2 className="font-semibold text-white">Open Play</h2>
+        <p className="mt-2 text-sm leading-6 text-white/70">
+          Drop-in sessions where you get matched with other players and rotate
+          through games. No partner needed.
+        </p>
+        <div className="mt-4">
+          <Button asChild variant="outline" size="sm">
+            <Link
+              href="https://app.courtreserve.com/Online/Events/List/10812"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => posthog.capture("open_play_schedule_clicked")}
+            >
+              View on CourtReserve
+            </Link>
+          </Button>
+        </div>
+      </div>
+
       {/* Upcoming Events */}
       <div className="space-y-6">
         <h2 className="text-sm font-semibold uppercase tracking-widest text-white/50">
@@ -89,30 +110,6 @@ export default function Events() {
             </p>
           </div>
         )}
-      </div>
-
-      {/* Event Types */}
-      <div className="grid gap-6 md:grid-cols-2">
-        {/* Open Play */}
-        <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-          <h2 className="font-semibold text-white">Open Play</h2>
-          <p className="mt-2 text-sm leading-6 text-white/70">
-            Drop-in sessions where you get matched with other players and rotate
-            through games. No partner needed.
-          </p>
-          <div className="mt-4">
-            <Button asChild variant="outline" size="sm">
-              <Link
-                href="https://app.courtreserve.com/Online/Events/List/10812"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => posthog.capture("open_play_schedule_clicked")}
-              >
-                View on CourtReserve
-              </Link>
-            </Button>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -114,18 +114,6 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
     secondaryCtaUrl: "https://www.facebook.com/profile.php?id=61591969192008",
   },
   {
-    title: "World of Pickleball $2,000 Prize Tournament",
-    organizer: "World of Pickleball",
-    type: "tournament",
-    date: "2026-09-13",
-    dateLabel: "Sep",
-    dateValue: "11–13",
-    description: "$2,000 prize tournament hosted at Dinks.",
-    ctaLabel: "Register",
-    ctaUrl:
-      "https://pickleballtournaments.com/tournaments/world-of-pickleball-des-moines-2-000-2",
-  },
-  {
     title: "Silly Pickles Fall League",
     organizer: "Silly Pickles",
     type: "league",
@@ -148,6 +136,18 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
     ctaLabel: "Register",
     ctaUrl:
       "https://app.fluidpb.com/tournaments/2026-des-moines-pickleball-team-classic",
+  },
+  {
+    title: "World of Pickleball $2,000 Prize Tournament",
+    organizer: "World of Pickleball",
+    type: "tournament",
+    date: "2026-12-13",
+    dateLabel: "Dec",
+    dateValue: "11–13",
+    description: "$2,000 prize tournament hosted at Dinks.",
+    ctaLabel: "Register",
+    ctaUrl:
+      "https://pickleballtournaments.com/tournaments/world-of-pickleball-des-moines-2-000-2",
   },
 ];
 

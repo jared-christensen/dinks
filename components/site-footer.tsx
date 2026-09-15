@@ -19,12 +19,14 @@ export function SiteFooter() {
               height={32}
             />
             <nav className="flex flex-wrap justify-center gap-6 text-sm">
+              {/* Temporarily hidden while About section is being updated:
               <Link
                 href="/about"
                 className="text-white/80 transition hover:text-white"
               >
                 About
               </Link>
+              */}
               <Link
                 href="/contact"
                 className="text-white/80 transition hover:text-white"

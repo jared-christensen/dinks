@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
 
     await resend.emails.send({
       from: process.env.EMAIL_FROM || "Dinks Website <noreply@dinkspickleballdsm.com>",
-      to: process.env.TRAINING_EMAIL || "lanningpickleball@gmail.com",
+      to: process.env.TRAINING_EMAIL || "dinkslessons@gmail.com",
       replyTo: email,
       subject: "New Training Inquiry from Dinks Website",
       html: `

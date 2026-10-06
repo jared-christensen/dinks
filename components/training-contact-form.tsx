@@ -49,7 +49,7 @@ export function TrainingContactForm() {
         setSubmitStatus({
           type: "success",
           message:
-            "Thank you! David & Bailey will get back to you soon to discuss instruction options.",
+            "Thank you! David will get back to you soon to discuss instruction options.",
         });
         setFormData({ name: "", email: "", phone: "", message: "", website: "" });
       } else {
@@ -79,7 +79,7 @@ export function TrainingContactForm() {
         Get Started with Instruction
       </h2>
       <p className="mt-1 text-sm text-brand-blue-500/70">
-        Share your contact info and David and Bailey will reach out to discuss
+        Share your contact info and David will reach out to discuss
         instruction options.
       </p>
 

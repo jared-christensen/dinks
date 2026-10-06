@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import posthog from "posthog-js";
 import { Button } from "@/components/ui/button";
 import { FaFacebook } from "react-icons/fa";
@@ -32,7 +31,7 @@ const pastDestinations = [
 ];
 
 const benefits = [
-  "Improve your game with professional instruction from David and Bailey",
+  "Improve your game with professional instruction from David",
   "Have an absolute blast in beautiful locations",
   "Create lifelong memories with fellow pickleball enthusiasts",
   "Experience destinations you've always dreamed of visiting",
@@ -51,7 +50,7 @@ export default function Destinations() {
           the most beautiful locations in the world!
         </p>
         <p className="max-w-2xl text-base leading-7 text-white/80">
-          Join David and Bailey Lanning, co-owners of Dinks Pickleball and PPR
+          Join David Lanning, co-owner of Dinks Pickleball and PPR
           Professional Instructors, on your next vacation. If you want to
           improve your game while having an absolute blast and creating lifelong
           memories and fun - these trips are for you!
@@ -143,36 +142,26 @@ export default function Destinations() {
       </Card>
 
       {/* About organizers */}
-      <div className="grid gap-6 lg:grid-cols-2">
-        <div className="relative h-64 overflow-hidden rounded-xl lg:h-auto">
-          <Image
-            src="/david-bailey.webp"
-            alt="David and Bailey Lanning"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <Card>
-          <CardHeader>
-            <CardTitle>Your Trip Organizers</CardTitle>
-            <CardDescription className="text-lg font-semibold text-white/90">
-              David and Bailey Lanning
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-base leading-7">
-              Co-owners of Dinks Pickleball and PPR Professional Instructors.
-              They bring their passion for pickleball and love of travel
-              together to create unforgettable experiences. You&apos;ll get
-              professional instruction, organized play, and the chance to
-              explore amazing destinations with fellow pickleball enthusiasts.
-            </p>
-            <Button asChild variant="outline" className="mt-4">
-              <Link href="/lessons">Explore lessons</Link>
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>Your Trip Organizer</CardTitle>
+          <CardDescription className="text-lg font-semibold text-white/90">
+            David Lanning
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-base leading-7">
+            Co-owner of Dinks Pickleball and PPR Professional Instructor.
+            David brings his passion for pickleball and love of travel
+            together to create unforgettable experiences. You&apos;ll get
+            professional instruction, organized play, and the chance to
+            explore amazing destinations with fellow pickleball enthusiasts.
+          </p>
+          <Button asChild variant="outline" className="mt-4">
+            <Link href="/lessons">Explore lessons</Link>
+          </Button>
+        </CardContent>
+      </Card>
     </section>
   );
 }

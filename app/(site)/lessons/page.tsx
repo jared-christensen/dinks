@@ -12,21 +12,21 @@ export default function Lessons() {
         <h1 className="text-4xl font-bold text-white">Lessons and clinics</h1>
         <p className="max-w-2xl text-base leading-7 text-white/80">
           Whether you&apos;re picking up a paddle for the first time or looking
-          to refine advanced techniques, our PPR-certified instructors David and
-          Bailey provide professional instruction for all skill levels.
+          to refine advanced techniques, our PPR-certified instructor David
+          provides professional instruction for all skill levels.
         </p>
       </div>
 
       {/* Instructor Hero */}
       <div className="overflow-hidden rounded-2xl border-8 border-white/10 bg-white">
         <div className="grid lg:grid-cols-5">
-          {/* Image - takes 3/5 on desktop */}
-          <div className="relative aspect-[4/3] lg:col-span-3 lg:aspect-auto">
+          {/* Image - takes 2/5 on desktop */}
+          <div className="relative aspect-square lg:col-span-2 lg:aspect-auto">
             <Image
-              src="/david-bailey.webp"
-              alt="David and Bailey Lanning"
+              src="/david.jpg"
+              alt="David Lanning"
               fill
-              className="object-cover object-[center_40%]"
+              className="object-cover object-[50%_20%]"
               priority
             />
           </div>
@@ -36,7 +36,7 @@ export default function Lessons() {
               Meet Your Instructors
             </p>
             <h2 className="mt-2 text-3xl font-bold text-brand-blue-500">
-              David and Bailey Lanning
+              David Lanning
             </h2>
             <ul className="mt-6 space-y-3 text-base leading-7 text-brand-blue-500/80">
               {INSTRUCTOR_CREDENTIALS.map((credential) => (
@@ -81,7 +81,7 @@ export default function Lessons() {
                 Ready to travel?
               </h3>
               <p className="max-w-sm text-white/80">
-                David and Bailey also organize{" "}
+                David also organizes{" "}
                 Dinks Destinations, pickleball vacation trips
                 to beautiful locations around the world.
               </p>

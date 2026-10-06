@@ -168,7 +168,7 @@ export default function Home() {
               </h3>
               <p className="max-w-sm text-white/80">
                 Private and group instruction with PPR-certified professionals
-                David & Bailey Lanning.
+                David Lanning.
               </p>
             </div>
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-yellow-500 text-black transition group-hover:scale-110">

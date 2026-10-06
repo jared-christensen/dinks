@@ -8,13 +8,12 @@ const families = [
     imageSrc: "/lannings-family.webp",
     imageAlt: "The Lanning family",
     paragraphs: [
-      "David and Bailey started playing pickleball about 5 years ago after Bailey's parents, Kirk and Beth Meints introduced them to the sport. Like most, once we started playing we quickly became addicted. We even took a family cruise with Engage Pickleball for a week of pickleball training which introduced us to the founders of Engage. David continues to play for Team Engage as a sponsored player. Pickleball has had a huge, positive impact on our lives making so many lifelong friends, allowing us to travel many states for tournaments and provides an outlet for our competitiveness! Our whole family will be heading to Texas in November to support Bailey who will be playing 5.0 Women's doubles at Nationals.",
+      "David started playing pickleball about 5 years ago after Kirk and Beth Meints introduced him to the sport. Like most, once we started playing we quickly became addicted. We even took a family cruise with Engage Pickleball for a week of pickleball training which introduced us to the founders of Engage. David continues to play for Team Engage as a sponsored player. Pickleball has had a huge, positive impact on our lives making so many lifelong friends, allowing us to travel many states for tournaments and provides an outlet for our competitiveness!",
       "Dinks represents both a passion for pickleball while at the same time an opportunity to respond to the overwhelming need for proper indoor facilities for the growing pickleball demographic in the greater Des Moines area.",
-      "Outside of Dinks, David works full-time as a regional sales manager for a cybersecurity startup covering enterprise accounts across 16 states and enjoys coaching his girls' soccer team.",
-      "Bailey is a licensed mental health therapist and owns her own private practice. She is very involved in our kids' activities, sits on boards, PTO and coaches the girls' volleyball team.",
+      "David works full-time as a regional sales manager for a cybersecurity startup covering enterprise accounts across 16 states and enjoys coaching his girls' soccer team.",
       "Campbell & Lolo are Dinks VPs of Youth Experience. While they are up-and-coming pickleball stars - they also focus their time on soccer, volleyball, tumbling, track and field, tennis, and basketball!",
       "We could not be more excited to open Dinks and in addition to 13 dedicated courts - provide training, tournaments, leagues, events and most of all a central hub for the Des Moines pickleball community!",
-      "We sincerely appreciate your support!\nDavid Lanning and Bailey Saal-Lanning",
+      "We sincerely appreciate your support!\nDavid Lanning",
     ],
   },
   {
